@@ -1,3 +1,11 @@
+# Site
+title: 谢桂纲的专栏客
+subtitle:
+description:
+author: しゃけい よしつな
+language:
+timezone:
+
 # Header
 menu:
   主页: /
@@ -28,14 +36,14 @@ mathjax: true
 animate: true
 
 # 是否在新窗口打开链接
-open_in_new: false
+open_in_new: true
 
 # Miscellaneous
 google_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
-avatar:
+avatar: https://avatars1.githubusercontent.com/u/9410171?v=3&s=460
 #是否开启分享
 share_jia: true
 share_addthis: false
