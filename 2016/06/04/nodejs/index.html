@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>关于NodeJS的单线程和异步IO | 谢桂纲的专栏</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="引用文  摘自 IBM 刘欣 个人公众号：码农翻身美丽的七侠镇上有一条美食街，很多著名的饭店都开在这里，有老字号的Apache, PHP, 最近几年火热的Ruby on Rail , 还有那些重量级的餐饮集团Websphere, Weblogic 等。
+这些饭店老板根据自己的实力，或多或少的雇佣了一些店小二来招待来客，这些小二干活都非常殷勤，没有一个偷懒耍滑，把顾客招待的舒舒服服， 所以平日里饭馆">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于NodeJS的单线程和异步IO">
+<meta property="og:url" content="http://yoursite.com/2016/06/04/nodejs/index.html">
+<meta property="og:site_name" content="谢桂纲的专栏">
+<meta property="og:description" content="引用文  摘自 IBM 刘欣 个人公众号：码农翻身美丽的七侠镇上有一条美食街，很多著名的饭店都开在这里，有老字号的Apache, PHP, 最近几年火热的Ruby on Rail , 还有那些重量级的餐饮集团Websphere, Weblogic 等。
+这些饭店老板根据自己的实力，或多或少的雇佣了一些店小二来招待来客，这些小二干活都非常殷勤，没有一个偷懒耍滑，把顾客招待的舒舒服服， 所以平日里饭馆">
+<meta property="og:updated_time" content="2016-06-03T18:38:09.006Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于NodeJS的单线程和异步IO">
+<meta name="twitter:description" content="引用文  摘自 IBM 刘欣 个人公众号：码农翻身美丽的七侠镇上有一条美食街，很多著名的饭店都开在这里，有老字号的Apache, PHP, 最近几年火热的Ruby on Rail , 还有那些重量级的餐饮集团Websphere, Weblogic 等。
+这些饭店老板根据自己的实力，或多或少的雇佣了一些店小二来招待来客，这些小二干活都非常殷勤，没有一个偷懒耍滑，把顾客招待的舒舒服服， 所以平日里饭馆">
+  
+    <link rel="alternative" href="/atom.xml" title="谢桂纲的专栏" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars1.githubusercontent.com/u/9410171?v=3&amp;s=460" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">しゃけい よしつな</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+						<li>Über</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="http://xieguigang.me/">HOME</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+							<li><a href="/about">About</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/xieguigang" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/ineat" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="mailto://I@xieguigang.me" title="mail">mail</a>
+					        
+								<a class="twitter" target="_blank" href="https://twitter.com/xieguigang" title="twitter">twitter</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/VB-NET/" style="font-size: 10px;">VB.NET</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/转载搬运/" style="font-size: 20px;">转载搬运</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://codeproject.com/">Code Project</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://gcmodeller.org/">GCModeller</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">大神在此！</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">しゃけい よしつな</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="https://avatars1.githubusercontent.com/u/9410171?v=3&amp;s=460" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">しゃけい よしつな</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="http://xieguigang.me/">HOME</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+					<li><a href="/about">About</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/xieguigang" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/ineat" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="mailto://I@xieguigang.me" title="mail">mail</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/xieguigang" title="twitter">twitter</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-nodejs" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/04/nodejs/" class="article-date">
+  	<time datetime="2016-06-03T16:00:00.000Z" itemprop="datePublished">2016-06-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      关于NodeJS的单线程和异步IO
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转载搬运/">转载搬运</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h6 id="引用文-摘自-IBM-刘欣-个人公众号：码农翻身"><a href="#引用文-摘自-IBM-刘欣-个人公众号：码农翻身" class="headerlink" title="引用文  摘自 IBM 刘欣 个人公众号：码农翻身"></a>引用文  摘自 IBM 刘欣 个人公众号：码农翻身</h6><p>美丽的七侠镇上有一条美食街，很多著名的饭店都开在这里，有老字号的Apache, PHP, 最近几年火热的Ruby on Rail , 还有那些重量级的餐饮集团Websphere, Weblogic 等。</p>
+<p>这些饭店老板根据自己的实力，或多或少的雇佣了一些店小二来招待来客，这些小二干活都非常殷勤，没有一个偷懒耍滑，把顾客招待的舒舒服服， 所以平日里饭馆运转的还不错，相安无事。</p>
+<p>但是随着《武林外传》的拍摄和播放， 七侠镇旅游业大爆发，游客像潮水一样蜂拥而至， 现有的店小二招待不过来了， 到了饭点，每家的门前都排起了长队，游客们吃不上饭，个个怨声载道。</p>
+<p>看到这种情况，有些老板咬了咬牙，在人工费不断上涨的情况下， 多雇了一些小二来帮忙， 无奈总是赶不上顾客增长的速度。</p>
+<p>某一天有个美国老外来到七侠镇上旅游， 也看到了吃不上饭的问题，他仔细分析了一番后发现了一个秘密： 原来这些店都采用了同一套叫做“全程贴心服务”的模式， 这个模式很有意思：</p>
+<blockquote>
+<p>客人来了以后，马上有个店小二殷勤迎上去，带着找座位，点菜，给后厨下单<br>由于后厨做菜需要很长时间，店小二就在客人的旁边等着。</p>
+<p>后厨一摇铃铛，大喊一声：上菜，店小二马上端到客人面前， 然后站在一边等着客人吃完</p>
+<p>客人说：结账，小二收钱，找钱，送客， 迎接下一位。</p>
+</blockquote>
+<p>通常这个时候门口都排成了好几百人了！</p>
+<p>这个VIP服务实在是太贴心了！ 导致的结果很明显，饭店有几个店小二，就只能同时接待几个顾客。(当然，现实中是没有饭店是这么做的，否则就等着关门吧)</p>
+<p>老外一声不吭的回去了。<br>过了几个月， 美食一条街上出现了一个巨火无比的饭馆： Node.js<br>虽然这个饭店中人满为患， 可门口竟然没有排队的！<br>更让人吃惊的是，这个店里声称： 我只需要一个店小二！</p>
+<p>Node.js这个美国老外开的饭店确实只用了一个店小二， 只不过这个小二干活的方式与众不同，他把所有的工作分为两类：</p>
+<ul>
+<li>(1) 马上就能干完的，例如迎客，点菜，找座，下单 等等</li>
+<li>(2) 需要等待别人干完才能干的活，例如上菜，结账等</li>
+</ul>
+<p>对 <strong>(1)</strong> 这个小二马上干活<br>对 <strong>(2)</strong> 店小二不会等待，他只是告诉别人说，你弄完了告诉我一声，我会接着干， 然后马上去做第一类工作</p>
+<blockquote>
+<p>客人来了以后，这个店小二殷勤迎上去，带着找座位，点菜，给后厨下单<br>由于后厨做菜需要很长时间，店小二闪电般的离开，去干别的活了，可能是迎客，点菜，找座等，总之是那些不用等待，迅速干完的活。<br>后厨大喊一声：上菜，这个小二马上端到客人面前，然后离开，干其他活。<br>客人说：结账，小二收钱，找钱，然后还是迅速闪人，干其他活。</p>
+<p>这个唯一的店小二的能力被发挥到了极致，一刻不停，闪电般的在饭店里跑来跑去，因为老板明确的告诉他： 不要等！</p>
+</blockquote>
+<p>Node.js饭店的基础设施很强大，一旦那些耗时的操作完成，店小二立刻就能知道，飞奔过来马上接着干，如果遇到新的耗时的操作，小二毫不留情的离开。<br>就这么简单， Node.js饭店火了，它同时接待客人的数量大大增加，而服务质量保持基本不变。</p>
+<p>这是我杜撰出来的一个不成熟的故事，帮助我来理解Node.js的特点：只用一个线程来处理所有请求，事件驱动编程</p>
+<p>如果我们回过头来再以计算机的视角看一下会更加清楚：<br>店小二：线程<br>顾客：http请求<br>第一类工作(迎客，找座，下单) : 在服务器端的代码，能够快速执行<br>后厨做菜，客人吃饭：耗时的I/O操作<br>后厨大喊一声：上菜：这是一个长时间I/O操作完成的后所发出的事件<br>客人说：结账：另外一个长时间I/O操作完成的后所发出的事件</p>
+<p>第二类工作(上菜，结账) : 同样是能快速执行的代码，但是他们需要等待那些耗时的I/O 操作完成才能开始，确切的来说，收到了系统发出的事件以后才开始执行。在Node.js中实际上是在回调函数中来执行的</p>
+<p>下面是Node.js服务模式的伪代码：</p>
+<ol>
+<li>迎客();</li>
+<li>找座();</li>
+<li>下单();</li>
+<li>后厨处理(“做菜完成事件”， function() {  </li>
+<li></li>
+<li> 上菜处理()；  </li>
+<li></li>
+<li>客人吃饭(“吃饭完成事件”，function(){  </li>
+<li></li>
+<li><pre><code>结账处理();  
+</code></pre></li>
+<li></li>
+<li><pre><code>送客();  
+</code></pre></li>
+<li></li>
+<li>});  </li>
+<li></li>
+<li>});  </li>
+<li>需要引起注意的是：</li>
+<li><p>后厨处理（）这个函数接受两个参数，一个是事件名，另外一个是匿名的回调函数，事件发生，回调函数才会执行。<br>客人吃饭（）函数也是类似。<br>Node.js 使用的JavaScript作为服务器端的编程语言，这种回调的方式对于javascript程序员来说，是非常自然的事情，同时从代码的角度来讲，也显得非常清晰。<br>另外Node.js使用Chrome的V8引擎来执行javascript,效率非常高</p>
+</li>
+<li><p>我们能不能把代码写成这样？</p>
+</li>
+<li>迎客();  </li>
+<li></li>
+<li>找座();  </li>
+<li></li>
+<li>下单();  </li>
+<li></li>
+<li>后厨处理(“做菜完成事件”， function(){  </li>
+<li></li>
+<li> 上菜处理()；      </li>
+<li></li>
+<li>});  </li>
+<li></li>
+<li>客人吃饭(“吃饭完成事件”，function(){  </li>
+<li></li>
+<li> 结账处理();  </li>
+<li></li>
+<li>});  </li>
+<li></li>
+<li>送客();   </li>
+<li></li>
+</ol>
+<p>肯定不行！， 因为Node.js执行”后厨处理()”函数时，只是安插了一个匿名的回调函数在那里，并不会等待（非阻塞I/O），反而马上 会执行“客人吃饭()”函数，所以上述的写法会引起逻辑上的错误:还没上菜就开始吃饭了！<br>所以写惯了”顺序阻塞I/O“的我们需要改变一下思维方式，进入到事件驱动的世界中来。</p>
+<ol>
+<li>如果某个操作例如“上菜处理” 是个CPU密集型的计算任务，Node.js那个唯一的线程就会忙于执行这个计算任务而被阻塞住，就无法响应其他的请求了，带来的后果很严重，整个服务器都无法响应了！  这个时候，需要考虑把这样的代码进行异步处理，也变成node.js所擅长的事件驱动的方式。</li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/06/04/VBdotNET_howto/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          VB.NET是怎样做到的（搬家版）
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 しゃけい よしつな
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
