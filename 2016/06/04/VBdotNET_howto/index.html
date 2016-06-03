@@ -14,7 +14,7 @@
 <meta property="og:site_name" content="谢桂纲的专栏">
 <meta property="og:description" content="VB.net能够实现很多C#不能做到的功能，如When语句、Optional参数、局部Static变量、对象实例访问静态方法、Handles绑定事件、On Error处理异常、Object直接后期绑定等等。VB和C#同属.net的语言，编译出来的是同样的CIL，但为什么VB支持很多有趣的特性呢。我们一起来探究一下。
 局部静态变量VB支持用Static关键字声明局部变量，这样在过程结束的时候可以保持">
-<meta property="og:updated_time" content="2016-06-03T18:38:15.149Z">
+<meta property="og:updated_time" content="2016-06-03T19:27:02.644Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VB.NET是怎样做到的（搬家版）">
 <meta name="twitter:description" content="VB.net能够实现很多C#不能做到的功能，如When语句、Optional参数、局部Static变量、对象实例访问静态方法、Handles绑定事件、On Error处理异常、Object直接后期绑定等等。VB和C#同属.net的语言，编译出来的是同样的CIL，但为什么VB支持很多有趣的特性呢。我们一起来探究一下。
@@ -305,8 +305,9 @@
 <p>结果——失败，不能通过后期绑定访问共享成员。现在结果已经很明显，只有在VB明确了解对象类型的情况下，才能使用实例访问共享成员，VB会自动判断类型，然后将所有对共享成员访问的语句改写成<br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Class1.i = <span class="number">100</span></span><br></pre></td></tr></table></figure></p>
 <p>这样的语法。Delphi也支持这一有趣的特征，而且李维在《Inside VCL》中将此说成Delphi.NET相对于.NET的扩展之一。</p>
 <blockquote>
-<p>“结果——失败，不能通过后期绑定访问共享成员”<br>那只是编辑器不允许而已，语法结构上并没有错！将Option Strict 设为 off 就不会有错误提示。正在从无知迈向菜鸟```</p>
+<p>“结果——失败，不能通过后期绑定访问共享成员”</p>
 </blockquote>
+<p>那只是编辑器不允许而已，语法结构上并没有错！将Option Strict 设为 off 就不会有错误提示。正在从无知迈向菜鸟…</p>
 
       
     </div>
