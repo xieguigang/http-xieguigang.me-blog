@@ -6,19 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>VB.NET是怎样做到的（搬家版） | 谢桂纲的专栏</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="VB.net能够实现很多C#不能做到的功能，如When语句、Optional参数、局部Static变量、对象实例访问静态方法、Handles绑定事件、On Error处理异常、Object直接后期绑定等等。VB和C#同属.net的语言，编译出来的是同样的CIL，但为什么VB支持很多有趣的特性呢。我们一起来探究一下。
-局部静态变量VB支持用Static关键字声明局部变量，这样在过程结束的时候可以保持">
+  <meta name="description" content="VB.net能够实现很多C#不能做到的功能，如When语句、Optional参数、局部Static变量、对象实例访问静态方法、Handles绑定事件、On Error处理异常、Object直接后期绑定等等。VB和C#同属.net的语言，编译出来的是同样的CIL，但为什么VB支持很多有趣的特性呢。我们一起来探究一下。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="VB.NET是怎样做到的（搬家版）">
 <meta property="og:url" content="http://yoursite.com/2016/06/04/VBdotNET_howto/index.html">
 <meta property="og:site_name" content="谢桂纲的专栏">
-<meta property="og:description" content="VB.net能够实现很多C#不能做到的功能，如When语句、Optional参数、局部Static变量、对象实例访问静态方法、Handles绑定事件、On Error处理异常、Object直接后期绑定等等。VB和C#同属.net的语言，编译出来的是同样的CIL，但为什么VB支持很多有趣的特性呢。我们一起来探究一下。
-局部静态变量VB支持用Static关键字声明局部变量，这样在过程结束的时候可以保持">
-<meta property="og:updated_time" content="2016-06-03T19:27:02.644Z">
+<meta property="og:description" content="VB.net能够实现很多C#不能做到的功能，如When语句、Optional参数、局部Static变量、对象实例访问静态方法、Handles绑定事件、On Error处理异常、Object直接后期绑定等等。VB和C#同属.net的语言，编译出来的是同样的CIL，但为什么VB支持很多有趣的特性呢。我们一起来探究一下。">
+<meta property="og:updated_time" content="2016-06-03T19:44:01.534Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VB.NET是怎样做到的（搬家版）">
-<meta name="twitter:description" content="VB.net能够实现很多C#不能做到的功能，如When语句、Optional参数、局部Static变量、对象实例访问静态方法、Handles绑定事件、On Error处理异常、Object直接后期绑定等等。VB和C#同属.net的语言，编译出来的是同样的CIL，但为什么VB支持很多有趣的特性呢。我们一起来探究一下。
-局部静态变量VB支持用Static关键字声明局部变量，这样在过程结束的时候可以保持">
+<meta name="twitter:description" content="VB.net能够实现很多C#不能做到的功能，如When语句、Optional参数、局部Static变量、对象实例访问静态方法、Handles绑定事件、On Error处理异常、Object直接后期绑定等等。VB和C#同属.net的语言，编译出来的是同样的CIL，但为什么VB支持很多有趣的特性呢。我们一起来探究一下。">
   
     <link rel="alternative" href="/atom.xml" title="谢桂纲的专栏" type="application/atom+xml">
   
@@ -233,7 +230,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>VB.net能够实现很多C#不能做到的功能，如<strong>When</strong>语句、<strong>Optional</strong>参数、局部<strong>Static</strong>变量、对象实例访问静态方法、<strong>Handles</strong>绑定事件、<strong>On Error</strong>处理异常、<strong>Object</strong>直接后期绑定等等。VB和C#同属.net的语言，编译出来的是同样的CIL，但为什么VB支持很多有趣的特性呢。我们一起来探究一下。</p>
+        <p>VB.net能够实现很多C#不能做到的功能，如<strong>When</strong>语句、<strong>Optional</strong>参数、局部<strong>Static</strong>变量、对象实例访问静态方法、<strong>Handles</strong>绑定事件、<strong>On Error</strong>处理异常、<strong>Object</strong>直接后期绑定等等。VB和C#同属.net的语言，编译出来的是同样的CIL，但为什么VB支持很多有趣的特性呢。我们一起来探究一下。<br><a id="more"></a></p>
 <h3 id="局部静态变量"><a href="#局部静态变量" class="headerlink" title="局部静态变量"></a>局部静态变量</h3><p>VB支持用<strong>Static</strong>关键字声明局部变量，这样在过程结束的时候可以保持变量的数值：<br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Public</span> <span class="keyword">Sub</span> Test1()</span><br><span class="line">   <span class="keyword">Static</span> i <span class="keyword">As</span> <span class="built_in">Integer</span></span><br><span class="line">   i += <span class="number">1</span>  <span class="comment">' 实现一个过程调用计数器</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure></p>
 <p>我们实现了一个简单的过程计数器。每调用一次Test，计数器的数值就增加1。其实还有很多情况我们希望保持变量的数值。而C#的static是不能用在过程内部的。因此要实现过程计数器，我们必须声明一个类级别的变量。这样做明显不如VB好。因为无法防止其他过程修改计数器变量。这就和对象封装一个道理，本来应该是一个方法的局部变量，现在我要被迫把它独立出来，显然是不好的设计。那么VB是怎么生成局部静态变量的呢？将上述代码返汇编，我们可以清楚地看到在VB生成的CIL中，i不是作为局部变量，而是作为类的Field出现的：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">.field <span class="keyword">private</span> specialname int32 $STATIC$Test1$<span class="number">2001</span>$i</span><br></pre></td></tr></table></figure>
