@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>Canvas for Network visualization | 谢桂纲的专栏</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Downloads the demo exampleDownloads the latest source code from github
+
+
+Introduction and backgroundIn my recent work on the GCModeller, I want to developing a module for the biological network data">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Canvas for Network visualization">
+<meta property="og:url" content="http://yoursite.com/2016/06/06/net_canvas/index.html">
+<meta property="og:site_name" content="谢桂纲的专栏">
+<meta property="og:description" content="Downloads the demo exampleDownloads the latest source code from github
+
+
+Introduction and backgroundIn my recent work on the GCModeller, I want to developing a module for the biological network data">
+<meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Datavisualization.Network/net_test/xcb-main.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Datavisualization.Network/tumblr_inline_mqvdlydGCp1qz4rgp.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Datavisualization.Network/canvas_screenshot.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Datavisualization.Network/canvas_screenshot.png">
+<meta property="og:updated_time" content="2016-06-05T19:21:48.054Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Canvas for Network visualization">
+<meta name="twitter:description" content="Downloads the demo exampleDownloads the latest source code from github
+
+
+Introduction and backgroundIn my recent work on the GCModeller, I want to developing a module for the biological network data">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Datavisualization.Network/net_test/xcb-main.png">
+  
+    <link rel="alternative" href="/atom.xml" title="谢桂纲的专栏" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://xieguigang.me/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars1.githubusercontent.com/u/9410171?v=3&amp;s=460" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">しゃけい よしつな</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+						<li>Über</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="http://xieguigang.me/">HOME</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+							<li><a href="/nuget">Works</a></li>
+				        
+							<li><a href="/about">About</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/xieguigang" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/ineat" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="mailto://I@xieguigang.me" title="mail">mail</a>
+					        
+								<a class="twitter" target="_blank" href="https://twitter.com/xieguigang" title="twitter">twitter</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/CodeProject/" style="font-size: 10px;">CodeProject</a> <a href="/tags/Documents/" style="font-size: 10px;">Documents</a> <a href="/tags/VB-NET/" style="font-size: 20px;">VB.NET</a> <a href="/tags/d3js/" style="font-size: 10px;">d3js</a> <a href="/tags/my-works/" style="font-size: 10px;">my works</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/转载搬运/" style="font-size: 15px;">转载搬运</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://codeproject.com/">Code Project</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://gcmodeller.org/">GCModeller</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">大神在此！</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">しゃけい よしつな</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="https://avatars1.githubusercontent.com/u/9410171?v=3&amp;s=460" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">しゃけい よしつな</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="http://xieguigang.me/">HOME</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+					<li><a href="/nuget">Works</a></li>
+		        
+					<li><a href="/about">About</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/xieguigang" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/ineat" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="mailto://I@xieguigang.me" title="mail">mail</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/xieguigang" title="twitter">twitter</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-net_canvas" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/06/net_canvas/" class="article-date">
+  	<time datetime="2016-06-05T16:00:00.000Z" itemprop="datePublished">2016-06-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Canvas for Network visualization
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/VB-NET/">VB.NET</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/d3js/">d3js</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/my-works/">my works</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><a href="https://github.com/xieguigang/VisualBasic_AppFramework/releases/tag/v0.16-update" target="_blank" rel="external">Downloads the demo example</a><br><a href="https://github.com/xieguigang/VisualBasic_AppFramework/tree/master/Datavisualization/Datavisualization.Network" target="_blank" rel="external">Downloads the latest source code from github</a></p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Datavisualization.Network/net_test/xcb-main.png" alt=""></p>
+<h2 id="Introduction-and-background"><a href="#Introduction-and-background" class="headerlink" title="Introduction and background"></a>Introduction and background</h2><p>In my recent work on the GCModeller, I want to developing a module for the biological network data visualization.<br>One of the solution is using d3js for this data visualization and the another solution is the Cytoscape software.</p>
+<p>The <a href="http://cytoscape.org/" target="_blank" rel="external">Cytoscape</a> software is doing the best in the network visualization as it provides a lot of style mapping and data imports and exports function. And in my recent work, the cytoscape software was used for visualize the biological network data frequently. But there is problem that the cytoscape software can only generate the statics image of the network, and just can only export a interactive output in web app format. And the cytoscape software is also can not programming with VB.NET. And as I want to build a inner interactive module for the biological network visualization, so that I should try another way for the job. There is another important tools for visualize the network data in the HTML programming: <a href="https://github.com/d3/d3" target="_blank" rel="external">d3js</a>. And the d3js is one of my favorite tools in the data visualization.</p>
+<p>Here is my most favorite project from Mr. whichlight’s work: a project for visualize the reddit discussion network by using d3js.</p>
+<blockquote>
+<p><img src="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Datavisualization.Network/tumblr_inline_mqvdlydGCp1qz4rgp.png" alt=""><br><a href="https://github.com/whichlight/reddit-network-vis" target="_blank" rel="external">Reddit Discussion Network Visualization</a></p>
+</blockquote>
+<p>And the d3js is my first choice in this work. And here is the force directed graphic engine that I write with d3js hybrid programming with VB.NET (whole source cdoe and example can be download from <a href="https://github.com/SMRUCC/GCModeller.Workbench/tree/master/d3js/Force-Directed%20Graph/js" target="_blank" rel="external">here</a>):</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">d3Network</span>(<span class="params">jsonFile, width, height</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> color = d3.scale.category20();</span><br><span class="line">    <span class="keyword">var</span> force = d3.layout.force()</span><br><span class="line">        .charge(<span class="number">-120</span>)</span><br><span class="line">        .linkDistance(<span class="number">30</span>)</span><br><span class="line">        .size([width, height]);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> svg = d3.select(<span class="string">"body"</span>).append(<span class="string">"svg"</span>)</span><br><span class="line">        .attr(<span class="string">"fill"</span>, <span class="string">"#DBF3FF"</span>)</span><br><span class="line">        .attr(<span class="string">"width"</span>, width)</span><br><span class="line">        .attr(<span class="string">"height"</span>, height)</span><br><span class="line">        .attr(<span class="string">"class"</span>, <span class="string">"chart"</span>);</span><br><span class="line"></span><br><span class="line">    d3.json(jsonFile, <span class="function"><span class="keyword">function</span> (<span class="params">error, graph</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (error) <span class="keyword">throw</span> error;</span><br><span class="line"></span><br><span class="line">        force</span><br><span class="line">            .nodes(graph.nodes)</span><br><span class="line">            .links(graph.links)</span><br><span class="line">            .start();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> link = svg.selectAll(<span class="string">".link"</span>)</span><br><span class="line">            .data(graph.links)</span><br><span class="line">            .enter().append(<span class="string">"line"</span>)</span><br><span class="line">            .attr(<span class="string">"class"</span>, <span class="string">"link"</span>)</span><br><span class="line">            .style(<span class="string">"stroke-width"</span>, <span class="number">0.5</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">var</span> node = svg.selectAll(<span class="string">".node"</span>)</span><br><span class="line">            .data(graph.nodes)</span><br><span class="line">            .enter().append(<span class="string">"circle"</span>)</span><br><span class="line">            .attr(<span class="string">"class"</span>, <span class="string">"node"</span>)</span><br><span class="line">            .attr(<span class="string">"r"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="built_in">Math</span>.sqrt(d.size)+<span class="number">1</span>;</span><br><span class="line">            &#125;)</span><br><span class="line">            .style(<span class="string">"fill"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> color(d.group);</span><br><span class="line">            &#125;)</span><br><span class="line">            .style(<span class="string">"opacity"</span>, <span class="number">0.8</span>)</span><br><span class="line">            .call(force.drag);</span><br><span class="line"></span><br><span class="line">        node.append(<span class="string">"title"</span>)</span><br><span class="line">            .attr(<span class="string">"class"</span>, <span class="string">"tooltip"</span>)</span><br><span class="line">            .style(<span class="string">"font-size"</span>, <span class="number">16</span>)</span><br><span class="line">            .html(<span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="string">"name:\t"</span> + d.name + <span class="string">"\ntype:\t"</span> + d.type + <span class="string">"\nlinks:\t"</span> + d.size;</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">        force.on(<span class="string">"tick"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            link.attr(<span class="string">"x1"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d.source.x; &#125;)</span><br><span class="line">                .attr(<span class="string">"y1"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d.source.y; &#125;)</span><br><span class="line">                .attr(<span class="string">"x2"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d.target.x; &#125;)</span><br><span class="line">                .attr(<span class="string">"y2"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d.target.y; &#125;);</span><br><span class="line"></span><br><span class="line">            node.attr(<span class="string">"cx"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d.x; &#125;)</span><br><span class="line">                .attr(<span class="string">"cy"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d.y; &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>The VB.NET language was programming hybrids with javascript as the server side on the local client. And by using WinForm web browser control, that we can display the network visualization data. But as the .NET Webbrowser control is based on the IE browser and not support d3js well, so that I have to changes the .NET Webbrowser control to the opensource Firefox browser or Google chrome. And by using Firefox in the project, it actually works, but the problem is that we needs deploy our application with the Chrome kernel(~100MB) and Firefox kernel(~50MB). This is not so convenient and friendly for my customer clients.</p>
+<p>And after search on the github, I found a solution for this interactive network visualization work in the .NET language its own way.</p>
+<a id="more"></a>
+<p><img src="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Datavisualization.Network/canvas_screenshot.png" alt=""></p>
+<p>This network canvas library is majority based on the work of <a href="http://www.codeproject.com/Articles/833043/EpForceDirectedGraph-cs-A-D-D-force-directed-gra" target="_blank" rel="external">Mr. Woong Gyu La</a></p>
+<h3 id="Overviews"><a href="#Overviews" class="headerlink" title="Overviews"></a>Overviews</h3><p>This canvas library is consist with 4 parts majority:</p>
+<ol>
+<li><a href="https://github.com/xieguigang/VisualBasic_AppFramework/blob/master/Datavisualization/Datavisualization.Network/Datavisualization.Network/Layouts/ForceDirected/Layout/ForceDirected.vb" target="_blank" rel="external">Force Directed layout engine</a></li>
+<li><a href="https://github.com/xieguigang/VisualBasic_AppFramework/blob/master/Datavisualization/Datavisualization.Network/NetworkCanvas/Canvas.vb" target="_blank" rel="external">Canvas control for WinForm</a></li>
+<li><a href="https://github.com/xieguigang/VisualBasic_AppFramework/blob/master/Datavisualization/Datavisualization.Network/NetworkCanvas/InputDevice.vb" target="_blank" rel="external">InputDevice for user mouse events</a></li>
+<li><a href="https://github.com/xieguigang/VisualBasic_AppFramework/blob/master/Datavisualization/Datavisualization.Network/NetworkCanvas/Renderer.vb" target="_blank" rel="external">Renderer for the graphics rendering of the network data</a></li>
+</ol>
+<h3 id="Code-in-details"><a href="#Code-in-details" class="headerlink" title="Code in details"></a>Code in details</h3><h5 id="Force-Directed-layout-engine"><a href="#Force-Directed-layout-engine" class="headerlink" title="Force Directed layout engine"></a>Force Directed layout engine</h5><p>The force directed network layout engine which is available at type <a href="https://github.com/xieguigang/VisualBasic_AppFramework/blob/master/Datavisualization/Datavisualization.Network/Datavisualization.Network/Layouts/ForceDirected/Layout/ForceDirected.vb" target="_blank" rel="external"><strong>Microsoft.VisualBasic.DataVisualization.Network.Layouts.ForceDirected2D</strong></a><br>The introduction for this layout provider is available at Mr. Woong Gyu La’s article: <a href="http://www.codeproject.com/Articles/833043/EpForceDirectedGraph-cs-A-D-D-force-directed-gra" target="_blank" rel="external">“EpForceDirectedGraph.cs- A 2D/3D force directed graph algorithm in C#”</a></p>
+<h5 id="Canvas-control-for-WinForm"><a href="#Canvas-control-for-WinForm" class="headerlink" title="Canvas control for WinForm"></a>Canvas control for WinForm</h5><p>The canvas control providers the user interface and rendering task thread for the layout engine.<br>Set up the network data just by using the <strong>Canvas.Graph</strong> property:</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Public</span> <span class="keyword">Property</span> Graph <span class="keyword">As</span> NetworkGraph</span><br><span class="line">    <span class="keyword">Get</span></span><br><span class="line">        <span class="keyword">If</span> net <span class="keyword">Is</span> <span class="literal">Nothing</span> <span class="keyword">Then</span></span><br><span class="line">            <span class="keyword">Call</span> __invokeSet(<span class="keyword">New</span> NetworkGraph)</span><br><span class="line">        <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">Return</span> net</span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">Get</span></span><br><span class="line">    <span class="keyword">Set</span>(value <span class="keyword">As</span> NetworkGraph)</span><br><span class="line">        <span class="keyword">Call</span> __invokeSet(value)</span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">Set</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Property</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Private</span> <span class="keyword">Sub</span> __invokeSet(g <span class="keyword">As</span> NetworkGraph)</span><br><span class="line">    net = g</span><br><span class="line">    fdgPhysics = <span class="keyword">New</span> ForceDirected2D(net, FdgArgs.Stiffness, FdgArgs.Repulsion, FdgArgs.Damping)</span><br><span class="line">    fdgRenderer = <span class="keyword">New</span> Renderer(</span><br><span class="line">        <span class="keyword">Function</span>() paper,</span><br><span class="line">        <span class="keyword">Function</span>() <span class="keyword">New</span> Rectangle(<span class="keyword">New</span> Point, Size),</span><br><span class="line">        fdgPhysics)</span><br><span class="line">    inputs = <span class="keyword">New</span> InputDevice(<span class="keyword">Me</span>)</span><br><span class="line">    fdgRenderer.Asynchronous = <span class="literal">False</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+<p>And these components is using for the layout engine and rendering of the image:</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">'''</span> The network data model for the visualization</span></span><br><span class="line"><span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">Dim</span> net <span class="keyword">As</span> NetworkGraph</span><br><span class="line"><span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">'''</span> Layout provider engine</span></span><br><span class="line"><span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">Protected</span> <span class="keyword">Friend</span> fdgPhysics <span class="keyword">As</span> ForceDirected2D</span><br><span class="line"><span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">'''</span> The graphics updates thread.</span></span><br><span class="line"><span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">Protected</span> <span class="keyword">Friend</span> timer <span class="keyword">As</span> <span class="keyword">New</span> UpdateThread(<span class="number">30</span>, <span class="keyword">AddressOf</span> __invokePaint)</span><br><span class="line"><span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">'''</span> The graphics rendering provider</span></span><br><span class="line"><span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">Protected</span> <span class="keyword">Friend</span> fdgRenderer <span class="keyword">As</span> Renderer</span><br><span class="line"><span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">'''</span> GDI+ interface for the canvas control.</span></span><br><span class="line"><span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">Dim</span> paper <span class="keyword">As</span> Graphics</span><br></pre></td></tr></table></figure>
+<p>All of the rendering work is starting from the <strong>timer</strong> object:</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">'''</span> The graphics updates thread.</span></span><br><span class="line"><span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">Protected</span> <span class="keyword">Friend</span> timer <span class="keyword">As</span> <span class="keyword">New</span> UpdateThread(<span class="number">30</span>, <span class="keyword">AddressOf</span> __invokePaint)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Private</span> <span class="keyword">Sub</span> __invokePaint()</span><br><span class="line">    <span class="keyword">Call</span> <span class="keyword">Me</span>.Invoke(<span class="keyword">Sub</span>() Invalidate())</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+<p>By notifying the Windows message that the control needs to be update in periodic in the timer thread, and then the event <strong>Paint</strong> will be trigged, and then we are able to use the graphics gdi+ interface in the rendering engine for the network visualization. As you can see, this event function provides the required gdi+ interface for the rendering engine and invoke updates the network layout and the control graphics image.</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Private</span> <span class="keyword">Sub</span> Canvas_Paint(sender <span class="keyword">As</span> <span class="built_in">Object</span>, e <span class="keyword">As</span> PaintEventArgs) <span class="keyword">Handles</span> <span class="keyword">Me</span>.Paint</span><br><span class="line">    paper = e.Graphics</span><br><span class="line">    paper.CompositingQuality = Drawing2D.CompositingQuality.HighQuality</span><br><span class="line">    paper.SmoothingMode = Drawing2D.SmoothingMode.HighQuality</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Call</span> fdgRenderer.Draw(<span class="number">0.05</span>F)</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+<p>Here is the same function that implements in javascript:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">force.on(<span class="string">"tick"</span>, <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">     link.attr(<span class="string">"x1"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d.source.x; &#125;)</span><br><span class="line">         .attr(<span class="string">"y1"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d.source.y; &#125;)</span><br><span class="line">         .attr(<span class="string">"x2"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d.target.x; &#125;)</span><br><span class="line">         .attr(<span class="string">"y2"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d.target.y; &#125;);</span><br><span class="line"></span><br><span class="line">     node.attr(<span class="string">"cx"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d.x; &#125;)</span><br><span class="line">         .attr(<span class="string">"cy"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123; <span class="keyword">return</span> d.y; &#125;);</span><br><span class="line">    &#125;);</span><br></pre></td></tr></table></figure></p>
+<h5 id="InputDevice-for-user-mouse-events"><a href="#InputDevice-for-user-mouse-events" class="headerlink" title="InputDevice for user mouse events"></a>InputDevice for user mouse events</h5><p>The graphics node in the d3js visualization can be drag by the mouse by binding the mouse event to each node object:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> node = svg.selectAll(<span class="string">".node"</span>)</span><br><span class="line">      .data(graph.nodes)</span><br><span class="line">      .enter().append(<span class="string">"circle"</span>)</span><br><span class="line">      .attr(<span class="string">"class"</span>, <span class="string">"node"</span>)</span><br><span class="line">      .attr(<span class="string">"r"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">Math</span>.sqrt(d.size)+<span class="number">1</span>;</span><br><span class="line">      &#125;)</span><br><span class="line">      .style(<span class="string">"fill"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> color(d.group);</span><br><span class="line">      &#125;)</span><br><span class="line">      .style(<span class="string">"opacity"</span>, <span class="number">0.8</span>)</span><br><span class="line">      .call(force.drag);</span><br></pre></td></tr></table></figure>
+<p>And this input device class is implements the same function as the code <strong>.call(force.drag)</strong> in javascript:</p>
+<p>First, when our mouse move on the control, will trigger a mouse move event. And for drag a node on the control, a mouse down event will be triggered. When finish the drag, the mouse up event will be triggered.<br>And both of these events have a <strong>MouseEventArgs</strong> parameter, which we can using this argument value for the node detectes and node drags.</p>
+<p>From the very beginning, we start to drag a node, then we can set the drag event start and knowing which node is clicked by using <strong>__getNode(Point)</strong> function:<br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Private</span> <span class="keyword">Sub</span> Canvas_MouseDown(sender <span class="keyword">As</span> <span class="built_in">Object</span>, e <span class="keyword">As</span> MouseEventArgs) <span class="keyword">Handles</span> Canvas.MouseDown</span><br><span class="line">    drag = <span class="literal">True</span></span><br><span class="line">    dragNode = __getNode(e.Location)</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure></p>
+<p>The <strong>__getNode(Point)</strong> function loops on the nodes in the network, and detected the mouse location is located in which nodes region by using <strong>System.Drawing.Rectangle.Contains(System.Drawing.Point) As Boolean</strong> method, due to the reason of the node location is the location in the data mode, can not be used on the user client directly, so that a function <strong>Canvas.fdgRenderer.GraphToScreen</strong> for the projection between the data model and user interface is used in this function:</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Private</span> <span class="keyword">Function</span> __getNode(p <span class="keyword">As</span> Point) <span class="keyword">As</span> Node</span><br><span class="line">    <span class="keyword">For</span> <span class="keyword">Each</span> node <span class="keyword">As</span> Node <span class="keyword">In</span> Canvas.Graph.nodes</span><br><span class="line">        <span class="keyword">Dim</span> r <span class="keyword">As</span> <span class="built_in">Single</span> = node.Data.radius</span><br><span class="line">        <span class="keyword">Dim</span> npt <span class="keyword">As</span> Point =</span><br><span class="line">            Canvas.fdgRenderer.GraphToScreen(</span><br><span class="line">            Canvas.fdgPhysics.GetPoint(node).position)</span><br><span class="line">        <span class="keyword">Dim</span> pt <span class="keyword">As</span> <span class="keyword">New</span> Point(npt.X - r / <span class="number">2</span>, npt.Y - r / <span class="number">2</span>)</span><br><span class="line">        <span class="keyword">Dim</span> rect <span class="keyword">As</span> <span class="keyword">New</span> Rectangle(pt, <span class="keyword">New</span> Size(r, r))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">If</span> rect.Contains(p) <span class="keyword">Then</span></span><br><span class="line">            <span class="keyword">Return</span> node</span><br><span class="line">        <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line">    <span class="keyword">Next</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Return</span> <span class="literal">Nothing</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Function</span></span><br></pre></td></tr></table></figure>
+<p>Then by start the mouse move we are able to move the location of the draged node:<br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Private</span> <span class="keyword">Sub</span> Canvas_MouseMove(sender <span class="keyword">As</span> <span class="built_in">Object</span>, e <span class="keyword">As</span> MouseEventArgs) <span class="keyword">Handles</span> Canvas.MouseMove</span><br><span class="line">    <span class="keyword">If</span> <span class="keyword">Not</span> drag <span class="keyword">Then</span></span><br><span class="line">        <span class="keyword">Return</span></span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">If</span> dragNode <span class="keyword">IsNot</span> <span class="literal">Nothing</span> <span class="keyword">Then</span></span><br><span class="line">        <span class="keyword">Dim</span> vec <span class="keyword">As</span> FDGVector2 =</span><br><span class="line">                Canvas.fdgRenderer.ScreenToGraph(</span><br><span class="line">                <span class="keyword">New</span> Point(e.Location.X, e.Location.Y))</span><br><span class="line"></span><br><span class="line">        dragNode.Pinned = <span class="literal">True</span></span><br><span class="line">        Canvas.fdgPhysics.GetPoint(dragNode).position = vec</span><br><span class="line">    <span class="keyword">Else</span></span><br><span class="line">        dragNode = __getNode(e.Location)</span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure></p>
+<p>If is in the drag mode, then we are set the location of the draged node to the mouse current location, then are we implements the drag events. When we finish the drag event, a mouse up event will be trigged, we release the drag node at here:<br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Private</span> <span class="keyword">Sub</span> Canvas_MouseUp(sender <span class="keyword">As</span> <span class="built_in">Object</span>, e <span class="keyword">As</span> MouseEventArgs) <span class="keyword">Handles</span> Canvas.MouseUp</span><br><span class="line">    drag = <span class="literal">False</span></span><br><span class="line">    <span class="keyword">If</span> dragNode <span class="keyword">IsNot</span> <span class="literal">Nothing</span> <span class="keyword">Then</span></span><br><span class="line">        dragNode.Pinned = <span class="literal">False</span></span><br><span class="line">        dragNode = <span class="literal">Nothing</span></span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure></p>
+<h5 id="Renderer-for-the-graphics-rendering-of-the-network-data"><a href="#Renderer-for-the-graphics-rendering-of-the-network-data" class="headerlink" title="Renderer for the graphics rendering of the network data"></a>Renderer for the graphics rendering of the network data</h5><p>As we mentioned above, the world between the inner data model and the user interface is different, so that we needs two function for the projection between the inner data model world and the outside user world:</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">'''</span> Projects the data model to our screen for display.</span></span><br><span class="line"><span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;param name="iPos"&gt;</span><span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;returns&gt;</span><span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="keyword">Public</span> <span class="keyword">Function</span> GraphToScreen(iPos <span class="keyword">As</span> FDGVector2) <span class="keyword">As</span> Point</span><br><span class="line">    <span class="keyword">Dim</span> rect = __regionProvider()</span><br><span class="line">    <span class="keyword">Dim</span> x = <span class="built_in">CInt</span>(Math.Truncate(iPos.x + (<span class="built_in">CSng</span>(rect.Right - rect.Left) / <span class="number">2.0</span>F)))</span><br><span class="line">    <span class="keyword">Dim</span> y = <span class="built_in">CInt</span>(Math.Truncate(iPos.y + (<span class="built_in">CSng</span>(rect.Bottom - rect.Top) / <span class="number">2.0</span>F)))</span><br><span class="line">    <span class="keyword">Return</span> <span class="keyword">New</span> Point(x, y)</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Function</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">'''</span> Projects the client graphics data to the data model. </span></span><br><span class="line"><span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;param name="iScreenPos"&gt;</span><span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;returns&gt;</span><span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="keyword">Public</span> <span class="keyword">Function</span> ScreenToGraph(iScreenPos <span class="keyword">As</span> Point) <span class="keyword">As</span> FDGVector2</span><br><span class="line">    <span class="keyword">Dim</span> retVec <span class="keyword">As</span> <span class="keyword">New</span> FDGVector2()</span><br><span class="line">    <span class="keyword">Dim</span> rect = __regionProvider()</span><br><span class="line">    retVec.x = <span class="built_in">CSng</span>(iScreenPos.X) - (<span class="built_in">CSng</span>(rect.Right - rect.Left) / <span class="number">2.0</span>F)</span><br><span class="line">    retVec.y = <span class="built_in">CSng</span>(iScreenPos.Y) - (<span class="built_in">CSng</span>(rect.Bottom - rect.Top) / <span class="number">2.0</span>F)</span><br><span class="line">    <span class="keyword">Return</span> retVec</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Function</span></span><br></pre></td></tr></table></figure>
+<p>And these two project function required of a graphics region on the client controls, which the data source is provides by a lambda expression in the canvas control:</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Imports</span> System.Collections.Generic</span><br><span class="line"><span class="keyword">Imports</span> System.Linq</span><br><span class="line"><span class="keyword">Imports</span> System.<span class="keyword">Text</span></span><br><span class="line"><span class="keyword">Imports</span> Microsoft.VisualBasic.DataVisualization.Network.Graph</span><br><span class="line"><span class="keyword">Imports</span> Microsoft.VisualBasic.DataVisualization.Network.Layouts</span><br><span class="line"><span class="keyword">Imports</span> Microsoft.VisualBasic.DataVisualization.Network.Layouts.Interfaces</span><br><span class="line"></span><br><span class="line"><span class="keyword">Public</span> <span class="keyword">Class</span> Renderer</span><br><span class="line">    <span class="keyword">Inherits</span> AbstractRenderer</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">'''</span> Gets the graphics source</span></span><br><span class="line">    <span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="keyword">Dim</span> __graphicsProvider <span class="keyword">As</span> Func(<span class="keyword">Of</span> Graphics)</span><br><span class="line">    <span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">'''</span> gets the graphics region for the projections: <span class="doctag">&lt;see cref="GraphToScreen"/&gt;</span> and <span class="doctag">&lt;see cref="ScreenToGraph"/&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="keyword">Dim</span> __regionProvider <span class="keyword">As</span> Func(<span class="keyword">Of</span> Rectangle)</span><br></pre></td></tr></table></figure>
+<p>The lambda expression in the constructor provides the required client data for the data visualization renderer:</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Private</span> <span class="keyword">Sub</span> __invokeSet(g <span class="keyword">As</span> NetworkGraph)</span><br><span class="line">    net = g</span><br><span class="line">    fdgPhysics = <span class="keyword">New</span> ForceDirected2D(net, FdgArgs.Stiffness, FdgArgs.Repulsion, FdgArgs.Damping)</span><br><span class="line">    fdgRenderer = <span class="keyword">New</span> Renderer(</span><br><span class="line">        <span class="keyword">Function</span>() paper,</span><br><span class="line">        <span class="keyword">Function</span>() <span class="keyword">New</span> Rectangle(<span class="keyword">New</span> Point, Size),</span><br><span class="line">        fdgPhysics)</span><br><span class="line">    inputs = <span class="keyword">New</span> InputDevice(<span class="keyword">Me</span>)</span><br><span class="line">    fdgRenderer.Asynchronous = <span class="literal">False</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+<p>Then by using the <strong>GraphToScreen</strong> function, we are knowing where the node should be draw and using <strong>ScreenToGraph</strong> we can update the draged node its location into the data model.</p>
+<p>For draw a edge, we just using the <strong>Graphics.DrawLine(pen As Pen, x1 As Integer, y1 As Integer, x2 As Integer, y2 As Integer)</strong> function, and by using the function <strong>Graphics.FillPie(brush As Brush, rect As Rectangle, startAngle As Single, sweepAngle As Single)</strong> that we can draw a node on the canvas.</p>
+<h3 id="How-to-use"><a href="#How-to-use" class="headerlink" title="How to use?"></a>How to use?</h3><p>Just create a empty form, and then put the canvas control in your form like this:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">Imports System.Windows.Forms</span><br><span class="line">Imports Microsoft.VisualBasic.DataVisualization.Network.Canvas</span><br><span class="line">Imports Microsoft.VisualBasic.DataVisualization.Network.FileStream</span><br><span class="line"></span><br><span class="line">Public Class Form1</span><br><span class="line"></span><br><span class="line">    Dim canvas As New Canvas With &#123;</span><br><span class="line">        .Dock = DockStyle.Fill</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load</span><br><span class="line">        Call Me.Controls.Add(canvas)</span><br><span class="line"></span><br><span class="line">        canvas.Graph = CytoscapeExportAsGraph(</span><br><span class="line">            App.HOME &amp; "\Resources\xcb-main-Edges.csv",</span><br><span class="line">            App.HOME &amp; "\Resources\xcb-main-Nodes.csv")</span><br><span class="line">    End Sub</span><br><span class="line">End Class</span><br></pre></td></tr></table></figure>
+<h3 id="Performance-issue"><a href="#Performance-issue" class="headerlink" title="Performance issue"></a>Performance issue</h3><p>Both VisualBasic and C# have the performance issue of the gdi+ graphics on large image rendering, as all of the gdi+ graphics work is on the CPU. This tools works well on the small network, but it get stuck when trying to rendering a large scale network data, and the graphics display is not so smoothly.</p>
+<p>Planning changes the graphics engine from gdi+ to Microsoft Win2D or OpenGL in the future work.</p>
+<h3 id="Running-the-Test"><a href="#Running-the-Test" class="headerlink" title="Running the Test"></a>Running the Test</h3><p>The testing project source code can be download from the <a href="https://github.com/xieguigang/VisualBasic_AppFramework/tree/master/Datavisualization/Datavisualization.Network/Test" target="_blank" rel="external">github</a> and here is the <a href="https://github.com/xieguigang/VisualBasic_AppFramework/releases/tag/v0.16-update" target="_blank" rel="external">example release program</a>.<br><img src="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Datavisualization.Network/canvas_screenshot.png" alt=""></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/06/04/VBdotNET_howto/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">VB.NET是怎样做到的（搬家版）</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 しゃけい よしつな
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
