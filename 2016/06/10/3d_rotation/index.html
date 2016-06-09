@@ -19,11 +19,12 @@
 
 3D Rotation is more complicated than 2D rotation since we must specify an axis of rotation.">
 <meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Microsoft.VisualBasic.Imaging/Drawing3D/images/feature.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Datavisualization.Network/3d_demo.gif">
 <meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Microsoft.VisualBasic.Imaging/Drawing3D/images/3drotz.gif">
 <meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Microsoft.VisualBasic.Imaging/Drawing3D/images/3drotx.gif">
 <meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Microsoft.VisualBasic.Imaging/Drawing3D/images/3droty.gif">
 <meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Microsoft.VisualBasic.Imaging/Drawing3D/images/3drotar1.gif">
-<meta property="og:updated_time" content="2016-06-09T19:26:29.224Z">
+<meta property="og:updated_time" content="2016-06-09T19:56:11.818Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="3D Rotation">
 <meta name="twitter:description" content="source: https://www.siggraph.org/education/materials/HyperGraph/modeling/mod_tran/3drota.htm#3D Rotation
@@ -263,6 +264,10 @@
 </ol>
 </blockquote>
 <a id="more"></a>
+<p>Example Demo:</p>
+<blockquote>
+<p><img src="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Datavisualization.Network/3d_demo.gif" alt=""><br><a href="https://github.com/xieguigang/VisualBasic_AppFramework/tree/master/Datavisualization/Datavisualization.Network" target="_blank" rel="external"><strong>3D network rotation in my project on github</strong></a></p>
+</blockquote>
 <h1 id="Z-Axis-Rotation"><a href="#Z-Axis-Rotation" class="headerlink" title="Z-Axis Rotation"></a>Z-Axis Rotation</h1><p>Z-axis rotation is identical to the 2D case:<br><img src="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Microsoft.VisualBasic.Imaging/Drawing3D/images/3drotz.gif" alt=""></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x&apos; = x*cos q - y*sin q</span><br><span class="line">y&apos; = x*sin q + y*cos q</span><br><span class="line">z&apos; = z</span><br><span class="line"></span><br><span class="line">         | cos q  sin q  0  0|</span><br><span class="line">Rz (q) = |-sin q  cos q  0  0|</span><br><span class="line">         |     0      0  1  0|</span><br><span class="line">         |     0      0  0  1|</span><br></pre></td></tr></table></figure>
 <h1 id="X-Axis-Rotation"><a href="#X-Axis-Rotation" class="headerlink" title="X-Axis Rotation"></a>X-Axis Rotation</h1><p>X-axis rotation looks like Z-axis rotation if replace:</p>
