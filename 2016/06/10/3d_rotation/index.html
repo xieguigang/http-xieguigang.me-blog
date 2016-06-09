@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>3D Rotation | 谢桂纲的专栏</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="source: https://www.siggraph.org/education/materials/HyperGraph/modeling/mod_tran/3drota.htm#3D Rotation
+
+
+3D Rotation is more complicated than 2D rotation since we must specify an axis of rotation.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3D Rotation">
+<meta property="og:url" content="http://yoursite.com/2016/06/10/3d_rotation/index.html">
+<meta property="og:site_name" content="谢桂纲的专栏">
+<meta property="og:description" content="source: https://www.siggraph.org/education/materials/HyperGraph/modeling/mod_tran/3drota.htm#3D Rotation
+
+
+3D Rotation is more complicated than 2D rotation since we must specify an axis of rotation.">
+<meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Microsoft.VisualBasic.Imaging/Drawing3D/images/feature.jpg">
+<meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Microsoft.VisualBasic.Imaging/Drawing3D/images/3drotz.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Microsoft.VisualBasic.Imaging/Drawing3D/images/3drotx.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Microsoft.VisualBasic.Imaging/Drawing3D/images/3droty.gif">
+<meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Microsoft.VisualBasic.Imaging/Drawing3D/images/3drotar1.gif">
+<meta property="og:updated_time" content="2016-06-09T19:26:29.224Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="3D Rotation">
+<meta name="twitter:description" content="source: https://www.siggraph.org/education/materials/HyperGraph/modeling/mod_tran/3drota.htm#3D Rotation
+
+
+3D Rotation is more complicated than 2D rotation since we must specify an axis of rotation.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Microsoft.VisualBasic.Imaging/Drawing3D/images/feature.jpg">
+  
+    <link rel="alternative" href="/atom.xml" title="谢桂纲的专栏" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://xieguigang.me/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars1.githubusercontent.com/u/9410171?v=3&amp;s=460" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">しゃけい よしつな</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+						<li>Über</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="http://xieguigang.me/">HOME</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+							<li><a href="/nuget">Works</a></li>
+				        
+							<li><a href="/about">About</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/xieguigang" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/ineat" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="mailto://I@xieguigang.me" title="mail">mail</a>
+					        
+								<a class="twitter" target="_blank" href="https://twitter.com/xieguigang" title="twitter">twitter</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/3d-graphics/" style="font-size: 10px;">3d graphics</a> <a href="/tags/CodeProject/" style="font-size: 13.33px;">CodeProject</a> <a href="/tags/Documents/" style="font-size: 10px;">Documents</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Syntax/" style="font-size: 10px;">Syntax</a> <a href="/tags/YAML/" style="font-size: 10px;">YAML</a> <a href="/tags/architecture/" style="font-size: 10px;">architecture</a> <a href="/tags/d3js/" style="font-size: 10px;">d3js</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/my-works/" style="font-size: 10px;">my works</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/note/" style="font-size: 16.67px;">note</a> <a href="/tags/repost/" style="font-size: 13.33px;">repost</a> <a href="/tags/vb-net/" style="font-size: 20px;">vb.net</a> <a href="/tags/转载搬运/" style="font-size: 20px;">转载搬运</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://codeproject.com/">Code Project</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://gcmodeller.org/">GCModeller</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">大神在此！</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">しゃけい よしつな</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="https://avatars1.githubusercontent.com/u/9410171?v=3&amp;s=460" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">しゃけい よしつな</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="http://xieguigang.me/">HOME</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+					<li><a href="/nuget">Works</a></li>
+		        
+					<li><a href="/about">About</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/xieguigang" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/ineat" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="mailto://I@xieguigang.me" title="mail">mail</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/xieguigang" title="twitter">twitter</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-3d_rotation" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/10/3d_rotation/" class="article-date">
+  	<time datetime="2016-06-09T16:00:00.000Z" itemprop="datePublished">2016-06-10</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      3D Rotation
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/3d-graphics/">3d graphics</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/note/">note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/repost/">repost</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>source: <a href="https://www.siggraph.org/education/materials/HyperGraph/modeling/mod_tran/3drota.htm#3D" target="_blank" rel="external">https://www.siggraph.org/education/materials/HyperGraph/modeling/mod_tran/3drota.htm#3D</a> Rotation</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Microsoft.VisualBasic.Imaging/Drawing3D/images/feature.jpg" alt=""></p>
+<p>3D Rotation is more complicated than 2D rotation since we must specify an axis of rotation. In 2D the axis of rotation is always perpendicular to the <strong>x,y</strong> plane, i.e., the Z axis, but in 3D the axis of rotation can have any spatial orientation. We will first look at rotation around the three principle axes <strong>(X, Y, Z)</strong> and then about an arbitrary axis. Note that for Inverse Rotation: <strong>replace q with -q and then R(R-1) = 1</strong></p>
+<blockquote>
+<ol>
+<li>Z-Axis Rotation</li>
+<li>X-Axis Rotation</li>
+<li>Y-Axis Rotation</li>
+<li>Rotation about an Arbitrary Axis</li>
+</ol>
+</blockquote>
+<a id="more"></a>
+<h1 id="Z-Axis-Rotation"><a href="#Z-Axis-Rotation" class="headerlink" title="Z-Axis Rotation"></a>Z-Axis Rotation</h1><p>Z-axis rotation is identical to the 2D case:<br><img src="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Microsoft.VisualBasic.Imaging/Drawing3D/images/3drotz.gif" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x&apos; = x*cos q - y*sin q</span><br><span class="line">y&apos; = x*sin q + y*cos q</span><br><span class="line">z&apos; = z</span><br><span class="line"></span><br><span class="line">         | cos q  sin q  0  0|</span><br><span class="line">Rz (q) = |-sin q  cos q  0  0|</span><br><span class="line">         |     0      0  1  0|</span><br><span class="line">         |     0      0  0  1|</span><br></pre></td></tr></table></figure>
+<h1 id="X-Axis-Rotation"><a href="#X-Axis-Rotation" class="headerlink" title="X-Axis Rotation"></a>X-Axis Rotation</h1><p>X-axis rotation looks like Z-axis rotation if replace:</p>
+<blockquote>
+<p>X axis with Y axis<br>Y axis with Z axis<br>Z axis with X axis</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Microsoft.VisualBasic.Imaging/Drawing3D/images/3drotx.gif" alt=""></p>
+<p>So we do the same replacement in the equations:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">y&apos; = y*cos(q) - z*sin(q)</span><br><span class="line">z&apos; = y*sin(q) + z*cos(q)</span><br><span class="line">x&apos; = x</span><br><span class="line"></span><br><span class="line">        |1      0       0   0|</span><br><span class="line">Rx(q) = |0  cos(q)  sin(q)  0|</span><br><span class="line">        |0 -sin(q)  cos(q)  0|</span><br><span class="line">        |0      0       0   1|</span><br></pre></td></tr></table></figure></p>
+<h1 id="Y-Axis-Rotation"><a href="#Y-Axis-Rotation" class="headerlink" title="Y-Axis Rotation"></a>Y-Axis Rotation</h1><p>Y-axis rotation looks like Z-axis rotation if replace:</p>
+<blockquote>
+<p>X axis with Z axis<br>Y axis with X axis<br>Z axis with Y axis</p>
+</blockquote>
+<p><img src="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Microsoft.VisualBasic.Imaging/Drawing3D/images/3droty.gif" alt=""></p>
+<p>So we do the same replacement in equations :</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">z&apos; = z*cos(q) - x*sin(q)</span><br><span class="line">x&apos; = z*sin(q) + x*cos(q)</span><br><span class="line">y&apos; = y</span><br><span class="line"></span><br><span class="line">        |cos(q)  0  -sin(q)  0|</span><br><span class="line">Ry(q) = |    0   1       0   0|</span><br><span class="line">        |sin(q)  0   cos(q)  0|</span><br><span class="line">        |    0   0       0   1|</span><br></pre></td></tr></table></figure>
+<h1 id="Rotation-about-an-Arbitrary-Axis"><a href="#Rotation-about-an-Arbitrary-Axis" class="headerlink" title="Rotation about an Arbitrary Axis"></a>Rotation about an Arbitrary Axis</h1><p>This is similar to 2D rotation about an arbitrary point. The general procedure is as follows:</p>
+<ol>
+<li>Perform transformations which align rotation axis with one of coordinate axis <strong>(x, y, z)</strong></li>
+<li>Perform rotation about the axis</li>
+<li>Do inverse of (1)</li>
+</ol>
+<p>Special case: The rotation axis is parallel to a principle coordinate axis. This is directly analogous to the 2D case of rotation about a point. The steps are:</p>
+<ol>
+<li>Translate rotation axis to coordinate axis</li>
+<li>Perform rotation</li>
+<li>Do inverse translation</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Microsoft.VisualBasic.Imaging/Drawing3D/images/3drotar1.gif" alt=""></p>
+<p>In the general case, rotation about an arbitrary axis is more complicated. First we must define <strong>the axis of Rotation by 2 points - P1, P2</strong> then do the following:</p>
+<ol>
+<li>Translate so that rotation axis passes through origin.</li>
+<li>Rotate so that the rotation axis is aligned with one of the principle coordinate axes.</li>
+<li>Perform rotation of object about coordinate axis.</li>
+<li>Perform inverse rotation of 2.</li>
+<li>Perform iInverse translation of 1.</li>
+</ol>
+<p>We will arbitrarily choose the Z axis to map the rotation axis onto. The rotation axis is defined by 2 points: <strong>P1(x1,y1,z1) and P2(x2,y2,z2.)</strong>. These 2 points define a vector:</p>
+<blockquote>
+<p>V = (x2 - x1 , y2 - y1 , z2 - z1) = (dx, dy, dz)</p>
+</blockquote>
+<p>which has a unit vector</p>
+<blockquote>
+<p><strong>U = V * |V|</strong> where |V| is the length of <strong>V = (VxV) = (dx^2 + dy^2 + dz^2)^1/2</strong></p>
+</blockquote>
+<p>Now <strong>U = (a,b,c)</strong> where</p>
+<blockquote>
+<p>a = dx/|V|<br>b = dy/|V|<br>c = dz/|V| (these are called the direction cosines of x, y, and z)</p>
+</blockquote>
+<p>(Note: the direction cosine of <strong>x = cos A</strong> where <strong>A = angle</strong> of V with respect to x axis)</p>
+<p>Now we can perform the first translation (of the rotation axis to pass through the origin) by using the matrix <strong>T (-x1, -y1, -z 1)</strong>, i.e., move the point P1 to the origin. Next we want to rotate to align V with Z axis. We do this in 2 steps:</p>
+<ol>
+<li>Rotate V about X axis to put V in XZ plane.</li>
+<li>Rotate V about Y to align with Z.</li>
+</ol>
+<p>For rotation about X axis we need to find <strong>cos(A), sin(A) where A = angle</strong> between projection of U (in YZ plane) and Z axis.<br>Note: <strong>U’</strong> is no longer a unit vector, i.e.</p>
+<blockquote>
+<p>|U’| =/ 1<br>Uz = unit vector along z axis = (0,0,1)</p>
+</blockquote>
+<p>now</p>
+<blockquote>
+<p>(U)’ * (Uz ) = |U’| * |Uz| cos A = d * cos A<br>|Uz| = (1)1/2 = 1<br>(U’)(Uz) = 0 * 0 + b * 0 + c * 1 = c</p>
+</blockquote>
+<p>therefore <strong>c = d * (cos A) =&gt; cos A = c/d</strong></p>
+<p>Now the cross product of 2 vectors</p>
+<blockquote>
+<p>(V1) X (V2) = W |V| * |V2|sin(q) where W is perpendicular to plane of V1, V2</p>
+</blockquote>
+<p>so</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(U&apos;) X (Uz) = Ux|U&apos;| * |Uz|sin(A) = Ux d * sin(A)</span><br><span class="line"></span><br><span class="line">           |0   0    0    0|</span><br><span class="line">So Rx(a) = |0   c/d  b/a  0|</span><br><span class="line">           |0  -b/a  c/a  0|</span><br><span class="line">           |0   0    0    1|</span><br></pre></td></tr></table></figure>
+<p>Rx(a) –&gt; Rotates U into XZ plane<br>Now compute Ry(B) for rotation to z-axis.<br>After rotation about x-axis the vector is as below:</p>
+<blockquote>
+<p>Uy” = 0 since in XZ plane<br>Uz” = d = |U’| since just rotated U’ into XZ plane</p>
+</blockquote>
+<p>again from dot product:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cos(B) = U&quot; * (Uz) / |U&quot;|</span><br><span class="line">  |Uz| = 0 * a + 0 * 0 + 1 * d = d</span><br></pre></td></tr></table></figure></p>
+<p>Note: <strong>|U”|*|Uz| = 1</strong> since both are unit vectors<br>from the cross product <strong>U” x Uz = Uz|U”||Uz|sin B</strong><br>(from matrix) = Uy x (-a)<br>therefore <strong>sin(B) = - a</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">        | d  0  a  0|</span><br><span class="line">Ry(B) = | 0  1  0  0|</span><br><span class="line">        |-a  0  d  0|</span><br><span class="line">        | 0  0  0  1|</span><br></pre></td></tr></table></figure></p>
+<p>The result of this transformation is that V (= Rotation axis) is coincident with z axis.</p>
+<p>Then apply<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">        | cos(q) sin(q)  0  0|</span><br><span class="line">Rz(q) = |-sin(q) cos(q)  0  0|</span><br><span class="line">        |     0      0   1  0|</span><br><span class="line">        |     0      0   0  1|</span><br></pre></td></tr></table></figure></p>
+<p>Then we must apply inverse transformations to get R.A. back to original position. Therefore, the complete composite transformation matrix is as follows:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">R(q) = T * Rx(A) * Ry(B) * Rz(q) * RY-1(B) * Rx-1(A) * T-1</span><br><span class="line">n1 = a(x)</span><br><span class="line">n2 = b(y)</span><br><span class="line">n3 = c(z)</span><br><span class="line"></span><br><span class="line">[R] =</span><br><span class="line">Row1    n12 + (1 - n12)cosq         n1n2(1 - cosq) + n3sinq     n1n3(1 - cosq) - n2sinq    0</span><br><span class="line">Row2	n1n2(1 - cosq) - n3sinq     n22 + (1 - n22)cosq         n2n3(1 - cosq) + n1sinq    0</span><br><span class="line">Row3	n1n3(1 - cosq) + n2sinq     n2n3(1 - cosq) - n1sinq     n32 + (1 - n32)cosq        0</span><br><span class="line">Row4	0                           0                           0                          1</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/06/09/action_interceptor_pattern/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">The Action Interceptor Pattern</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'xieguigang'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 しゃけい よしつな
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
