@@ -467,68 +467,6 @@
 
 
   
-    <article id="post-markdown_syntax" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/07/markdown_syntax/" class="article-date">
-  	<time datetime="2016-06-06T16:00:00.000Z" itemprop="datePublished">2016-06-07</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/06/07/markdown_syntax/">Markdown Syntax</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Markdown-Syntax"><a href="#Markdown-Syntax" class="headerlink" title="Markdown: Syntax"></a>Markdown: Syntax</h1><blockquote>
-<p>Source from: <a href="http://daringfireball.net/projects/markdown/syntax">http://daringfireball.net/projects/markdown/syntax</a></p>
-</blockquote>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Syntax/">Syntax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转载搬运/">转载搬运</a></li></ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a  href="/2016/06/07/markdown_syntax/#more">閱讀全文 >></a>
-        </p>
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
     <article id="post-MergeGthubConflicts" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -555,15 +493,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Deal-with-the-github-merge-conflicts"><a href="#Deal-with-the-github-merge-conflicts" class="headerlink" title="Deal with the github merge conflicts"></a>Deal with the github merge conflicts</h1><h3 id="First-checkout-branch"><a href="#First-checkout-branch" class="headerlink" title="First: checkout branch"></a>First: checkout branch</h3><blockquote>
+        <h3 id="First-checkout-branch"><a href="#First-checkout-branch" class="headerlink" title="First: checkout branch"></a>First: checkout branch</h3><blockquote>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b &lt;branch-name&gt; master</span><br><span class="line">git pull git://github.com/&#123;username&#125;/&#123;&lt;repo&gt;.git&#125; master</span><br></pre></td></tr></table></figure>
 </blockquote>
 <h3 id="Second-edits-the-conflict-file"><a href="#Second-edits-the-conflict-file" class="headerlink" title="Second: edits the conflict file"></a>Second: edits the conflict file</h3><p>After edits in your text editor, then commit the changes:</p>
 <blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -a</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit <span class="_">-a</span></span><br></pre></td></tr></table></figure>
 </blockquote>
 <h3 id="Last-Push-and-merge"><a href="#Last-Push-and-merge" class="headerlink" title="Last: Push and merge"></a>Last: Push and merge</h3><blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge --no-ff &lt;branch-name&gt;</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge --no-ff &lt;branch-name&gt;</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
 </blockquote>
       
     </div>
@@ -580,6 +518,98 @@
       
         <p class="article-more-link">
           <a  href="/2016/06/07/MergeGthubConflicts/#more">閱讀全文 >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-markdown_syntax" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/07/markdown_syntax/" class="article-date">
+  	<time datetime="2016-06-06T16:00:00.000Z" itemprop="datePublished">2016-06-07</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/07/markdown_syntax/">Markdown Syntax</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Source from: <a href="http://daringfireball.net/projects/markdown/syntax">http://daringfireball.net/projects/markdown/syntax</a></p>
+<ul>
+<li><a href="#overview">Overview</a><ul>
+<li><a href="#philosophy">Philosophy</a></li>
+<li><a href="#html">Inline HTML</a></li>
+<li><a href="#autoescape">Automatic Escaping for Special Characters</a></li>
+</ul>
+</li>
+<li><a href="#block">Block Elements</a><ul>
+<li><a href="#p">Paragraphs and Line Breaks</a></li>
+<li><a href="#header">Headers</a></li>
+<li><a href="#blockquote">Blockquotes</a></li>
+<li><a href="#list">Lists</a></li>
+<li><a href="#precode">Code Blocks</a></li>
+<li><a href="#hr">Horizontal Rules</a></li>
+</ul>
+</li>
+<li><a href="#span">Span Elements</a><ul>
+<li><a href="#link">Links</a></li>
+<li><a href="#em">Emphasis</a></li>
+<li><a href="#code">Code</a></li>
+<li><a href="#img">Images</a></li>
+</ul>
+</li>
+<li><a href="#misc">Miscellaneous</a><ul>
+<li><a href="#backslash">Backslash Escapes</a></li>
+<li><a href="#autolink">Automatic Links</a></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<p><strong>Note:</strong> This document is itself written using Markdown; you can <a href="http://daringfireball.net/projects/markdown/syntax.text">see the source for it by adding ‘.text’ to the URL</a>.</p>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Syntax/">Syntax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转载搬运/">转载搬运</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/06/07/markdown_syntax/#more">閱讀全文 >></a>
         </p>
       
       <div class="clearfix"></div>
