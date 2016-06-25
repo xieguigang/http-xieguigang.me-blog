@@ -6,23 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>The Action Interceptor Pattern | 拾荒者</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="source: http://www.codeproject.com/Articles/1104555/The-Action-Interceptor-Pattern?msg=5258531#xx5258531xx
-
-IntroductionIn Interceptor in the Wild by João Matos Silva has presented how to use an IoC">
+  <meta name="description" content="IntroductionIn Interceptor in the Wild by João Matos Silva has presented how to use an IoC framework, NInject, to inject new behaviors into existing methods without hacking into the method implementat">
 <meta property="og:type" content="article">
 <meta property="og:title" content="The Action Interceptor Pattern">
 <meta property="og:url" content="http://yoursite.com/2016/06/09/action_interceptor_pattern/index.html">
 <meta property="og:site_name" content="拾荒者">
-<meta property="og:description" content="source: http://www.codeproject.com/Articles/1104555/The-Action-Interceptor-Pattern?msg=5258531#xx5258531xx
-
-IntroductionIn Interceptor in the Wild by João Matos Silva has presented how to use an IoC">
+<meta property="og:description" content="IntroductionIn Interceptor in the Wild by João Matos Silva has presented how to use an IoC framework, NInject, to inject new behaviors into existing methods without hacking into the method implementat">
 <meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/Class.png">
-<meta property="og:updated_time" content="2016-06-09T19:02:33.332Z">
+<meta property="og:updated_time" content="2016-06-25T12:37:13.848Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="The Action Interceptor Pattern">
-<meta name="twitter:description" content="source: http://www.codeproject.com/Articles/1104555/The-Action-Interceptor-Pattern?msg=5258531#xx5258531xx
-
-IntroductionIn Interceptor in the Wild by João Matos Silva has presented how to use an IoC">
+<meta name="twitter:description" content="IntroductionIn Interceptor in the Wild by João Matos Silva has presented how to use an IoC framework, NInject, to inject new behaviors into existing methods without hacking into the method implementat">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/Class.png">
   
     <link rel="alternative" href="/atom.xml" title="拾荒者" type="application/atom+xml">
@@ -127,7 +121,7 @@ IntroductionIn Interceptor in the Wild by João Matos Silva has presented how to
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/3d-graphics/" style="font-size: 10px;">3d graphics</a> <a href="/tags/CodeProject/" style="font-size: 14px;">CodeProject</a> <a href="/tags/Desktop/" style="font-size: 10px;">Desktop</a> <a href="/tags/GCModeller/" style="font-size: 10px;">GCModeller</a> <a href="/tags/Linq/" style="font-size: 10px;">Linq</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/SDK-document/" style="font-size: 10px;">SDK document</a> <a href="/tags/Syntax/" style="font-size: 10px;">Syntax</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/WPF/" style="font-size: 10px;">WPF</a> <a href="/tags/XAML/" style="font-size: 10px;">XAML</a> <a href="/tags/YAML/" style="font-size: 10px;">YAML</a> <a href="/tags/architecture/" style="font-size: 12px;">architecture</a> <a href="/tags/circos/" style="font-size: 12px;">circos</a> <a href="/tags/d3js/" style="font-size: 12px;">d3js</a> <a href="/tags/data-visualization/" style="font-size: 10px;">data visualization</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/libzplay/" style="font-size: 10px;">libzplay</a> <a href="/tags/music/" style="font-size: 12px;">music</a> <a href="/tags/my-works/" style="font-size: 10px;">my works</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/note/" style="font-size: 18px;">note</a> <a href="/tags/perl/" style="font-size: 10px;">perl</a> <a href="/tags/re0/" style="font-size: 10px;">re0</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/repost/" style="font-size: 12px;">repost</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tricks/" style="font-size: 10px;">tricks</a> <a href="/tags/user-agent/" style="font-size: 10px;">user-agent</a> <a href="/tags/vb-net/" style="font-size: 20px;">vb.net</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/works/" style="font-size: 10px;">works</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/前端设计/" style="font-size: 14px;">前端设计</a> <a href="/tags/架构设计/" style="font-size: 10px;">架构设计</a> <a href="/tags/转载搬运/" style="font-size: 16px;">转载搬运</a>
+						<a href="/tags/3d-graphics/" style="font-size: 10px;">3d graphics</a> <a href="/tags/CodeProject/" style="font-size: 16px;">CodeProject</a> <a href="/tags/Desktop/" style="font-size: 10px;">Desktop</a> <a href="/tags/GCModeller/" style="font-size: 10px;">GCModeller</a> <a href="/tags/Linq/" style="font-size: 10px;">Linq</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/SDK-document/" style="font-size: 10px;">SDK document</a> <a href="/tags/Syntax/" style="font-size: 10px;">Syntax</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/WPF/" style="font-size: 10px;">WPF</a> <a href="/tags/XAML/" style="font-size: 10px;">XAML</a> <a href="/tags/YAML/" style="font-size: 10px;">YAML</a> <a href="/tags/architecture/" style="font-size: 12px;">architecture</a> <a href="/tags/circos/" style="font-size: 12px;">circos</a> <a href="/tags/d3js/" style="font-size: 12px;">d3js</a> <a href="/tags/data-visualization/" style="font-size: 10px;">data visualization</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/libzplay/" style="font-size: 10px;">libzplay</a> <a href="/tags/music/" style="font-size: 12px;">music</a> <a href="/tags/my-works/" style="font-size: 10px;">my works</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/note/" style="font-size: 18px;">note</a> <a href="/tags/perl/" style="font-size: 10px;">perl</a> <a href="/tags/re0/" style="font-size: 10px;">re0</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/repost/" style="font-size: 12px;">repost</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tricks/" style="font-size: 10px;">tricks</a> <a href="/tags/user-agent/" style="font-size: 10px;">user-agent</a> <a href="/tags/vb-net/" style="font-size: 20px;">vb.net</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/works/" style="font-size: 10px;">works</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/前端设计/" style="font-size: 14px;">前端设计</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/架构设计/" style="font-size: 10px;">架构设计</a> <a href="/tags/转载搬运/" style="font-size: 16px;">转载搬运</a>
 					</div>
 				</section>
 				
@@ -242,10 +236,7 @@ IntroductionIn Interceptor in the Wild by João Matos Silva has presented how to
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>source: <a href="http://www.codeproject.com/Articles/1104555/The-Action-Interceptor-Pattern?msg=5258531#xx5258531xx" target="_blank" rel="external">http://www.codeproject.com/Articles/1104555/The-Action-Interceptor-Pattern?msg=5258531#xx5258531xx</a></p>
-</blockquote>
-<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>In Interceptor in the Wild by João Matos Silva has presented how to use an IoC framework, NInject, to inject new behaviors into existing methods without hacking into the method implementations. In this article, we will see an old-school yet beneficial way to reach the same goal, but without messing around with IoC frameworks.</p>
+        <h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><p>In Interceptor in the Wild by João Matos Silva has presented how to use an IoC framework, NInject, to inject new behaviors into existing methods without hacking into the method implementations. In this article, we will see an old-school yet beneficial way to reach the same goal, but without messing around with IoC frameworks.</p>
 <p><img src="https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/Class.png" alt=""></p>
 <a id="more"></a>
 <h2 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h2><blockquote>
@@ -343,6 +334,9 @@ IntroductionIn Interceptor in the Wild by João Matos Silva has presented how to
 <li>It is up to your decision.</li>
 </ol>
 <p>IoC frameworks do give us great powers. But we have to face the tradeoffs of added code complexity and performance loss. When I saw people asking questions about IoC frameworks here and there, which were originally simple without IoC, I wondered whether they were using the right tool.</p>
+<blockquote>
+<p>source: <a href="http://www.codeproject.com/Articles/1104555/The-Action-Interceptor-Pattern?msg=5258531#xx5258531xx" target="_blank" rel="external">wmjordan,</a> 16 Jun 2016</p>
+</blockquote>
 
       
     </div>
