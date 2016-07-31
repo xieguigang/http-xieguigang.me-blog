@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>R语言 假设检验（非参数） 学习笔记 | 拾荒者</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="1. 皮尔森拟合优度塔防检验
+假设H0：总体具有某分布F
+备择假设H1：总体不具有该分布。
+
+我们将数轴分成若干个区间，所抽取的样本会分布在这些区间中。在原假设成立的条件下，我们便知道每个区间包含样本的个数的期望值。用实际值Ni与期望值Npi可以构造统计量K。皮尔森证明，n趋向于无穷时，k收敛于m-1的塔防分布。m为我们分组的个数。有了这个分布，我们就可以做假设检验。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="R语言 假设检验（非参数） 学习笔记">
+<meta property="og:url" content="http://yoursite.com/2016/08/01/R_hypothesis_testing/index.html">
+<meta property="og:site_name" content="拾荒者">
+<meta property="og:description" content="1. 皮尔森拟合优度塔防检验
+假设H0：总体具有某分布F
+备择假设H1：总体不具有该分布。
+
+我们将数轴分成若干个区间，所抽取的样本会分布在这些区间中。在原假设成立的条件下，我们便知道每个区间包含样本的个数的期望值。用实际值Ni与期望值Npi可以构造统计量K。皮尔森证明，n趋向于无穷时，k收敛于m-1的塔防分布。m为我们分组的个数。有了这个分布，我们就可以做假设检验。">
+<meta property="og:updated_time" content="2016-07-31T17:34:14.695Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="R语言 假设检验（非参数） 学习笔记">
+<meta name="twitter:description" content="1. 皮尔森拟合优度塔防检验
+假设H0：总体具有某分布F
+备择假设H1：总体不具有该分布。
+
+我们将数轴分成若干个区间，所抽取的样本会分布在这些区间中。在原假设成立的条件下，我们便知道每个区间包含样本的个数的期望值。用实际值Ni与期望值Npi可以构造统计量K。皮尔森证明，n趋向于无穷时，k收敛于m-1的塔防分布。m为我们分组的个数。有了这个分布，我们就可以做假设检验。">
+  
+    <link rel="alternative" href="/atom.xml" title="拾荒者" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="http://xieguigang.me/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars1.githubusercontent.com/u/9410171?v=3&amp;s=460" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">しゃけい よしつな</a></h1>
+		</hgroup>
+
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>Menu</li>
+						<li>Tags</li>
+						
+						<li>Links</li>
+						
+						
+						<li>Über</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="http://xieguigang.me/">HOME</a></li>
+				        
+							<li><a href="/archives">Archives</a></li>
+				        
+							<li><a href="/nuget">Works</a></li>
+				        
+							<li><a href="/about">About</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/xieguigang" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/ineat" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="mailto://I@xieguigang.me" title="mail">mail</a>
+					        
+								<a class="google" target="_blank" href="/xie.guigang@gmail.com" title="google">google</a>
+					        
+								<a class="twitter" target="_blank" href="https://twitter.com/xieguigang" title="twitter">twitter</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/3d-graphics/" style="font-size: 10px;">3d graphics</a> <a href="/tags/CodeProject/" style="font-size: 16px;">CodeProject</a> <a href="/tags/Compiler/" style="font-size: 10px;">Compiler</a> <a href="/tags/Desktop/" style="font-size: 10px;">Desktop</a> <a href="/tags/GCModeller/" style="font-size: 10px;">GCModeller</a> <a href="/tags/Linq/" style="font-size: 10px;">Linq</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/SDK-document/" style="font-size: 10px;">SDK document</a> <a href="/tags/Syntax/" style="font-size: 10px;">Syntax</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/VisualStudio/" style="font-size: 10px;">VisualStudio</a> <a href="/tags/WPF/" style="font-size: 10px;">WPF</a> <a href="/tags/XAML/" style="font-size: 10px;">XAML</a> <a href="/tags/YAML/" style="font-size: 10px;">YAML</a> <a href="/tags/architecture/" style="font-size: 12px;">architecture</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/check-point/" style="font-size: 10px;">check-point</a> <a href="/tags/circos/" style="font-size: 12px;">circos</a> <a href="/tags/d3js/" style="font-size: 12px;">d3js</a> <a href="/tags/data-visualization/" style="font-size: 10px;">data visualization</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/elementary-os/" style="font-size: 10px;">elementary os</a> <a href="/tags/github/" style="font-size: 12px;">github</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/libzplay/" style="font-size: 10px;">libzplay</a> <a href="/tags/music/" style="font-size: 12px;">music</a> <a href="/tags/my-works/" style="font-size: 10px;">my works</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/note/" style="font-size: 18px;">note</a> <a href="/tags/perl/" style="font-size: 10px;">perl</a> <a href="/tags/re0/" style="font-size: 10px;">re0</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/repost/" style="font-size: 12px;">repost</a> <a href="/tags/statics/" style="font-size: 10px;">statics</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tricks/" style="font-size: 10px;">tricks</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/user-agent/" style="font-size: 10px;">user-agent</a> <a href="/tags/vb-net/" style="font-size: 20px;">vb.net</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/works/" style="font-size: 10px;">works</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/前端设计/" style="font-size: 14px;">前端设计</a> <a href="/tags/搬运转载/" style="font-size: 10px;">搬运转载</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/架构设计/" style="font-size: 10px;">架构设计</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/转载搬运/" style="font-size: 16px;">转载搬运</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://codeproject.com/">Code Project</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://gcmodeller.org/">GCModeller</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">大神在此！</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">しゃけい よしつな</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="https://avatars1.githubusercontent.com/u/9410171?v=3&amp;s=460" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">しゃけい よしつな</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="http://xieguigang.me/">HOME</a></li>
+		        
+					<li><a href="/archives">Archives</a></li>
+		        
+					<li><a href="/nuget">Works</a></li>
+		        
+					<li><a href="/about">About</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/xieguigang" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/ineat" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="mailto://I@xieguigang.me" title="mail">mail</a>
+			        
+						<a class="google" target="_blank" href="/xie.guigang@gmail.com" title="google">google</a>
+			        
+						<a class="twitter" target="_blank" href="https://twitter.com/xieguigang" title="twitter">twitter</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-R_hypothesis_testing" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/08/01/R_hypothesis_testing/" class="article-date">
+  	<time datetime="2016-07-31T16:00:00.000Z" itemprop="datePublished">2016-08-01</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      R语言 假设检验（非参数） 学习笔记
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/R/">R</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/note/">note</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/statics/">statics</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/转载/">转载</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-皮尔森拟合优度塔防检验"><a href="#1-皮尔森拟合优度塔防检验" class="headerlink" title="1. 皮尔森拟合优度塔防检验"></a>1. 皮尔森拟合优度塔防检验</h3><ul>
+<li>假设H0：总体具有某分布F</li>
+<li>备择假设H1：总体不具有该分布。</li>
+</ul>
+<p>我们将数轴分成若干个区间，所抽取的样本会分布在这些区间中。在原假设成立的条件下，我们便知道每个区间包含样本的个数的期望值。用实际值<code>Ni</code>与期望值<code>Npi</code>可以构造统计量<code>K</code>。皮尔森证明，<strong><code>n</code>趋向于无穷时，<code>k</code>收敛于<code>m-1</code>的塔防分布</strong>。<code>m</code>为我们分组的个数。有了这个分布，我们就可以做假设检验。</p>
+<a id="more"></a>
+<p>例：</p>
+<blockquote>
+<p>某消费者协会为了确定市场上消费者对5中品牌啤酒的喜好情况，随机抽取了1000名啤酒爱好者作为样本进行如下实验：每个人得到5种品牌的啤酒各一瓶，但是未标明牌子，这5种啤酒按分别写着A、B、C、D、E字母的5张纸片随机的顺序送给每一个人，下表是根据样本资料整理得到的各种品牌啤酒爱好者的频数分布。试根据这些数据判断消费者对这5种品牌啤酒的爱好有无明显差异？</p>
+<h6 id="5种品牌啤酒爱好者的频数"><a href="#5种品牌啤酒爱好者的频数" class="headerlink" title="5种品牌啤酒爱好者的频数"></a>5种品牌啤酒爱好者的频数</h6><table>
+<thead>
+<tr>
+<th>最喜欢的牌子</th>
+<th>A</th>
+<th>B</th>
+<th>C</th>
+<th>D</th>
+<th>E</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>人数<code>X</code></td>
+<td>210</td>
+<td>312</td>
+<td>170</td>
+<td>85</td>
+<td>223</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如果是均匀分布，则没有明显差异 。这里组其实已经分好了，直接用 。H0：人数服从均匀分布</span></span><br><span class="line">x &lt;- c(<span class="number">210</span>,<span class="number">312</span>,<span class="number">170</span>,<span class="number">85</span>,<span class="number">223</span>)</span><br><span class="line">n &lt;- sum(x); m &lt;- length(x)</span><br><span class="line">p &lt;- rep(<span class="number">1</span>/m,m)</span><br><span class="line">K &lt;- sum((x-n*p)^<span class="number">2</span>/(n*p)); K <span class="comment">#计算出K值</span></span><br><span class="line"><span class="comment"># [1] 136.49</span></span><br><span class="line"></span><br><span class="line">p &lt;- <span class="number">1</span>-pchisq(K,m-<span class="number">1</span>); p <span class="comment">#计算出p值</span></span><br><span class="line"><span class="comment"># [1] 0 #拒绝原假设。</span></span><br></pre></td></tr></table></figure>
+<p>在R语言中 <code>chisq.test()</code>，可以完成拟合优度检验。默认就是检验是否为均匀分布，如果是其他分布，需要自己分组，并在参数<code>p</code>中指出。上面题目的解法</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">chisq.test(x)</span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#         Chi-squared test for given probabilities</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># data:  x</span></span><br><span class="line"><span class="comment"># X-squared = 136.49, df = 4, p-value &lt; 2.2e-16 #同样拒绝原假设。</span></span><br></pre></td></tr></table></figure>
+<p>例，用这个函数检验其他分布。 抽取31名学生的成绩，检验是否为正态分布。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- c(<span class="number">25</span>,<span class="number">45</span>,<span class="number">50</span>,<span class="number">54</span>,<span class="number">55</span>,<span class="number">61</span>,<span class="number">64</span>,<span class="number">68</span>,<span class="number">72</span>,<span class="number">75</span>,<span class="number">75</span>,<span class="number">78</span>,<span class="number">79</span>,<span class="number">81</span>,<span class="number">83</span>,<span class="number">84</span>,<span class="number">84</span>,<span class="number">84</span>,<span class="number">85</span>, <span class="number">86</span>,<span class="number">86</span>,<span class="number">86</span>,<span class="number">87</span>,<span class="number">89</span>,<span class="number">89</span>,<span class="number">89</span>,<span class="number">90</span>,<span class="number">91</span>,<span class="number">91</span>,<span class="number">92</span>,<span class="number">100</span>)</span><br><span class="line">A &lt;- table(cut(x,breaks=c(<span class="number">0</span>,<span class="number">69</span>,<span class="number">79</span>,<span class="number">89</span>,<span class="number">100</span>))) <span class="comment">#对样本数据进行分组。</span></span><br><span class="line">A</span><br><span class="line"></span><br><span class="line"><span class="comment">#  (0,69]  (69,79]  (79,89] (89,100]</span></span><br><span class="line"><span class="comment">#       8        5       13        5</span></span><br><span class="line">p &lt;- pnorm(c(<span class="number">70</span>,<span class="number">80</span>,<span class="number">90</span>,<span class="number">100</span>),mean(x),sd(x)) <span class="comment">#获得理论分布的概率值</span></span><br><span class="line">p &lt;- c(p[<span class="number">1</span>],p[<span class="number">2</span>]-p[<span class="number">1</span>],p[<span class="number">3</span>]-p[<span class="number">2</span>],<span class="number">1</span>-p[<span class="number">3</span>])</span><br><span class="line">chisq.test(A,p=p)</span><br><span class="line"></span><br><span class="line"><span class="comment">#        Chi-squared test for given probabilities</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># data:  A</span></span><br><span class="line"><span class="comment"># X-squared = 8.334, df = 3, p-value = 0.03959  #检验结果不是正态的。</span></span><br></pre></td></tr></table></figure>
+<p>例：大麦杂交后关于芒性的比例应该是 无芒：长芒：短芒=9:3:4 。 我们的实际观测值是335：125：160 。请问观测值是否符合预期？</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">p &lt;- c(<span class="number">9</span>/<span class="number">16</span>,<span class="number">3</span>/<span class="number">16</span>,<span class="number">4</span>/<span class="number">16</span>)</span><br><span class="line">x &lt;- c(<span class="number">335</span>,<span class="number">125</span>,<span class="number">160</span>)</span><br><span class="line">chisq.test(x,p=p)</span><br><span class="line"></span><br><span class="line"><span class="comment">#        Chi-squared test for given probabilities</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># data:  x</span></span><br><span class="line"><span class="comment"># X-squared = 1.362, df = 2, p-value = 0.5061</span></span><br></pre></td></tr></table></figure>
+<p>在分组的时候要注意，每组的频数要大于等于5.<br>如果理论分布依赖于多个未知参数，只能先由样本得到参数的估计量。然后构造统计量<code>K</code>，此时<code>K</code>的自由度减少位置参数的数量个。</p>
+<h3 id="2-ks检验"><a href="#2-ks检验" class="headerlink" title="2. ks检验"></a>2. ks检验</h3><p>R语言中提供了<code>ks.test()</code>函数，理论上可以检验任何分布。他既能够做单样本检验，也能做双样本检验。</p>
+<p><strong>单样本</strong><br>例：记录一台设备无故障工作时常，并从小到大排序<code>420 500 920 1380 1510 1650 1760 2100 2300 2350</code>。问这些时间是否服从<code>拉姆达=1/1500</code>的指数分布？</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- c(<span class="number">420</span>,<span class="number">500</span>,<span class="number">920</span>,<span class="number">1380</span>,<span class="number">1510</span>,<span class="number">1650</span>,<span class="number">1760</span>,<span class="number">2100</span>,<span class="number">2300</span>,<span class="number">2350</span>)</span><br><span class="line">ks.test(x,<span class="string">"pexp"</span>,<span class="number">1</span>/<span class="number">1500</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#        One-sample Kolmogorov-Smirnov test</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># data:  x</span></span><br><span class="line"><span class="comment"># D = 0.3015, p-value = 0.2654</span></span><br><span class="line"><span class="comment"># alternative hypothesis: two-sided</span></span><br></pre></td></tr></table></figure>
+<p><strong>双样本</strong><br>例：有两个分布，分别抽样了一些数据，问他们是否服从相同的分布。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">X&lt;-scan()</span><br><span class="line"><span class="comment"># 1: 0.61 0.29 0.06 0.59 -1.73 -0.74 0.51 -0.56 0.39</span></span><br><span class="line"><span class="comment"># 10: 1.64 0.05 -0.06 0.64 -0.82 0.37 1.77 1.09 -1.28</span></span><br><span class="line"><span class="comment"># 19: 2.36 1.31 1.05 -0.32 -0.40 1.06 -2.47</span></span><br><span class="line"><span class="comment"># 26: </span></span><br><span class="line"><span class="comment"># Read 25 items</span></span><br><span class="line">Y&lt;-scan()</span><br><span class="line"><span class="comment"># 1: 2.20 1.66 1.38 0.20 0.36 0.00 0.96 1.56 0.44</span></span><br><span class="line"><span class="comment"># 10: 1.50 -0.30 0.66 2.31 3.29 -0.27 -0.37 0.38 0.70</span></span><br><span class="line"><span class="comment"># 19: 0.52 -0.71</span></span><br><span class="line"><span class="comment"># 21: </span></span><br><span class="line"><span class="comment"># Read 20 items</span></span><br><span class="line">ks.test(X,Y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#        Two-sample Kolmogorov-Smirnov test #原假设为 他们的分布相同</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># data:  X and Y</span></span><br><span class="line"><span class="comment"># D = 0.23, p-value = 0.5286</span></span><br><span class="line"><span class="comment"># alternative hypothesis: two-sided</span></span><br></pre></td></tr></table></figure>
+<h3 id="3-列联表数据独立性检验"><a href="#3-列联表数据独立性检验" class="headerlink" title="3. 列联表数据独立性检验"></a>3. 列联表数据独立性检验</h3><p><code>chisq.test()</code>同样可以做列联表数据独立性检验，只要将数据写成矩阵的形式就可以了。</p>
+<h6 id="列联表数据"><a href="#列联表数据" class="headerlink" title="列联表数据"></a>列联表数据</h6><table>
+<thead>
+<tr>
+<th></th>
+<th>患肺癌</th>
+<th>未患肺癌</th>
+<th>合计</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>吸烟</td>
+<td>60</td>
+<td>32</td>
+<td>92</td>
+</tr>
+<tr>
+<td>不吸烟</td>
+<td>3</td>
+<td>11</td>
+<td>14</td>
+</tr>
+<tr>
+<td>合计</td>
+<td>63</td>
+<td>43</td>
+<td>106</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- matrix(c(<span class="number">60</span>,<span class="number">3</span>,<span class="number">32</span>,<span class="number">11</span>),nrow=<span class="number">2</span>) <span class="comment">#参数correct是逻辑变量 表示带不带连续矫正。</span></span><br><span class="line">x</span><br><span class="line"><span class="comment">#      [,1] [,2]</span></span><br><span class="line"><span class="comment"># [1,]   60   32</span></span><br><span class="line"><span class="comment"># [2,]    3   11</span></span><br><span class="line">chisq.test(x)</span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment">#        Pearson's Chi-squared test with Yates' continuity correction</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># data:  x</span></span><br><span class="line"><span class="comment"># X-squared = 7.9327, df = 1, p-value = 0.004855  #拒绝假设 认为有关系</span></span><br></pre></td></tr></table></figure>
+<p>如果一个单元格内的数据小于5 那么做<code>pearson</code>检验是无效的。此时应该使用<code>Fisher</code>精确检验。</p>
+<p>例：</p>
+<blockquote>
+<p>某医生为研究乙肝免疫球蛋白预防胎儿宫内感染HBV的效果，将33例HBsAg阳性孕妇随机分为预防注射组和对照组，结果由下表所示。问两组新生儿的HBV总体感染率有无差别？</p>
+<h6 id="两组新生儿HBV感染率的比较"><a href="#两组新生儿HBV感染率的比较" class="headerlink" title="两组新生儿HBV感染率的比较"></a>两组新生儿HBV感染率的比较</h6><table>
+<thead>
+<tr>
+<th>组别</th>
+<th>阳性</th>
+<th>阴性</th>
+<th>合计</th>
+<th>感染率(%)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>预防注射组</td>
+<td>4</td>
+<td>18</td>
+<td>22</td>
+<td>18.18</td>
+</tr>
+<tr>
+<td>对照组</td>
+<td>5</td>
+<td>6</td>
+<td>11</td>
+<td>45.45</td>
+</tr>
+<tr>
+<td>合计</td>
+<td>9</td>
+<td>24</td>
+<td>33</td>
+<td>27.27</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- matrix(c(<span class="number">4</span>,<span class="number">5</span>,<span class="number">18</span>,<span class="number">6</span>),nrow=<span class="number">2</span>)</span><br><span class="line">x</span><br><span class="line"><span class="comment">#     [,1] [,2]</span></span><br><span class="line"><span class="comment"># [1,]    4   18</span></span><br><span class="line"><span class="comment"># [2,]    5    6</span></span><br><span class="line">fisher.test(x)</span><br><span class="line"></span><br><span class="line"><span class="comment">#        Fisher's Exact Test for Count Data</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># data:  x</span></span><br><span class="line"><span class="comment"># p-value = 0.121</span></span><br><span class="line"><span class="comment"># alternative hypothesis: true odds ratio is not equal to 1</span></span><br><span class="line"><span class="comment"># 95 percent confidence interval:</span></span><br><span class="line"><span class="comment"># 0.03974151 1.76726409  #p值大与0.05， 区间估计包含1，所以认为没有关系。</span></span><br><span class="line"><span class="comment"># sample estimates:</span></span><br><span class="line"><span class="comment"># odds ratio</span></span><br><span class="line"><span class="comment"># 0.2791061</span></span><br></pre></td></tr></table></figure>
+<p><code>McNemar</code>检验。这个不是相关性检验。是配对卡放检验。也就是说，我们是对一个样本做了两次观测，本身不是独立的样本而是相关的样本，而我们检验的是变化的强度。H0：频数没有发生变化。</p>
+<h6 id="相依配对计数资料"><a href="#相依配对计数资料" class="headerlink" title="相依配对计数资料"></a>相依配对计数资料</h6><table>
+<thead>
+<tr>
+<th></th>
+<th>治疗后具有症状A</th>
+<th>治疗后不具有症状A</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>治疗前不具有症状A</td>
+<td>a</td>
+<td>b</td>
+</tr>
+<tr>
+<td>治疗前具有症状A</td>
+<td>c</td>
+<td>d</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>用法就不举例了。单元格内数字不得小于5.n要大于100.</p>
+</blockquote>
+<h3 id="4-符号检验"><a href="#4-符号检验" class="headerlink" title="4. 符号检验"></a>4. 符号检验</h3><p>当我们以中位数将数据分为两边，一边为正，一边为负，那么样本出现在两边的概率应该都为1/2。因此，使用p=0.2的二项检验就可以做符号检验了。<br>例：</p>
+<blockquote>
+<p>统计了66个城市的生活花费指数，北京的生活花费指数为99 。请问北京是否位于中位数以上。</p>
+</blockquote>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- scan()</span><br><span class="line"><span class="comment"># 1: 66 75 78 80 81 81 82 83 83 83 83</span></span><br><span class="line"><span class="comment"># 12: 84 85 85 86 86 86 86 87 87 88 88</span></span><br><span class="line"><span class="comment"># 23: 88 88 88 89 89 89 89 90 90 91 91</span></span><br><span class="line"><span class="comment"># 34: 91 91 92 93 93 96 96 96 97 99 100</span></span><br><span class="line"><span class="comment"># 45: 101 102 103 103 104 104 104 105 106 109 109</span></span><br><span class="line"><span class="comment"># 56: 110 110 110 111 113 115 116 117 118 155 192</span></span><br><span class="line"><span class="comment"># 67:</span></span><br><span class="line"><span class="comment"># Read 66 items</span></span><br><span class="line"></span><br><span class="line">binom.test(sum(x&gt;<span class="number">99</span>),length(x),alternative=<span class="string">"less"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#        Exact binomial test</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># data:  sum(x &gt; 99) and length(x)</span></span><br><span class="line"><span class="comment"># number of successes = 23, number of trials = 66, p-value = 0.009329</span></span><br><span class="line"><span class="comment"># alternative hypothesis: true probability of success is less than 0.5</span></span><br><span class="line"><span class="comment"># 95 percent confidence interval:</span></span><br><span class="line"><span class="comment"># 0.0000000 0.4563087</span></span><br><span class="line"><span class="comment"># sample estimates:</span></span><br><span class="line"><span class="comment"># probability of success</span></span><br><span class="line"><span class="comment">#             0.3484848   #北京位于中位数下。</span></span><br></pre></td></tr></table></figure>
+<p>符号检验也可以用来检验两个总体是否存在明显差异。要是没有差异，那么两者之差为正的概率为0.5.</p>
+<blockquote>
+<p>用两种不同的饲料养猪，其增重情况如下表所示，请分析两种饲料</p>
+<h6 id="不同饲料养猪的增重情况"><a href="#不同饲料养猪的增重情况" class="headerlink" title="不同饲料养猪的增重情况"></a>不同饲料养猪的增重情况</h6><table>
+<thead>
+<tr>
+<th>对编号</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+<th>14</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>饲料X</td>
+<td>25</td>
+<td>30</td>
+<td>28</td>
+<td>23</td>
+<td>27</td>
+<td>35</td>
+<td>30</td>
+<td>28</td>
+<td>32</td>
+<td>29</td>
+<td>30</td>
+<td>30</td>
+<td>31</td>
+<td>16</td>
+</tr>
+<tr>
+<td>饲料Y</td>
+<td>19</td>
+<td>32</td>
+<td>21</td>
+<td>19</td>
+<td>25</td>
+<td>31</td>
+<td>31</td>
+<td>26</td>
+<td>30</td>
+<td>25</td>
+<td>28</td>
+<td>31</td>
+<td>25</td>
+<td>25</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>例：</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">y &lt;- c(<span class="number">19</span>,<span class="number">32</span>,<span class="number">21</span>,<span class="number">19</span>,<span class="number">25</span>,<span class="number">31</span>,<span class="number">31</span>,<span class="number">26</span>,<span class="number">30</span>,<span class="number">25</span>,<span class="number">28</span>,<span class="number">31</span>,<span class="number">25</span>,<span class="number">25</span>)</span><br><span class="line">x &lt;- c(<span class="number">25</span>,<span class="number">30</span>,<span class="number">28</span>,<span class="number">23</span>,<span class="number">27</span>,<span class="number">35</span>,<span class="number">30</span>,<span class="number">28</span>,<span class="number">32</span>,<span class="number">29</span>,<span class="number">30</span>,<span class="number">30</span>,<span class="number">31</span>,<span class="number">16</span>)</span><br><span class="line">binom.test(sum(x&lt;y),length(x))</span><br><span class="line"></span><br><span class="line"><span class="comment">#        Exact binomial test</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># data:  sum(x &lt; y) and length(x)</span></span><br><span class="line"><span class="comment"># number of successes = 4, number of trials = 14, p-value = 0.1796</span></span><br><span class="line"><span class="comment"># alternative hypothesis: true probability of success is not equal to 0.5</span></span><br><span class="line"><span class="comment"># 95 percent confidence interval:</span></span><br><span class="line"><span class="comment"># 0.08388932 0.58103526</span></span><br><span class="line"><span class="comment"># sample estimates:</span></span><br><span class="line"><span class="comment"># probability of success</span></span><br><span class="line"><span class="comment">#             0.2857143  #无明显差异。这个例子不是很好</span></span><br></pre></td></tr></table></figure>
+<p>例</p>
+<blockquote>
+<p>某饮料店为了解顾客对饮料的爱好情况，进一步改进他们的工作，对顾客喜欢咖啡还是喜欢奶茶，或者两者同样爱好进行了调查。该店在某日随机的抽取了13名顾客进行了调查，顾客喜欢咖啡超过奶茶用正号表示，喜欢奶茶超过咖啡用负号表示，两者同样爱好用0表示，现将调查的结果列在下表中:</p>
+<h6 id="不同顾客的爱好情况"><a href="#不同顾客的爱好情况" class="headerlink" title="不同顾客的爱好情况"></a>不同顾客的爱好情况</h6><table>
+<thead>
+<tr>
+<th>顾客编号</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+<th>5</th>
+<th>6</th>
+<th>7</th>
+<th>8</th>
+<th>9</th>
+<th>10</th>
+<th>11</th>
+<th>12</th>
+<th>13</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>喜欢咖啡</td>
+<td>1</td>
+<td></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td></td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td></td>
+<td>1</td>
+</tr>
+<tr>
+<td>喜欢奶茶</td>
+<td></td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+<td></td>
+<td></td>
+<td></td>
+<td>1</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>题目中标识为0的意思是两者同样喜欢。</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">binom.test(<span class="number">3</span>,<span class="number">12</span>,alternative=<span class="string">"less"</span>,conf.level=<span class="number">0.9</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#        Exact binomial test</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># data:  3 and 12</span></span><br><span class="line"><span class="comment"># number of successes = 3, number of trials = 12, p-value = 0.073</span></span><br><span class="line"><span class="comment"># alternative hypothesis: true probability of success is less than 0.5</span></span><br><span class="line"><span class="comment"># 90 percent confidence interval:</span></span><br><span class="line"><span class="comment"># 0.0000000 0.4752663</span></span><br><span class="line"><span class="comment"># sample estimates:</span></span><br><span class="line"><span class="comment"># probability of success  #p&lt;0.1 接受备择假设 认为有差异</span></span><br><span class="line"><span class="comment">#                  0.25</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-秩相关检验"><a href="#5-秩相关检验" class="headerlink" title="5. 秩相关检验"></a>5. 秩相关检验</h3><p>在R语言中，<code>rank()</code>函数用来求秩，如果向量中有相同的数据，求出的秩可能不合我们的要求，对数据做微调即可</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- c(<span class="number">1.2</span>,<span class="number">0.8</span>,-<span class="number">3.1</span>,<span class="number">2</span>,<span class="number">1.2</span>)</span><br><span class="line">rank(x)</span><br><span class="line"><span class="comment"># [1] 3.5 2.0 1.0 5.0 3.5</span></span><br><span class="line">x &lt;- c(<span class="number">1.2</span>,<span class="number">0.8</span>,-<span class="number">3.1</span>,<span class="number">2</span>,<span class="number">1.2</span>+<span class="number">1e-5</span>)</span><br><span class="line">rank(x)</span><br><span class="line"><span class="comment"># [1] 3 2 1 5 4</span></span><br></pre></td></tr></table></figure>
+<p>利用秩可以做相关性检验。具体在上上篇笔记里已经讲了。<code>cor.test( method=&quot;spearman,kendell&quot;)</code></p>
+<h3 id="6-wilcoxon检验"><a href="#6-wilcoxon检验" class="headerlink" title="6. wilcoxon检验"></a>6. wilcoxon检验</h3><p>符号检验只考虑了符号，没有考虑要差异的大小。<code>wilcoxon</code>解决了这个问题。假设，数据是连续分布的，数据是关于中位数对称的。</p>
+<p>例：</p>
+<blockquote>
+<p>某电池厂商生产的电池中位数为140.现从新生产的电池中抽取20个测试。请问电池是否合格</p>
+</blockquote>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- c(<span class="number">137</span>,<span class="number">140</span>,<span class="number">138.3</span>,<span class="number">139</span>,<span class="number">144.3</span>,<span class="number">139.1</span>,<span class="number">141.7</span>,<span class="number">137.3</span>,<span class="number">133.5</span>,<span class="number">138.2</span>,<span class="number">141.1</span>,<span class="number">139.2</span>,<span class="number">136.5</span>,<span class="number">136.5</span>,<span class="number">135.6</span>,<span class="number">138</span>,<span class="number">140.9</span>,<span class="number">140.6</span>,<span class="number">136.3</span>,<span class="number">134.1</span>)</span><br><span class="line">wilcox.test(x,mu=<span class="number">140</span>,alternative=<span class="string">"less"</span>,exact=<span class="literal">F</span>,correct=<span class="literal">F</span>,confi.int=<span class="literal">T</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#        Wilcoxon signed rank test</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># data:  x</span></span><br><span class="line"><span class="comment"># V = 34, p-value = 0.007034</span></span><br><span class="line"><span class="comment"># alternative hypothesis: true location is less than 140</span></span><br></pre></td></tr></table></figure>
+<p><code>wilcox.test()</code>做成对样本检测。</p>
+<p>例：</p>
+<blockquote>
+<p>在农场中选择了10块农田，将每一块农田分成2小块，分别用不同的化肥种菜。请问化肥会不会提高蔬菜产量。</p>
+</blockquote>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- c(<span class="number">459</span>,<span class="number">367</span>,<span class="number">303</span>,<span class="number">392</span>,<span class="number">310</span>,<span class="number">342</span>,<span class="number">421</span>,<span class="number">446</span>,<span class="number">430</span>,<span class="number">412</span>)</span><br><span class="line">y &lt;- c(<span class="number">414</span>,<span class="number">306</span>,<span class="number">321</span>,<span class="number">443</span>,<span class="number">281</span>,<span class="number">301</span>,<span class="number">353</span>,<span class="number">391</span>,<span class="number">405</span>,<span class="number">390</span>)</span><br><span class="line">wilcox.test(x-y,alternative=<span class="string">"greater"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#        Wilcoxon signed rank test</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># data:  x - y</span></span><br><span class="line"><span class="comment"># V = 47, p-value = 0.02441</span></span><br><span class="line"><span class="comment"># alternative hypothesis: true location is greater than 0 #能够提高产量</span></span><br></pre></td></tr></table></figure>
+<p>非配对双样本检测：</p>
+<p>例</p>
+<blockquote>
+<p>今测得10名非铅作业工人和7名铅作业工人的血铅值，如下表所示，试用Wilcoxon秩和检验分析两组工人血铅值有无差异</p>
+<h6 id="两组工人的血铅值（单位：-1e-6mmol-L）"><a href="#两组工人的血铅值（单位：-1e-6mmol-L）" class="headerlink" title="两组工人的血铅值（单位： 1e-6mmol/L）"></a>两组工人的血铅值（单位： 1e-6mmol/L）</h6><table>
+<thead>
+<tr>
+<th>非铅作业组</th>
+<th>24</th>
+<th>26</th>
+<th>29</th>
+<th>34</th>
+<th>43</th>
+<th>58</th>
+<th>63</th>
+<th>72</th>
+<th>87</th>
+<th>101</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>铅作业组</td>
+<td>82</td>
+<td>87</td>
+<td>97</td>
+<td>121</td>
+<td>164</td>
+<td>208</td>
+<td>213</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- c(<span class="number">24</span>,<span class="number">26</span>,<span class="number">29</span>,<span class="number">34</span>,<span class="number">43</span>,<span class="number">58</span>,<span class="number">63</span>,<span class="number">72</span>,<span class="number">87</span>,<span class="number">101</span>)</span><br><span class="line">y &lt;- c(<span class="number">82</span>,<span class="number">87</span>,<span class="number">97</span>,<span class="number">121</span>,<span class="number">164</span>,<span class="number">208</span>,<span class="number">213</span>)</span><br><span class="line">wilcox.test(x,y,alternative=<span class="string">"less"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#        Wilcoxon rank sum test with continuity correction</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># data:  x and y</span></span><br><span class="line"><span class="comment"># W = 4.5, p-value = 0.001698</span></span><br><span class="line"><span class="comment"># alternative hypothesis: true location shift is less than 0</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Warning message:</span></span><br><span class="line"><span class="comment"># In wilcox.test.default(x, y, alternative = "less") :</span></span><br><span class="line"><span class="comment"># cannot compute exact p-value with ties #好奇怪这里为什么会有警告。。明明没有同秩的现象。</span></span><br></pre></td></tr></table></figure>
+<p>例</p>
+<blockquote>
+<p>某医院用某种药物治疗两型慢性支气管炎患者共216例，疗效由下表所示。试分析该药物对两型慢性支气管炎的治疗是否相同</p>
+<h6 id="某种药物治疗两型慢性支气管炎疗效结果"><a href="#某种药物治疗两型慢性支气管炎疗效结果" class="headerlink" title="某种药物治疗两型慢性支气管炎疗效结果"></a>某种药物治疗两型慢性支气管炎疗效结果</h6><table>
+<thead>
+<tr>
+<th>疗效</th>
+<th>控制</th>
+<th>显效</th>
+<th>进步</th>
+<th>无效</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单纯型</td>
+<td>62</td>
+<td>41</td>
+<td>14</td>
+<td>11</td>
+</tr>
+<tr>
+<td>喘息性</td>
+<td>20</td>
+<td>37</td>
+<td>16</td>
+<td>15</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">x &lt;- rep(<span class="number">1</span>:<span class="number">4</span>,c(<span class="number">62</span>,<span class="number">41</span>,<span class="number">14</span>,<span class="number">11</span>))</span><br><span class="line">y &lt;- rep(<span class="number">1</span>:<span class="number">4</span>,c(<span class="number">20</span>,<span class="number">37</span>,<span class="number">16</span>,<span class="number">15</span>))</span><br><span class="line">wilcox.test(x,y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#        Wilcoxon rank sum test with continuity correction</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># data:  x and y</span></span><br><span class="line"><span class="comment"># W = 3994, p-value = 0.0001242</span></span><br><span class="line"><span class="comment"># alternative hypothesis: true location shift is not equal to 0</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>source: 一只小桃子 - <a href="http://my.oschina.net/u/1047640/blog/196546" target="_blank" rel="external">R语言 假设检验（非参数） 学习笔记</a></p>
+</blockquote>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/07/31/github_4000_contribution/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Github contributions reach 4000 points</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+
+
+
+<section id="comments">
+  <div id="disqus_thread"></div>
+    <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'xieguigang'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 しゃけい よしつな
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
