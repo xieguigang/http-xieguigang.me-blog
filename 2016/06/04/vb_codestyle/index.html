@@ -1,16 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="utf-8">
-  
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Code style guidelines for Microsoft VisualBasic | 拾荒者</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Code Architecture of a VisualBasic CLI programThere is a VisualBasic application helper module that define in the namespace:Microsoft.VisualBasic.App
+    <meta charset="utf-8">
+    
+    <title>Code style guidelines for Microsoft VisualBasic | 拾荒者</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Code Architecture of a VisualBasic CLI programThere is a VisualBasic application helper module that define in the namespace:Microsoft.VisualBasic.App
 A special function named main is the starting poin">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Code style guidelines for Microsoft VisualBasic">
-<meta property="og:url" content="http://yoursite.com/2016/06/04/vb_codestyle/index.html">
+<meta property="og:url" content="http://blog.xieguigang.me/2016/06/04/vb_codestyle/index.html">
 <meta property="og:site_name" content="拾荒者">
 <meta property="og:description" content="Code Architecture of a VisualBasic CLI programThere is a VisualBasic application helper module that define in the namespace:Microsoft.VisualBasic.App
 A special function named main is the starting poin">
@@ -23,229 +22,221 @@ A special function named main is the starting poin">
 <meta name="twitter:description" content="Code Architecture of a VisualBasic CLI programThere is a VisualBasic application helper module that define in the namespace:Microsoft.VisualBasic.App
 A special function named main is the starting poin">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/vb_codestyle/FunctionNames.png">
-  
-    <link rel="alternative" href="/atom.xml" title="拾荒者" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="http://xieguigang.me/favicon.ico">
-  
-  <link rel="stylesheet" href="/css/style.css">
+    
+
+    
+        <link rel="alternate" href="/" title="拾荒者" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="http://xieguigang.me/favicon.ico" />
+    
+
+    <link rel="stylesheet" href="/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/vendor/open-sans/styles.css">
+    <link rel="stylesheet" href="/vendor/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/vendor/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/vendor/fancybox/jquery.fancybox.css">
+    
+    
+    
+    
+
 </head>
 
 <body>
-  <div id="container">
-    <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img lazy-src="https://avatars1.githubusercontent.com/u/9410171?v=3&amp;s=460" class="js-avatar">
-			
-		</a>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">拾荒者</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/nuget">nuget</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="https://avatars1.githubusercontent.com/u/9410171?v=3&amp;s=460" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
 
-		<hgroup>
-		  <h1 class="header-author"><a href="/">しゃけい よしつな</a></h1>
-		</hgroup>
-
-		
-
-		
-			<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						
-						<div class="icon-wrap icon-link hide" data-idx="2">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
-						
-						<div class="icon-wrap icon-me hide" data-idx="3">
-							<div class="user"></div>
-							<div class="shoulder"></div>
-						</div>
-						
-					</div>
-					
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>Menu</li>
-						<li>Tags</li>
-						
-						<li>Links</li>
-						
-						
-						<li>Über</li>
-						
-					</ul>
-				</div>
-			</div>
-		
-
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="http://xieguigang.me/">HOME</a></li>
-				        
-							<li><a href="/archives">Archives</a></li>
-				        
-							<li><a href="/nuget">Works</a></li>
-				        
-							<li><a href="/about">About</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-								<a class="github" target="_blank" href="https://github.com/xieguigang" title="github">github</a>
-					        
-								<a class="weibo" target="_blank" href="http://weibo.com/ineat" title="weibo">weibo</a>
-					        
-								<a class="mail" target="_blank" href="mailto://I@xieguigang.me" title="mail">mail</a>
-					        
-								<a class="google" target="_blank" href="/xie.guigang@gmail.com" title="google">google</a>
-					        
-								<a class="twitter" target="_blank" href="https://twitter.com/xieguigang" title="twitter">twitter</a>
-					        
-						</div>
-					</nav>
-				</section>
-				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/3d-graphics/" style="font-size: 10px;">3d graphics</a> <a href="/tags/CodeProject/" style="font-size: 16px;">CodeProject</a> <a href="/tags/Compiler/" style="font-size: 10px;">Compiler</a> <a href="/tags/Desktop/" style="font-size: 10px;">Desktop</a> <a href="/tags/GCModeller/" style="font-size: 10px;">GCModeller</a> <a href="/tags/Linq/" style="font-size: 10px;">Linq</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/SDK-document/" style="font-size: 10px;">SDK document</a> <a href="/tags/Syntax/" style="font-size: 10px;">Syntax</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/VisualStudio/" style="font-size: 10px;">VisualStudio</a> <a href="/tags/WPF/" style="font-size: 10px;">WPF</a> <a href="/tags/XAML/" style="font-size: 10px;">XAML</a> <a href="/tags/YAML/" style="font-size: 10px;">YAML</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/architecture/" style="font-size: 12px;">architecture</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/check-point/" style="font-size: 10px;">check-point</a> <a href="/tags/circos/" style="font-size: 12px;">circos</a> <a href="/tags/d3js/" style="font-size: 12px;">d3js</a> <a href="/tags/data-visualization/" style="font-size: 10px;">data visualization</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/elementary-os/" style="font-size: 10px;">elementary os</a> <a href="/tags/genetics/" style="font-size: 10px;">genetics</a> <a href="/tags/github/" style="font-size: 12px;">github</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/libzplay/" style="font-size: 10px;">libzplay</a> <a href="/tags/music/" style="font-size: 14px;">music</a> <a href="/tags/my-works/" style="font-size: 10px;">my works</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/note/" style="font-size: 18px;">note</a> <a href="/tags/perl/" style="font-size: 10px;">perl</a> <a href="/tags/re0/" style="font-size: 10px;">re0</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/repost/" style="font-size: 12px;">repost</a> <a href="/tags/statics/" style="font-size: 10px;">statics</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tricks/" style="font-size: 10px;">tricks</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/user-agent/" style="font-size: 10px;">user-agent</a> <a href="/tags/vb-net/" style="font-size: 20px;">vb.net</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/works/" style="font-size: 10px;">works</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/前端设计/" style="font-size: 14px;">前端设计</a> <a href="/tags/搬运转载/" style="font-size: 10px;">搬运转载</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/架构设计/" style="font-size: 10px;">架构设计</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/转载搬运/" style="font-size: 16px;">转载搬运</a>
-					</div>
-				</section>
-				
-				
-				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://codeproject.com/">Code Project</a>
-			        
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://gcmodeller.org/">GCModeller</a>
-			        
-			        </div>
-				</section>
-				
-
-				
-				
-				<section class="switch-part switch-part4">
-				
-					<div id="js-aboutme">大神在此！</div>
-				</section>
-				
-			</div>
-		</div>
-	</header>				
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
 </div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
 
+</div>
+        </div>
     </div>
-    <div class="mid-col">
-      <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">しゃけい よしつな</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-			
-				<img lazy-src="https://avatars1.githubusercontent.com/u/9410171?v=3&amp;s=460" class="js-avatar">
-			
-			</div>
-			<hgroup>
-			  <h1 class="header-author">しゃけい よしつな</h1>
-			</hgroup>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="http://xieguigang.me/">HOME</a></li>
-		        
-					<li><a href="/archives">Archives</a></li>
-		        
-					<li><a href="/nuget">Works</a></li>
-		        
-					<li><a href="/about">About</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-						<a class="github" target="_blank" href="https://github.com/xieguigang" title="github">github</a>
-			        
-						<a class="weibo" target="_blank" href="http://weibo.com/ineat" title="weibo">weibo</a>
-			        
-						<a class="mail" target="_blank" href="mailto://I@xieguigang.me" title="mail">mail</a>
-			        
-						<a class="google" target="_blank" href="/xie.guigang@gmail.com" title="google">google</a>
-			        
-						<a class="twitter" target="_blank" href="https://twitter.com/xieguigang" title="twitter">twitter</a>
-			        
-				</div>
-			</nav>
-		</header>				
-	</div>
-</nav>
-
-      <div class="body-wrap"><article id="post-vb_codestyle" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/06/04/vb_codestyle/" class="article-date">
-  	<time datetime="2016-06-03T16:00:00.000Z" itemprop="datePublished">2016-06-04</time>
-</a>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/nuget">nuget</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
     </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Code style guidelines for Microsoft VisualBasic
-    </h1>
-  
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CodeProject/">CodeProject</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/SDK-document/">SDK document</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vb-net/">vb.net</a></li></ul>
-	</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
 
-        
+        <div class="outer">
+            
+                
 
-        <div class="clearfix"></div>
-      </div>
-      
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="https://avatars1.githubusercontent.com/u/9410171?v=3&amp;s=460" />
+            <h2 id="name">xieguigang</h2>
+            <h3 id="title">GCModeller chief developer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>GuiLin, China (中國 · 桂林)</span>
+            <a id="follow" target="_blank" href="https://github.com/xieguigang">FOLLOW</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                29
+                <span>posts</span>
+            </div>
+            <div class="article-info-block">
+                53
+                <span>tags</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/xieguigang" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-vb_codestyle" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Code-Architecture-of-a-VisualBasic-CLI-program"><a href="#Code-Architecture-of-a-VisualBasic-CLI-program" class="headerlink" title="Code Architecture of a VisualBasic CLI program"></a>Code Architecture of a VisualBasic CLI program</h2><p>There is a VisualBasic application helper module that define in the namespace:<br><a href="https://github.com/xieguigang/VisualBasic_AppFramework/blob/master/Microsoft.VisualBasic.Architecture.Framework/Extensions/App.vb" target="_blank" rel="external">Microsoft.VisualBasic.App</a></p>
+        <h1 class="article-title" itemprop="name">
+            Code style guidelines for Microsoft VisualBasic
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/06/04/vb_codestyle/">
+            <time datetime="2016-06-03T16:00:00.000Z" itemprop="datePublished">2016-06-04</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CodeProject/">CodeProject</a>, <a class="tag-link" href="/tags/SDK-document/">SDK document</a>, <a class="tag-link" href="/tags/vb-net/">vb.net</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h2 id="Code-Architecture-of-a-VisualBasic-CLI-program"><a href="#Code-Architecture-of-a-VisualBasic-CLI-program" class="headerlink" title="Code Architecture of a VisualBasic CLI program"></a>Code Architecture of a VisualBasic CLI program</h2><p>There is a VisualBasic application helper module that define in the namespace:<br><a href="https://github.com/xieguigang/VisualBasic_AppFramework/blob/master/Microsoft.VisualBasic.Architecture.Framework/Extensions/App.vb" target="_blank" rel="external">Microsoft.VisualBasic.App</a></p>
 <p><strong>A special function named <em>main</em> is the starting point of execution for all VisualBasic programs</strong>. A VisualBasic CLI application should define the <strong>Main</strong> entry point in a Module which is named <em>Program</em> and running from a Integer Function Main. By using the name of Program for the entry point module, this will makes more easily recognize of your program’s entry point.</p>
 <figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Module</span> Program</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">'''</span> This is the main entry point of your VisualBasic application.</span></span><br><span class="line">    <span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">'''</span> <span class="doctag">&lt;returns&gt;</span><span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line">    <span class="keyword">Public</span> <span class="keyword">Function</span> Main() <span class="keyword">As</span> <span class="built_in">Integer</span></span><br><span class="line">        <span class="keyword">Return</span> <span class="built_in">GetType</span>(CLI).RunCLI(App.CommandLine)</span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">Function</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Module</span></span><br></pre></td></tr></table></figure>
 <p>By using a <strong>Integer</strong> <em>Function</em> instead of <em>Sub</em> in VisualBasic, this makes your code style is more standard compare with the main function from C++.</p>
@@ -361,117 +352,216 @@ App.exe /API1 /test2-enable /test /test3-enable /msg &quot;Hello World!!!&quot;
 <h4 id="Some-common-used-name-for-common-types"><a href="#Some-common-used-name-for-common-types" class="headerlink" title="Some common used name for common types"></a>Some common used name for common types</h4><table class="table table-bordered table-striped table-condensed"><br><thead><br><tr><td>System.Type</td><td>Recommend Name</td><td>Example</td></tr><br></thead><br>    <tbody><br>        <tr><br>        <td>System.Text.StringBuilder</td><br>        <td>sb</td><br>        <td><br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> sb <span class="keyword">As</span> <span class="keyword">New</span> StringBuilder</span><br></pre></td></tr></table></figure><br><br></td><br>        </tr><br>        <tr><br>        <td>System.String</td><br>        <td>s, str, name, sId, id, x</td><br>        <td><br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> s <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line"><span class="keyword">Dim</span> str <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line"><span class="keyword">Dim</span> name <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line"><span class="keyword">Dim</span> sId <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line"><span class="keyword">Dim</span> id <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line"><span class="keyword">Dim</span> x <span class="keyword">As</span> <span class="built_in">String</span></span><br></pre></td></tr></table></figure><br><br>    </td><br>    </tr><br>    <tr><td>System.Integer, System.Long</td><br>        <td>i, j, n, x</td><br>        <td><br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> i <span class="keyword">As</span> <span class="built_in">Integer</span></span><br><span class="line"><span class="keyword">Dim</span> j <span class="keyword">As</span> <span class="built_in">Integer</span></span><br><span class="line"><span class="keyword">Dim</span> n <span class="keyword">As</span> <span class="built_in">Integer</span></span><br><span class="line"><span class="keyword">Dim</span> x <span class="keyword">As</span> <span class="built_in">Integer</span></span><br></pre></td></tr></table></figure><br><br></td></tr><br>    <tr><td>System.Object</td><br>        <td>x, o, obj, value</td><br>        <td><br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> x <span class="keyword">As</span> <span class="built_in">Object</span></span><br><span class="line"><span class="keyword">Dim</span> o <span class="keyword">As</span> <span class="built_in">Object</span></span><br><span class="line"><span class="keyword">Dim</span> obj <span class="keyword">As</span> <span class="built_in">Object</span></span><br><span class="line"><span class="keyword">Dim</span> value <span class="keyword">As</span> <span class="built_in">Object</span></span><br></pre></td></tr></table></figure><br><br></td><br>    </tr><br>        </tbody><br></table>
 
 <h4 id="Name-for-some-meaning"><a href="#Name-for-some-meaning" class="headerlink" title="Name for some meaning"></a>Name for some meaning</h4><table><br>   <tr><td>Meaning</td><td>Recommend Name</td><td>Example</td></tr><br>   <tr><td>Commandline arguments</td><br>       <td>args, CLI</td><br>       <td><br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> args <span class="keyword">As</span> CommandLine</span><br><span class="line"><span class="keyword">Dim</span> CLI <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line"><span class="keyword">Dim</span> args <span class="keyword">As</span> <span class="built_in">String</span>()</span><br></pre></td></tr></table></figure><br><br></td></tr><br>    <tr><td>SQL query</td><br>        <td>SQL, sql, query</td><br>        <td><br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> SQL <span class="keyword">As</span> <span class="built_in">String</span> = <span class="string">"SELECT * FROM table LIMIT 1;"</span></span><br></pre></td></tr></table></figure><br><br></td><br>    </tr><br>    <tr><td>Iterator</td><br>        <td>i, j, k, l</td><br>        <td><br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">For</span> i <span class="keyword">As</span> <span class="built_in">Integer</span> = <span class="number">0</span> <span class="keyword">to</span> [<span class="keyword">stop</span>]</span><br><span class="line">    <span class="keyword">For</span> j <span class="keyword">As</span> <span class="built_in">Integer</span> = i <span class="keyword">to</span> [<span class="keyword">stop</span>]</span><br><span class="line">        <span class="keyword">For</span> k <span class="keyword">As</span> <span class="built_in">Integer</span> = j <span class="keyword">to</span> [<span class="keyword">stop</span>]</span><br><span class="line">        <span class="keyword">Next</span></span><br><span class="line">    <span class="keyword">Next</span></span><br><span class="line"><span class="keyword">Next</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Dim</span> l <span class="keyword">As</span> <span class="built_in">Integer</span> = <span class="number">100</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Do</span> <span class="keyword">while</span> l = <span class="number">100</span></span><br><span class="line">    <span class="comment">' blablabla...</span></span><br><span class="line"><span class="keyword">Loop</span></span><br></pre></td></tr></table></figure><br><br></td><br>    </tr><br>    <tr><td>Linq query expression</td><td>LQuery</td><td><br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> LQuery = <span class="keyword">From</span> path <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line">             <span class="keyword">In</span> ls -l -r -wildcards(<span class="string">"*.Xml"</span>) &lt;= DIR</span><br><span class="line">             <span class="keyword">Where</span> InStr(path.BaseName, <span class="string">"xcb"</span>) = <span class="number">1</span></span><br><span class="line">             <span class="keyword">Select</span> path.LoadXml(<span class="keyword">Of</span> KEGG.DBGET.<span class="keyword">Module</span>)</span><br></pre></td></tr></table></figure><br><br></td><br></tr><br>    <tr><br>        <td>Query Result/Function Returns</td><td>result, rtvl</td><td><br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> result <span class="keyword">As</span> [<span class="keyword">Module</span>] = </span><br><span class="line">    LinqAPI.Exec(<span class="keyword">Of</span> [<span class="keyword">Module</span>]) &lt;= </span><br><span class="line">          <span class="keyword">From</span> path <span class="keyword">As</span> <span class="built_in">String</span></span><br><span class="line">          <span class="keyword">In</span> ls -l -r -wildcards(<span class="string">"*.Xml"</span>) &lt;= DIR</span><br><span class="line">          <span class="keyword">Where</span> InStr(path.BaseName, <span class="string">"xcb"</span>) = <span class="number">1</span></span><br><span class="line">          <span class="keyword">Select</span> path.LoadXml(<span class="keyword">Of</span> KEGG.DBGET.<span class="keyword">Module</span>)</span><br><span class="line">        </span><br><span class="line"><span class="keyword">Return</span> result</span><br></pre></td></tr></table></figure><br><br></td><br></tr><br>    <tr><td>Directory</td><td>DIR, out, inDIR</td><td><br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> files <span class="keyword">As</span> IEnumerable(<span class="keyword">Of</span> <span class="built_in">String</span>) = </span><br><span class="line">    ls -l -r -wildcards(<span class="string">"*.Xml"</span>) &lt;= DIR</span><br></pre></td></tr></table></figure><br><br></td><br></tr><br>    <tr><td>json</td><td>json, JSON</td><td><br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> JSON <span class="keyword">As</span> <span class="built_in">String</span> = (ls -l -r -wildcards(<span class="string">"*.json"</span>) &lt;= DIR).GetJson</span><br></pre></td></tr></table></figure><br><br></td><br></tr><br>    <tr><td>data frame</td><td>df, ds, data</td><td><br><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> df <span class="keyword">As</span> DataFrame = DataFrame.CreateObject(path)</span><br></pre></td></tr></table></figure><br><br></td><br></tr><br>    <tr><td>Network objects</td><td>net, network, node, nodes, edge, edges</td><td><br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Dim net As Network = Network.Load(DIR)</span><br><span class="line"></span><br><span class="line">net += New Node With &#123;</span><br><span class="line">    .Identifier = "Linq"</span><br><span class="line">&#125;</span><br><span class="line">net += New Edge With &#123;</span><br><span class="line">    .FromNode = "Linq",</span><br><span class="line">    .ToNode = "SQL"</span><br><span class="line">&#125;</span><br><span class="line">Return net &gt;&gt; Open("./test.net/")</span><br></pre></td></tr></table></figure><br><br></td><br></tr><br></table>
-      
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://blog.xieguigang.me/2016/06/04/vb_codestyle/" data-id="cipnbu3eo000m8gv4t6bbf15s" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://blog.xieguigang.me/2016/06/04/vb_codestyle/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/06/04/vb_codestyle/">Comments</a>
+    
+
+        </footer>
     </div>
     
-  </div>
-  
-    
+        
 <nav id="article-nav">
-  
-    <a href="/2016/06/04/nodejs/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          关于NodeJS的单线程和异步IO
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2016/06/04/VBdotNET_howto/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">VB.NET是怎样做到的（搬家版）</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
+    
+        <a href="/2016/06/04/nodejs/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Newer</strong>
+            <div class="article-nav-title">
+                
+                    关于NodeJS的单线程和异步IO
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2016/06/04/VBdotNET_howto/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">VB.NET是怎样做到的（搬家版）</div>
+        </a>
+    
 </nav>
 
-  
+
+    
 </article>
 
 
-
-
-
-
-
-
-<section id="comments">
-  <div id="disqus_thread"></div>
-    <script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'xieguigang'; // required: replace example with your forum shortname
-
-    /* * * DON'T EDIT BELOW THIS LINE * * */
-    (function() {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</section>
-
-</div>
-      <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2016 しゃけい よしつな
-    	</div>
-      	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
-      	</div>
-    </div>
-  </div>
-</footer>
-    </div>
     
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">archives</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">22</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">tag cloud</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/3d-graphics/" style="font-size: 10px;">3d graphics</a> <a href="/tags/CodeProject/" style="font-size: 16px;">CodeProject</a> <a href="/tags/Compiler/" style="font-size: 10px;">Compiler</a> <a href="/tags/Desktop/" style="font-size: 10px;">Desktop</a> <a href="/tags/GCModeller/" style="font-size: 10px;">GCModeller</a> <a href="/tags/Linq/" style="font-size: 10px;">Linq</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/SDK-document/" style="font-size: 10px;">SDK document</a> <a href="/tags/Syntax/" style="font-size: 10px;">Syntax</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/VisualStudio/" style="font-size: 10px;">VisualStudio</a> <a href="/tags/WPF/" style="font-size: 10px;">WPF</a> <a href="/tags/XAML/" style="font-size: 10px;">XAML</a> <a href="/tags/YAML/" style="font-size: 10px;">YAML</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/architecture/" style="font-size: 12px;">architecture</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/check-point/" style="font-size: 10px;">check-point</a> <a href="/tags/circos/" style="font-size: 12px;">circos</a> <a href="/tags/d3js/" style="font-size: 12px;">d3js</a> <a href="/tags/data-visualization/" style="font-size: 10px;">data visualization</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/elementary-os/" style="font-size: 10px;">elementary os</a> <a href="/tags/genetics/" style="font-size: 10px;">genetics</a> <a href="/tags/github/" style="font-size: 12px;">github</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/libzplay/" style="font-size: 10px;">libzplay</a> <a href="/tags/music/" style="font-size: 14px;">music</a> <a href="/tags/my-works/" style="font-size: 10px;">my works</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/note/" style="font-size: 18px;">note</a> <a href="/tags/perl/" style="font-size: 10px;">perl</a> <a href="/tags/re0/" style="font-size: 10px;">re0</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/repost/" style="font-size: 12px;">repost</a> <a href="/tags/statics/" style="font-size: 10px;">statics</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tricks/" style="font-size: 10px;">tricks</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/user-agent/" style="font-size: 10px;">user-agent</a> <a href="/tags/vb-net/" style="font-size: 20px;">vb.net</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/works/" style="font-size: 10px;">works</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/前端设计/" style="font-size: 14px;">前端设计</a> <a href="/tags/搬运转载/" style="font-size: 10px;">搬运转载</a> <a href="/tags/架构/" style="font-size: 10px;">架构</a> <a href="/tags/架构设计/" style="font-size: 10px;">架构设计</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/转载搬运/" style="font-size: 16px;">转载搬运</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://framework-docs.xieguigang.me/">VisualBasic Framework</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+                    <li>
+                        <a href="http://gcmodeller.org">http://gcmodeller.org</a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/genetics-potato">https://github.com/genetics-potato</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
 
 
-<script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: true,
-		animate: true,
-		isHome: false,
-		isPost: true,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
-	}
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2016 しゃけい よしつな<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/ppoffice">PPOffice</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_config = function () {
+        
+            this.page.url = 'http://blog.xieguigang.me/2016/06/04/vb_codestyle/';
+        
+        this.page.identifier = 'vb_codestyle';
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'xieguigang' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
 </script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+
+
+
+    
+        <script src="/vendor/fancybox/jquery.fancybox.pack.js"></script>
+    
+
+
+<!-- Custom Scripts -->
 <script src="/js/main.js"></script>
 
-
-
-
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
-
-  </div>
+    </div>
 </body>
 </html>
