@@ -17,7 +17,8 @@
 <meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Microsoft.VisualBasic.Imaging/Drawing3D/images/3drotx.gif">
 <meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Microsoft.VisualBasic.Imaging/Drawing3D/images/3droty.gif">
 <meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/VisualBasic_AppFramework/master/Datavisualization/Microsoft.VisualBasic.Imaging/Drawing3D/images/3drotar1.gif">
-<meta property="og:updated_time" content="2016-08-03T13:21:17.996Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/qrcode/3d_rotation.png">
+<meta property="og:updated_time" content="2016-08-04T20:20:17.024Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="3D Rotation">
 <meta name="twitter:description" content="3D Rotation is more complicated than 2D rotation since we must specify an axis of rotation. In 2D the axis of rotation is always perpendicular to the x,y plane, i.e., the Z axis, but in 3D the axis o">
@@ -74,7 +75,7 @@
                 <nav id="sub-nav">
                     <div class="profile" id="profile-nav">
                         <a id="profile-anchor" href="javascript:;">
-                            <img class="avatar" src="https://avatars1.githubusercontent.com/u/9410171?v=3&amp;s=460" />
+                            <img class="avatar" src="https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/my/WeChatImage636059681622385094.jpg" />
                             <i class="fa fa-caret-down"></i>
                         </a>
                     </div>
@@ -150,7 +151,7 @@
 <aside id="profile">
     <div class="inner profile-inner">
         <div class="base-info profile-block">
-            <img id="avatar" src="https://avatars1.githubusercontent.com/u/9410171?v=3&amp;s=460" />
+            <img id="avatar" src="https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/my/WeChatImage636059681622385094.jpg" />
             <h2 id="name">xieguigang</h2>
             <h3 id="title">GCModeller chief developer</h3>
             <span id="location"><i class="fa fa-map-marker"></i>GuiLin, China (中國 · 桂林)</span>
@@ -330,7 +331,7 @@
 <p>Then apply<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">        | cos(q) sin(q)  0  0|</span><br><span class="line">Rz(q) = |-sin(q) cos(q)  0  0|</span><br><span class="line">        |     0      0   1  0|</span><br><span class="line">        |     0      0   0  1|</span><br></pre></td></tr></table></figure></p>
 <p>Then we must apply inverse transformations to get R.A. back to original position. Therefore, the complete composite transformation matrix is as follows:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">R(q) = T * Rx(A) * Ry(B) * Rz(q) * RY-1(B) * Rx-1(A) * T-1</span><br><span class="line">n1 = a(x)</span><br><span class="line">n2 = b(y)</span><br><span class="line">n3 = c(z)</span><br><span class="line"></span><br><span class="line">[R] =</span><br><span class="line">Row1    n12 + (1 - n12)cosq         n1n2(1 - cosq) + n3sinq     n1n3(1 - cosq) - n2sinq    0</span><br><span class="line">Row2	n1n2(1 - cosq) - n3sinq     n22 + (1 - n22)cosq         n2n3(1 - cosq) + n1sinq    0</span><br><span class="line">Row3	n1n3(1 - cosq) + n2sinq     n2n3(1 - cosq) - n1sinq     n32 + (1 - n32)cosq        0</span><br><span class="line">Row4	0                           0                           0                          1</span><br></pre></td></tr></table></figure></p>
 <blockquote>
-<p>source: <a href="https://www.siggraph.org/education/materials/HyperGraph/modeling/mod_tran/3drota.htm#3D Rotation" target="_blank" rel="external">3D Rotation</a></p>
+<p><img src="https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/qrcode/3d_rotation.png" alt="3D Rotation"></p>
 </blockquote>
 
         
