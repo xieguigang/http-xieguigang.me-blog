@@ -75,7 +75,7 @@
             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
@@ -94,10 +94,10 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
+            POSTS: 'Entradas',
             PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
+            CATEGORIES: 'Categorias',
+            TAGS: 'Etiquetas',
             UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
@@ -126,7 +126,7 @@
                 <td>
                     
     <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
     </div>
 
                 </td>
@@ -146,16 +146,16 @@
             <h2 id="name">xieguigang</h2>
             <h3 id="title">GCModeller chief developer</h3>
             <span id="location"><i class="fa fa-map-marker"></i>GuiLin, China (中國 · 桂林)</span>
-            <a id="follow" target="_blank" href="https://github.com/xieguigang">FOLLOW</a>
+            <a id="follow" target="_blank" href="https://github.com/xieguigang">SEGUIR</a>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                32
-                <span>posts</span>
+                37
+                <span>Entradas</span>
             </div>
             <div class="article-info-block">
-                66
-                <span>tags</span>
+                76
+                <span>Etiquetas</span>
             </div>
         </div>
         
@@ -191,7 +191,7 @@
 
             
             <section id="main">
-    <article id="post-DependencyInjection" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-R_hypothesis_testing" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -200,7 +200,7 @@
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2016/06/25/DependencyInjection/">Dependency Injection In Programming</a>
+            <a class="article-title" href="/2016/08/01/R_hypothesis_testing/">R语言 假设检验（非参数） 学习笔记</a>
         </h1>
     
 
@@ -209,8 +209,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/06/25/DependencyInjection/">
-            <time datetime="2016-06-24T16:00:00.000Z" itemprop="datePublished">2016-06-25</time>
+        <a href="/2016/08/01/R_hypothesis_testing/">
+            <time datetime="2016-07-31T16:00:00.000Z" itemprop="datePublished">2016-08-01</time>
         </a>
     </div>
 
@@ -219,7 +219,7 @@
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/CodeProject/">CodeProject</a>, <a class="tag-link" href="/tags/interface/">interface</a>, <a class="tag-link" href="/tags/vb-net/">vb.net</a>, <a class="tag-link" href="/tags/架构/">架构</a>
+        <a class="tag-link" href="/tags/R/">R</a>, <a class="tag-link" href="/tags/note/">note</a>, <a class="tag-link" href="/tags/statics/">statics</a>, <a class="tag-link" href="/tags/转载/">转载</a>
     </div>
 
                     </div>
@@ -228,15 +228,13 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            <p><h2 id="What-is-Dependency-Injection"><a href="#What-is-Dependency-Injection" class="headerlink" title="What is Dependency Injection ?"></a>What is Dependency Injection ?</h2><p>Dependency injection mean <strong>if your class depend on another class or another external login so you will need to create object of this dependent class to use its logic in your designed class.</strong></p>
-<p>For example:</p>
-<blockquote>
-<p>If you want to design laptop class that use another class called electric power that supply your laptop class by power to run.</p>
-</blockquote>
-<p>So you will use electric power object in laptop class (<strong>Not Good Design</strong>) Like this:</p>
-<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Public</span> <span class="keyword">Class</span> Laptop</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> _electricPowerObj <span class="keyword">As</span> ElectricPower</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Public</span> <span class="keyword">Sub</span> <span class="keyword">New</span>()</span><br><span class="line">        _electricPowerObj = <span class="keyword">New</span> ElectricPower()</span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Public</span> <span class="keyword">Sub</span> Start()</span><br><span class="line">        <span class="comment">' any logic</span></span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Class</span></span><br></pre></td></tr></table></figure></p>
+            <p><h3 id="1-皮尔森拟合优度塔防检验"><a href="#1-皮尔森拟合优度塔防检验" class="headerlink" title="1. 皮尔森拟合优度塔防检验"></a>1. 皮尔森拟合优度塔防检验</h3><ul>
+<li>假设H0：总体具有某分布F</li>
+<li>备择假设H1：总体不具有该分布。</li>
+</ul>
+<p>我们将数轴分成若干个区间，所抽取的样本会分布在这些区间中。在原假设成立的条件下，我们便知道每个区间包含样本的个数的期望值。用实际值<code>Ni</code>与期望值<code>Npi</code>可以构造统计量<code>K</code>。皮尔森证明，<strong><code>n</code>趋向于无穷时，<code>k</code>收敛于<code>m-1</code>的塔防分布</strong>。<code>m</code>为我们分组的个数。有了这个分布，我们就可以做假设检验。</p></p>
             <p class="article-more-link">
-                <a href="/2016/06/25/DependencyInjection/#more">Read More</a>
+                <a href="/2016/08/01/R_hypothesis_testing/#more">Read More</a>
             </p>
         
         </div>
@@ -247,7 +245,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/06/25/DependencyInjection/" data-id="cipv59q5q0000dsv4730n3aef" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/01/R_hypothesis_testing/" data-id="cirat70p20000pcv44kxd9hso" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -315,7 +313,660 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/06/25/DependencyInjection/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/06/25/DependencyInjection/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/08/01/R_hypothesis_testing/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/01/R_hypothesis_testing/">Comentarios</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-github_4000_contribution" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/07/31/github_4000_contribution/">Github contributions reach 4000 points</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/07/31/github_4000_contribution/">
+            <time datetime="2016-07-30T16:00:00.000Z" itemprop="datePublished">2016-07-31</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/check-point/">check-point</a>, <a class="tag-link" href="/tags/github/">github</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>Hi, fellows,</p>
+<p>Today I gladly announced that my personal open source contributions on the github community have reach 4000 points, from the continute works on github have been half year with almost 200 streak days.</p>
+<p>Cheers! <img src="https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/my/20160708144913.gif" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/my/github_4000_hits.png" width="450" /></p></p>
+            <p class="article-more-link">
+                <a href="/2016/07/31/github_4000_contribution/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://blog.xieguigang.me/2016/07/31/github_4000_contribution/" data-id="cir9j70jz0000dwv4u851lrv2" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://blog.xieguigang.me/2016/07/31/github_4000_contribution/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/07/31/github_4000_contribution/">Comentarios</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-6_reason_for_opensource" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/07/30/6_reason_for_opensource/">程序员应该做开源项目的 6 个原因</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/07/30/6_reason_for_opensource/">
+            <time datetime="2016-07-29T16:00:00.000Z" itemprop="datePublished">2016-07-30</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/open-source/">open-source</a>, <a class="tag-link" href="/tags/转载搬运/">转载搬运</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>“<strong>开源开发人员都是义务劳动者</strong>” 的观点已经成为编程世界中的陈词滥调，即使是那些伟大的开源举措也无法驳倒这种风靡一时的心态。</p>
+<p>但是真理总是掌握在少数人手里——即使是在开源惯例中，也需要参与开源的开发人员主动为其他人贡献他们的技能，一些企业（或企业集团）往往会因此雇用——并支付——这些程序员去研究特定的开源项目（如<code>Linux Kernel</code>）。</p>
+<p><img src="https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/640.jpg" alt=""></p></p>
+            <p class="article-more-link">
+                <a href="/2016/07/30/6_reason_for_opensource/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://blog.xieguigang.me/2016/07/30/6_reason_for_opensource/" data-id="cir9hv5ye00007sv427d02qla" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://blog.xieguigang.me/2016/07/30/6_reason_for_opensource/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/07/30/6_reason_for_opensource/">Comentarios</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-take_screenshot_login_screen" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/07/26/take_screenshot_login_screen/">Take screenshot of Login Screen in Ubuntu, Elementary &amp; Pear OS</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/07/26/take_screenshot_login_screen/">
+            <time datetime="2016-07-25T16:00:00.000Z" itemprop="datePublished">2016-07-26</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/bash/">bash</a>, <a class="tag-link" href="/tags/elementary-os/">elementary os</a>, <a class="tag-link" href="/tags/repost/">repost</a>, <a class="tag-link" href="/tags/ubuntu/">ubuntu</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>This simple tutorial shows you how to capture screenshot of the <code>LightDM</code> / <code>GDM</code> login screen in <code>Ubuntu</code>, <code>Elementary OS</code>, or <code>Pear OS</code>.</p>
+<p>Besides installing your system as <code>Virtualbox</code> or <code>Vmware</code> Guest OS, we can follow the steps below to capture and share our login screens.</p>
+<p><img src="https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/c/login_screenshot_bash.png" alt=""></p></p>
+            <p class="article-more-link">
+                <a href="/2016/07/26/take_screenshot_login_screen/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://blog.xieguigang.me/2016/07/26/take_screenshot_login_screen/" data-id="cir3jql4z0000jkv4kp9zk67v" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://blog.xieguigang.me/2016/07/26/take_screenshot_login_screen/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/07/26/take_screenshot_login_screen/">Comentarios</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-china_guangxi_guilin_yangsuo_by_andyanansu-d43r04m" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/07/07/china_guangxi_guilin_yangsuo_by_andyanansu-d43r04m/">中國·桂林</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/07/07/china_guangxi_guilin_yangsuo_by_andyanansu-d43r04m/">
+            <time datetime="2016-07-06T16:00:00.000Z" itemprop="datePublished">2016-07-07</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/art-work/">art work</a>, <a class="tag-link" href="/tags/repost/">repost</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p><img src="https://github.com/xieguigang/xieguigang.github.io-hexo/raw/master/images/china_guangxi_guilin_yangsuo_by_andyanansu-d43r04m.jpg" alt=""></p></p>
+            <p class="article-more-link">
+                <a href="/2016/07/07/china_guangxi_guilin_yangsuo_by_andyanansu-d43r04m/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://blog.xieguigang.me/2016/07/07/china_guangxi_guilin_yangsuo_by_andyanansu-d43r04m/" data-id="ciqc9c1d70000c0v4x402iu0j" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://blog.xieguigang.me/2016/07/07/china_guangxi_guilin_yangsuo_by_andyanansu-d43r04m/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/07/07/china_guangxi_guilin_yangsuo_by_andyanansu-d43r04m/">Comentarios</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-DependencyInjection" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/06/25/DependencyInjection/">Dependency Injection In Programming</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/06/25/DependencyInjection/">
+            <time datetime="2016-06-24T16:00:00.000Z" itemprop="datePublished">2016-06-25</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/CodeProject/">CodeProject</a>, <a class="tag-link" href="/tags/interface/">interface</a>, <a class="tag-link" href="/tags/vb-net/">vb.net</a>, <a class="tag-link" href="/tags/架构/">架构</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h2 id="What-is-Dependency-Injection"><a href="#What-is-Dependency-Injection" class="headerlink" title="What is Dependency Injection ?"></a>What is Dependency Injection ?</h2><p>Dependency injection mean <strong>if your class depend on another class or another external login so you will need to create object of this dependent class to use its logic in your designed class.</strong></p>
+<p>For example:</p>
+<blockquote>
+<p>If you want to design laptop class that use another class called electric power that supply your laptop class by power to run.</p>
+</blockquote>
+<p>So you will use electric power object in laptop class (<strong>Not Good Design</strong>) Like this:</p>
+<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Public</span> <span class="keyword">Class</span> Laptop</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> _electricPowerObj <span class="keyword">As</span> ElectricPower</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Public</span> <span class="keyword">Sub</span> <span class="keyword">New</span>()</span><br><span class="line">        _electricPowerObj = <span class="keyword">New</span> ElectricPower()</span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">Public</span> <span class="keyword">Sub</span> Start()</span><br><span class="line">        <span class="comment">' any logic</span></span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">Sub</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Class</span></span><br></pre></td></tr></table></figure></p>
+            <p class="article-more-link">
+                <a href="/2016/06/25/DependencyInjection/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://blog.xieguigang.me/2016/06/25/DependencyInjection/" data-id="cipv59q5q0000dsv4730n3aef" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://blog.xieguigang.me/2016/06/25/DependencyInjection/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/06/25/DependencyInjection/">Comentarios</a>
     
 
         </footer>
@@ -377,7 +1028,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/06/24/user-agent/" data-id="cipted0f10000hcv413nrj5vp" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/06/24/user-agent/" data-id="cipted0f10000hcv413nrj5vp" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -445,7 +1096,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/06/24/user-agent/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/06/24/user-agent/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/06/24/user-agent/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/06/24/user-agent/">Comentarios</a>
     
 
         </footer>
@@ -506,7 +1157,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/06/23/extensions-property/" data-id="cips22v7q0000owv4xy8uxgcx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/06/23/extensions-property/" data-id="cips22v7q0000owv4xy8uxgcx" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -574,7 +1225,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/06/23/extensions-property/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/06/23/extensions-property/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/06/23/extensions-property/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/06/23/extensions-property/">Comentarios</a>
     
 
         </footer>
@@ -636,7 +1287,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/06/21/暧昧ばんび~な/" data-id="cippgdo580000asv4dml6m6yz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/06/21/暧昧ばんび~な/" data-id="cippgdo580000asv4dml6m6yz" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -704,7 +1355,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/06/21/暧昧ばんび~な/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/06/21/暧昧ばんび~な/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/06/21/暧昧ばんび~な/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/06/21/暧昧ばんび~な/">Comentarios</a>
     
 
         </footer>
@@ -768,7 +1419,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/06/20/rem/" data-id="cipnjencz0000sgv4k11rnh9a" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/06/20/rem/" data-id="cipnjencz0000sgv4k11rnh9a" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -836,657 +1487,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/06/20/rem/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/06/20/rem/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-tricks_of_IsNullOrEmpty" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/06/20/tricks_of_IsNullOrEmpty/">The tricks of IsNullOrEmpty</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/06/20/tricks_of_IsNullOrEmpty/">
-            <time datetime="2016-06-19T16:00:00.000Z" itemprop="datePublished">2016-06-20</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Linq/">Linq</a>, <a class="tag-link" href="/tags/note/">note</a>, <a class="tag-link" href="/tags/tricks/">tricks</a>, <a class="tag-link" href="/tags/vb-net/">vb.net</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>I’m usually using a shared function from string type <code>String.IsNullOrEmpty</code> to determined that the user input string is nothing or is a empty string. And by works with the collection type, some time this <code>String.IsNullOrEmpty</code> liked operation is necessary as well:</p>
-<ul>
-<li>In most of situation of my data processing, such as text data parser, some text field is not exists in the source line, so that the parser may returns a empty string collection or nothing due to the exception</li>
-<li>In the object deserialization operations of the Xml, YAML or JSON, collection type as property may be nothing or is a empty collection after the serialization</li>
-</ul>
-<p>So that a extension method <code>IsNullOrEmpty</code> of collection type is required for deal with these situation.</p></p>
-            <p class="article-more-link">
-                <a href="/2016/06/20/tricks_of_IsNullOrEmpty/#more">Read More</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://blog.xieguigang.me/2016/06/20/tricks_of_IsNullOrEmpty/" data-id="cipnbu3ek000k8gv48bqdyz4p" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://blog.xieguigang.me/2016/06/20/tricks_of_IsNullOrEmpty/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/06/20/tricks_of_IsNullOrEmpty/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-Windows-10-Redesign-File-Explorer-589967814" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/06/19/Windows-10-Redesign-File-Explorer-589967814/">File-Explorer</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/06/19/Windows-10-Redesign-File-Explorer-589967814/">
-            <time datetime="2016-06-18T16:00:00.000Z" itemprop="datePublished">2016-06-19</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Desktop/">Desktop</a>, <a class="tag-link" href="/tags/vb-net/">vb.net</a>, <a class="tag-link" href="/tags/前端设计/">前端设计</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <p>What a Modern Version of Windows 10’s File Explorer Could Look Like</p>
-<p>try implements the explorer art design from <a href="http://steppiman89.deviantart.com/art/Windows-10-Redesign-File-Explorer-589967814" target="_blank" rel="external">http://steppiman89.deviantart.com/art/Windows-10-Redesign-File-Explorer-589967814</a></p>
-<p><img src="https://raw.githubusercontent.com/xieguigang/File-Explorer/master/what-a-modern-version-of-windows-10-s-file-explorer-could-look-like-500353-3.jpg" alt=""><br><a href="https://github.com/xieguigang/File-Explorer" target="_blank" rel="external">github/xieguigang/File-Explorer</a></p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://blog.xieguigang.me/2016/06/19/Windows-10-Redesign-File-Explorer-589967814/" data-id="cipnbu3cf00028gv4mlva8zez" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://blog.xieguigang.me/2016/06/19/Windows-10-Redesign-File-Explorer-589967814/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/06/19/Windows-10-Redesign-File-Explorer-589967814/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-Zplay-Music" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/06/19/Zplay-Music/">Zplay Music</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/06/19/Zplay-Music/">
-            <time datetime="2016-06-18T16:00:00.000Z" itemprop="datePublished">2016-06-19</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/libzplay/">libzplay</a>, <a class="tag-link" href="/tags/music/">music</a>, <a class="tag-link" href="/tags/vb-net/">vb.net</a>, <a class="tag-link" href="/tags/works/">works</a>, <a class="tag-link" href="/tags/前端设计/">前端设计</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p>Zplay-Music based on libzplay(<a href="http://libzplay.sourceforge.net/">http://libzplay.sourceforge.net/</a>) kernel<br><img src="https://raw.githubusercontent.com/xieguigang/Zplay-Music/master/manual/Zplay-Music.png" alt=""><br><a href="https://github.com/xieguigang/Zplay-Music">https://github.com/xieguigang/Zplay-Music</a></p></p>
-            <p class="article-more-link">
-                <a href="/2016/06/19/Zplay-Music/#more">Read More</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://blog.xieguigang.me/2016/06/19/Zplay-Music/" data-id="cipnbu3d700088gv4hp9ms8c0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://blog.xieguigang.me/2016/06/19/Zplay-Music/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/06/19/Zplay-Music/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-circos" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/06/15/circos/">Circos plots</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/06/15/circos/">
-            <time datetime="2016-06-14T16:00:00.000Z" itemprop="datePublished">2016-06-15</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/CodeProject/">CodeProject</a>, <a class="tag-link" href="/tags/GCModeller/">GCModeller</a>, <a class="tag-link" href="/tags/circos/">circos</a>, <a class="tag-link" href="/tags/data-visualization/">data visualization</a>, <a class="tag-link" href="/tags/perl/">perl</a>, <a class="tag-link" href="/tags/vb-net/">vb.net</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p><img src="https://raw.githubusercontent.com/SMRUCC/GCModeller.Circos/master/circos-cancer-cell.png" alt=""></p>
-<p>Circos is a software package for visualizing data and information which is written in <strong>Perl</strong> language. It visualizes data in a circular layout — this makes Circos ideal for exploring relationships between objects or positions. There are other reasons why a circular layout is advantageous, not the least being the fact that it is attractive. From the previous works on the bacterial genome annotation by using GCModeller, required of hybried programming with Perl language with vb.net for the annotation result visualization, by using this Circos software Perl script, I created this Circos API for .NET language, and introduce this .NET language API library.</p>
-<blockquote>
-<p>HOME page: <a href="http://circos.ca/">http://circos.ca/</a><br>GCModeller API: <a href="https://github.com/SMRUCC/GCModeller.Circos">https://github.com/SMRUCC/GCModeller.Circos</a></p>
-</blockquote></p>
-            <p class="article-more-link">
-                <a href="/2016/06/15/circos/#more">Read More</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://blog.xieguigang.me/2016/06/15/circos/" data-id="cipnbu3dl000a8gv4817wf7pf" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://blog.xieguigang.me/2016/06/15/circos/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/06/15/circos/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-my-win10" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/06/14/my-win10/">My Windows10 Desktop</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/06/14/my-win10/">
-            <time datetime="2016-06-13T16:00:00.000Z" itemprop="datePublished">2016-06-14</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/desktop/">desktop</a>, <a class="tag-link" href="/tags/win10/">win10</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p><img src="https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/win10/start.png" alt=""><br></p>
-            <p class="article-more-link">
-                <a href="/2016/06/14/my-win10/#more">Read More</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://blog.xieguigang.me/2016/06/14/my-win10/" data-id="cipsiqnq500006gv4kbq7u9zb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://blog.xieguigang.me/2016/06/14/my-win10/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/06/14/my-win10/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/06/20/rem/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/06/20/rem/">Comentarios</a>
     
 
         </footer>
@@ -1497,7 +1498,7 @@
 
 
     <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+        <a class="extend prev" rel="prev" href="/">&laquo; Anterior</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Siguiente  &raquo;</a>
     </nav>
 </section>
             
@@ -1507,25 +1508,25 @@
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">archives</h3>
+        <h3 class="widget-title">Archivos</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">6</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">22</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">22</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">tag cloud</h3>
+        <h3 class="widget-title">Nube de etiquetas</h3>
         <div class="widget tagcloud">
-            <a href="/tags/3d-graphics/" style="font-size: 10px;">3d graphics</a> <a href="/tags/Chinese-rural-dog/" style="font-size: 10px;">Chinese rural dog</a> <a href="/tags/CodeProject/" style="font-size: 15px;">CodeProject</a> <a href="/tags/Compiler/" style="font-size: 10px;">Compiler</a> <a href="/tags/Desktop/" style="font-size: 10px;">Desktop</a> <a href="/tags/Enigma/" style="font-size: 13.33px;">Enigma</a> <a href="/tags/GCModeller/" style="font-size: 10px;">GCModeller</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Linq/" style="font-size: 10px;">Linq</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/SDK-document/" style="font-size: 10px;">SDK document</a> <a href="/tags/Syntax/" style="font-size: 10px;">Syntax</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/VisualStudio/" style="font-size: 10px;">VisualStudio</a> <a href="/tags/WPF/" style="font-size: 10px;">WPF</a> <a href="/tags/XAML/" style="font-size: 10px;">XAML</a> <a href="/tags/YAML/" style="font-size: 10px;">YAML</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/architecture/" style="font-size: 11.67px;">architecture</a> <a href="/tags/art-work/" style="font-size: 10px;">art work</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/check-point/" style="font-size: 10px;">check-point</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/circos/" style="font-size: 11.67px;">circos</a> <a href="/tags/d3js/" style="font-size: 11.67px;">d3js</a> <a href="/tags/data-visualization/" style="font-size: 10px;">data visualization</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/elementary-os/" style="font-size: 10px;">elementary os</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/force-directed/" style="font-size: 10px;">force directed</a> <a href="/tags/genetics/" style="font-size: 10px;">genetics</a> <a href="/tags/github/" style="font-size: 13.33px;">github</a> <a href="/tags/interface/" style="font-size: 10px;">interface</a> <a href="/tags/javascript/" style="font-size: 11.67px;">javascript</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/libzplay/" style="font-size: 10px;">libzplay</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/music/" style="font-size: 16.67px;">music</a> <a href="/tags/my-works/" style="font-size: 10px;">my works</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/note/" style="font-size: 18.33px;">note</a> <a href="/tags/open-source/" style="font-size: 10px;">open-source</a> <a href="/tags/perl/" style="font-size: 10px;">perl</a> <a href="/tags/re0/" style="font-size: 10px;">re0</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/repost/" style="font-size: 16.67px;">repost</a> <a href="/tags/statics/" style="font-size: 10px;">statics</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tricks/" style="font-size: 10px;">tricks</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/user-agent/" style="font-size: 10px;">user-agent</a> <a href="/tags/vb-net/" style="font-size: 20px;">vb.net</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/works/" style="font-size: 10px;">works</a> <a href="/tags/中華田園犬/" style="font-size: 10px;">中華田園犬</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/前端设计/" style="font-size: 13.33px;">前端设计</a> <a href="/tags/架构/" style="font-size: 11.67px;">架构</a> <a href="/tags/架构设计/" style="font-size: 10px;">架构设计</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/转载搬运/" style="font-size: 16.67px;">转载搬运</a> <a href="/tags/鹿乃/" style="font-size: 10px;">鹿乃</a>
+            <a href="/tags/3D/" style="font-size: 10px;">3D</a> <a href="/tags/3d/" style="font-size: 10px;">3d</a> <a href="/tags/3d-graphics/" style="font-size: 10px;">3d graphics</a> <a href="/tags/BI/" style="font-size: 10px;">BI</a> <a href="/tags/Chinese-rural-dog/" style="font-size: 10px;">Chinese rural dog</a> <a href="/tags/CodeProject/" style="font-size: 15px;">CodeProject</a> <a href="/tags/Compiler/" style="font-size: 10px;">Compiler</a> <a href="/tags/Desktop/" style="font-size: 10px;">Desktop</a> <a href="/tags/Enigma/" style="font-size: 13.33px;">Enigma</a> <a href="/tags/GCModeller/" style="font-size: 11.67px;">GCModeller</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Linq/" style="font-size: 10px;">Linq</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/PDB/" style="font-size: 10px;">PDB</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/SDK-document/" style="font-size: 10px;">SDK document</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Syntax/" style="font-size: 10px;">Syntax</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/VisualStudio/" style="font-size: 10px;">VisualStudio</a> <a href="/tags/WPF/" style="font-size: 10px;">WPF</a> <a href="/tags/XAML/" style="font-size: 10px;">XAML</a> <a href="/tags/YAML/" style="font-size: 10px;">YAML</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/architecture/" style="font-size: 11.67px;">architecture</a> <a href="/tags/art-work/" style="font-size: 10px;">art work</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/check-point/" style="font-size: 10px;">check-point</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/circos/" style="font-size: 11.67px;">circos</a> <a href="/tags/d3js/" style="font-size: 11.67px;">d3js</a> <a href="/tags/data-analysis/" style="font-size: 10px;">data analysis</a> <a href="/tags/data-visualization/" style="font-size: 10px;">data visualization</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/elementary-os/" style="font-size: 10px;">elementary os</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/force-directed/" style="font-size: 10px;">force directed</a> <a href="/tags/gdi/" style="font-size: 11.67px;">gdi+</a> <a href="/tags/genetics/" style="font-size: 10px;">genetics</a> <a href="/tags/github/" style="font-size: 13.33px;">github</a> <a href="/tags/interface/" style="font-size: 10px;">interface</a> <a href="/tags/javascript/" style="font-size: 15px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/libzplay/" style="font-size: 10px;">libzplay</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/music/" style="font-size: 16.67px;">music</a> <a href="/tags/my-works/" style="font-size: 10px;">my works</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/note/" style="font-size: 18.33px;">note</a> <a href="/tags/open-source/" style="font-size: 10px;">open-source</a> <a href="/tags/perl/" style="font-size: 10px;">perl</a> <a href="/tags/re0/" style="font-size: 10px;">re0</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/repost/" style="font-size: 16.67px;">repost</a> <a href="/tags/statics/" style="font-size: 10px;">statics</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tricks/" style="font-size: 10px;">tricks</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/user-agent/" style="font-size: 10px;">user-agent</a> <a href="/tags/vb-net/" style="font-size: 20px;">vb.net</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/works/" style="font-size: 10px;">works</a> <a href="/tags/中華田園犬/" style="font-size: 10px;">中華田園犬</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/前端设计/" style="font-size: 13.33px;">前端设计</a> <a href="/tags/架构/" style="font-size: 11.67px;">架构</a> <a href="/tags/架构设计/" style="font-size: 10px;">架构设计</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/转载搬运/" style="font-size: 16.67px;">转载搬运</a> <a href="/tags/鹿乃/" style="font-size: 10px;">鹿乃</a>
         </div>
     </div>
 
     
         
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
+        <h3 class="widget-title">Links</h3>
         <div class="widget">
             <ul>
                 
