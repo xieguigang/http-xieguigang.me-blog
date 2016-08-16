@@ -6,21 +6,21 @@
     <title>MySql data analysis notes | 拾荒者</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="本文随时笔记随时更新
-Statics by day123SELECT date_format(time, &quot;%Y-%m-%d&quot;), COUNT(*) FROM zika_news.news_entry GROUP BY date_format(time, &quot;%Y-%m-%d&quot;);
-Where time is the field in your data table, which its data">
+Statics by day123SELECT date_format(time, &quot;%Y-%m-%d&quot;), COUNT(*)FROM zika_news.news_entryGROUP BY date_format(time, &quot;%Y-%m-%d&quot;);
+Where time is the field in your data table, which its data ty">
 <meta property="og:type" content="article">
 <meta property="og:title" content="MySql data analysis notes">
 <meta property="og:url" content="http://blog.xieguigang.me/2016/08/07/mysql_analysis/index.html">
 <meta property="og:site_name" content="拾荒者">
 <meta property="og:description" content="本文随时笔记随时更新
-Statics by day123SELECT date_format(time, &quot;%Y-%m-%d&quot;), COUNT(*) FROM zika_news.news_entry GROUP BY date_format(time, &quot;%Y-%m-%d&quot;);
-Where time is the field in your data table, which its data">
-<meta property="og:updated_time" content="2016-08-08T16:02:58.097Z">
+Statics by day123SELECT date_format(time, &quot;%Y-%m-%d&quot;), COUNT(*)FROM zika_news.news_entryGROUP BY date_format(time, &quot;%Y-%m-%d&quot;);
+Where time is the field in your data table, which its data ty">
+<meta property="og:updated_time" content="2016-08-16T11:31:08.057Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySql data analysis notes">
 <meta name="twitter:description" content="本文随时笔记随时更新
-Statics by day123SELECT date_format(time, &quot;%Y-%m-%d&quot;), COUNT(*) FROM zika_news.news_entry GROUP BY date_format(time, &quot;%Y-%m-%d&quot;);
-Where time is the field in your data table, which its data">
+Statics by day123SELECT date_format(time, &quot;%Y-%m-%d&quot;), COUNT(*)FROM zika_news.news_entryGROUP BY date_format(time, &quot;%Y-%m-%d&quot;);
+Where time is the field in your data table, which its data ty">
     
 
     
@@ -82,14 +82,14 @@ Where time is the field in your data table, which its data">
             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -101,11 +101,11 @@ Where time is the field in your data table, which its data">
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -133,7 +133,7 @@ Where time is the field in your data table, which its data">
                 <td>
                     
     <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
     </div>
 
                 </td>
@@ -153,16 +153,16 @@ Where time is the field in your data table, which its data">
             <h2 id="name">xieguigang</h2>
             <h3 id="title">GCModeller chief developer</h3>
             <span id="location"><i class="fa fa-map-marker"></i>GuiLin, China (中國 · 桂林)</span>
-            <a id="follow" target="_blank" href="https://github.com/xieguigang">FOLLOW</a>
+            <a id="follow" target="_blank" href="https://github.com/xieguigang">关注我</a>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
                 40
-                <span>posts</span>
+                <span>文章</span>
             </div>
             <div class="article-info-block">
-                82
-                <span>tags</span>
+                83
+                <span>标签</span>
             </div>
         </div>
         
@@ -225,7 +225,7 @@ Where time is the field in your data table, which its data">
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/BI/">BI</a>, <a class="tag-link" href="/tags/data-analysis/">data analysis</a>, <a class="tag-link" href="/tags/mysql/">mysql</a>
+        <a class="tag-link" href="/tags/BI/">BI</a>, <a class="tag-link" href="/tags/data-analysis/">data analysis</a>, <a class="tag-link" href="/tags/mysql/">mysql</a>, <a class="tag-link" href="/tags/vb-net/">vb.net</a>, <a class="tag-link" href="/tags/数据视图/">数据视图</a>
     </div>
 
                     </div>
@@ -236,12 +236,12 @@ Where time is the field in your data table, which its data">
         
             
             <p>本文随时笔记随时更新</p>
-<h2 id="Statics-by-day"><a href="#Statics-by-day" class="headerlink" title="Statics by day"></a>Statics by day</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">date_format</span>(<span class="keyword">time</span>, <span class="string">"%Y-%m-%d"</span>), <span class="keyword">COUNT</span>(*) </span><br><span class="line"><span class="keyword">FROM</span> zika_news.news_entry </span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">date_format</span>(<span class="keyword">time</span>, <span class="string">"%Y-%m-%d"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="Statics-by-day"><a href="#Statics-by-day" class="headerlink" title="Statics by day"></a>Statics by day</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">date_format</span>(<span class="keyword">time</span>, <span class="string">"%Y-%m-%d"</span>), <span class="keyword">COUNT</span>(*)</span><br><span class="line"><span class="keyword">FROM</span> zika_news.news_entry</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">date_format</span>(<span class="keyword">time</span>, <span class="string">"%Y-%m-%d"</span>);</span><br></pre></td></tr></table></figure>
 <p>Where <code>time</code> is the field in your data table, which its data type is <code>DateTime</code>. <code>%Y-%m-%d</code> means <strong>Year-Month-Day</strong>.</p>
 <h6 id="View-Output"><a href="#View-Output" class="headerlink" title="View Output"></a>View Output</h6><table>
 <thead>
 <tr>
-<th>date_format(time, “”%Y-%m-%d””)</th>
+<th>date_format(time, “%Y-%m-%d”)</th>
 <th>count(*)</th>
 </tr>
 </thead>
@@ -260,7 +260,93 @@ Where time is the field in your data table, which its data">
 </tr>
 </tbody>
 </table>
-
+<h6 id="Server-Code"><a href="#Server-Code" class="headerlink" title="Server Code"></a>Server Code</h6><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Dim dt As DataTable = mysql.Fetch(SQL).Tables(0)</span><br><span class="line">Dim data As date_count() &lt;=</span><br><span class="line"></span><br><span class="line">    From row As DataRow</span><br><span class="line">    In dt.Rows</span><br><span class="line">    Select dd = New date_count With &#123;</span><br><span class="line">        .date = CStr(row(MySqlREST.[date])),</span><br><span class="line">        .count = CInt(row(MySqlREST.count))</span><br><span class="line">    &#125;</span><br><span class="line">    Order By dd.date Ascending</span><br><span class="line"></span><br><span class="line">Call response.WriteJSON(data)</span><br></pre></td></tr></table></figure>
+<h6 id="JSON-output-Example"><a href="#JSON-output-Example" class="headerlink" title="JSON output Example"></a>JSON output Example</h6><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"count"</span>: <span class="number">84</span>,</span><br><span class="line">    <span class="attr">"date"</span>: <span class="string">"2016-07-08"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"count"</span>: <span class="number">141</span>,</span><br><span class="line">    <span class="attr">"date"</span>: <span class="string">"2016-07-09"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"count"</span>: <span class="number">33</span>,</span><br><span class="line">    <span class="attr">"date"</span>: <span class="string">"2016-07-10"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"count"</span>: <span class="number">41</span>,</span><br><span class="line">    <span class="attr">"date"</span>: <span class="string">"2016-07-11"</span></span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="Multiple-fileds-Grouping"><a href="#Multiple-fileds-Grouping" class="headerlink" title="Multiple fileds Grouping"></a>Multiple fileds Grouping</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">date_format</span>(<span class="keyword">time</span>, <span class="string">"%Y-%m-%d"</span>), <span class="keyword">COUNT</span>(<span class="string">`key`</span>), <span class="string">`key`</span></span><br><span class="line"><span class="keyword">FROM</span> zika_news.news_entry</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> <span class="keyword">date_format</span>(<span class="keyword">time</span>, <span class="string">"%Y-%m-%d"</span>),<span class="string">`key`</span>;</span><br></pre></td></tr></table></figure>
+<h6 id="View-Output-1"><a href="#View-Output-1" class="headerlink" title="View Output"></a>View Output</h6><table>
+<thead>
+<tr>
+<th>date_format(time, “%Y-%m-%d”)</th>
+<th>COUNT(<code>key</code>)</th>
+<th>key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2016-07-18</td>
+<td>46</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2016-07-18</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2016-07-18</td>
+<td>1</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2016-07-18</td>
+<td>9</td>
+<td>5</td>
+</tr>
+<tr>
+<td>2016-07-19</td>
+<td>127</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2016-07-19</td>
+<td>4</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2016-07-19</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2016-07-19</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2016-07-19</td>
+<td>4</td>
+<td>5</td>
+</tr>
+<tr>
+<td>2016-07-20</td>
+<td>135</td>
+<td>1</td>
+</tr>
+<tr>
+<td>2016-07-20</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>2016-07-20</td>
+<td>4</td>
+<td>3</td>
+</tr>
+<tr>
+<td>2016-07-20</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr>
+<td>2016-07-20</td>
+<td>3</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+<h6 id="Server-Code-1"><a href="#Server-Code-1" class="headerlink" title="Server Code"></a>Server Code</h6><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Dim dt As DataTable = mysql.Fetch(VirusDateCount).Tables(0)</span><br><span class="line">Dim data = From row As DataRow</span><br><span class="line">           In dt.Rows</span><br><span class="line">           Select key = CLng(row("key")),</span><br><span class="line">               x = New date_count With &#123;</span><br><span class="line">                   .date = CStr(row(MySqlREST.[date])),</span><br><span class="line">                   .count = CInt(row("COUNT(`key`)"))</span><br><span class="line">               &#125;</span><br><span class="line">           Group By key Into Group</span><br><span class="line"></span><br><span class="line">Dim out As New List(Of virus)</span><br><span class="line"></span><br><span class="line">For Each x In data</span><br><span class="line">    out += New virus With &#123;</span><br><span class="line">        .name = __keys(x.key).key,</span><br><span class="line">        .data = x.Group.ToArray(Function(o) o.x)</span><br><span class="line">    &#125;</span><br><span class="line">Next</span><br><span class="line"></span><br><span class="line">Call response.WriteJSON(out)</span><br></pre></td></tr></table></figure>
+<h6 id="JSON-output-example"><a href="#JSON-output-example" class="headerlink" title="JSON output example"></a>JSON output example</h6><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"data"</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">"count"</span>: <span class="number">84</span>,</span><br><span class="line">        <span class="attr">"date"</span>: <span class="string">"2016-07-08"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">"count"</span>: <span class="number">141</span>,</span><br><span class="line">        <span class="attr">"date"</span>: <span class="string">"2016-07-09"</span></span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"zika"</span></span><br><span class="line">  &#125;</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"data"</span>: [</span><br><span class="line"></span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">"count"</span>: <span class="number">2</span>,</span><br><span class="line">        <span class="attr">"date"</span>: <span class="string">"2016-08-15"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">"count"</span>: <span class="number">1</span>,</span><br><span class="line">        <span class="attr">"date"</span>: <span class="string">"2016-08-16"</span></span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"Ebola"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"data"</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">"count"</span>: <span class="number">4</span>,</span><br><span class="line">        <span class="attr">"date"</span>: <span class="string">"2016-08-10"</span></span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">"count"</span>: <span class="number">2</span>,</span><br><span class="line">        <span class="attr">"date"</span>: <span class="string">"2016-08-16"</span></span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    <span class="attr">"name"</span>: <span class="string">"Influenza"</span></span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
         
         </div>
         <footer class="article-footer">
@@ -270,7 +356,7 @@ Where time is the field in your data table, which its data">
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/07/mysql_analysis/" data-id="cirm86ggb000150v432dpsmq2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/07/mysql_analysis/" data-id="cirm86ggb000150v432dpsmq2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -338,7 +424,7 @@ Where time is the field in your data table, which its data">
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/07/mysql_analysis/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/07/mysql_analysis/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/08/07/mysql_analysis/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/07/mysql_analysis/">评论</a>
     
 
         </footer>
@@ -348,7 +434,7 @@ Where time is the field in your data table, which its data">
 <nav id="article-nav">
     
         <a href="/2016/08/08/javascript_async_loading/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
+            <strong class="article-nav-caption">上一篇</strong>
             <div class="article-nav-title">
                 
                     Javascript 异步加载详解
@@ -358,7 +444,7 @@ Where time is the field in your data table, which its data">
     
     
         <a href="/2016/08/07/network_canvas_3d/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Older</strong>
+            <strong class="article-nav-caption">下一篇</strong>
             <div class="article-nav-title">Network canvas in 3D</div>
         </a>
     
@@ -388,7 +474,7 @@ Where time is the field in your data table, which its data">
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">archives</h3>
+        <h3 class="widget-title">归档</h3>
         <div class="widget">
             <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">22</span></li></ul>
         </div>
@@ -397,16 +483,16 @@ Where time is the field in your data table, which its data">
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">tag cloud</h3>
+        <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/3D/" style="font-size: 10px;">3D</a> <a href="/tags/3d/" style="font-size: 10px;">3d</a> <a href="/tags/3d-graphics/" style="font-size: 10px;">3d graphics</a> <a href="/tags/BI/" style="font-size: 10px;">BI</a> <a href="/tags/Chinese/" style="font-size: 10px;">Chinese</a> <a href="/tags/Chinese-rural-dog/" style="font-size: 10px;">Chinese rural dog</a> <a href="/tags/CodeProject/" style="font-size: 15px;">CodeProject</a> <a href="/tags/Compiler/" style="font-size: 10px;">Compiler</a> <a href="/tags/Desktop/" style="font-size: 10px;">Desktop</a> <a href="/tags/Enigma/" style="font-size: 13.33px;">Enigma</a> <a href="/tags/GCModeller/" style="font-size: 11.67px;">GCModeller</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Linq/" style="font-size: 10px;">Linq</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/PDB/" style="font-size: 10px;">PDB</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/SDK-document/" style="font-size: 10px;">SDK document</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Syntax/" style="font-size: 10px;">Syntax</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/VisualStudio/" style="font-size: 10px;">VisualStudio</a> <a href="/tags/WPF/" style="font-size: 10px;">WPF</a> <a href="/tags/XAML/" style="font-size: 10px;">XAML</a> <a href="/tags/YAML/" style="font-size: 10px;">YAML</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/architecture/" style="font-size: 11.67px;">architecture</a> <a href="/tags/art-work/" style="font-size: 10px;">art work</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/check-point/" style="font-size: 10px;">check-point</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/circos/" style="font-size: 11.67px;">circos</a> <a href="/tags/d3js/" style="font-size: 13.33px;">d3js</a> <a href="/tags/data-analysis/" style="font-size: 10px;">data analysis</a> <a href="/tags/data-visualization/" style="font-size: 10px;">data visualization</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/elementary-os/" style="font-size: 10px;">elementary os</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/force-directed/" style="font-size: 10px;">force directed</a> <a href="/tags/gdi/" style="font-size: 11.67px;">gdi+</a> <a href="/tags/genetics/" style="font-size: 10px;">genetics</a> <a href="/tags/github/" style="font-size: 13.33px;">github</a> <a href="/tags/interface/" style="font-size: 10px;">interface</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/languages/" style="font-size: 10px;">languages</a> <a href="/tags/libzplay/" style="font-size: 10px;">libzplay</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/music/" style="font-size: 16.67px;">music</a> <a href="/tags/my-works/" style="font-size: 10px;">my works</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/note/" style="font-size: 18.33px;">note</a> <a href="/tags/open-source/" style="font-size: 10px;">open-source</a> <a href="/tags/perl/" style="font-size: 10px;">perl</a> <a href="/tags/re0/" style="font-size: 10px;">re0</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/repost/" style="font-size: 16.67px;">repost</a> <a href="/tags/statics/" style="font-size: 10px;">statics</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/threading/" style="font-size: 10px;">threading</a> <a href="/tags/threadpool/" style="font-size: 10px;">threadpool</a> <a href="/tags/tricks/" style="font-size: 10px;">tricks</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/user-agent/" style="font-size: 10px;">user-agent</a> <a href="/tags/vb-net/" style="font-size: 20px;">vb.net</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-server/" style="font-size: 10px;">web server</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/works/" style="font-size: 10px;">works</a> <a href="/tags/中華田園犬/" style="font-size: 10px;">中華田園犬</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/前端设计/" style="font-size: 13.33px;">前端设计</a> <a href="/tags/架构/" style="font-size: 11.67px;">架构</a> <a href="/tags/架构设计/" style="font-size: 10px;">架构设计</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/转载搬运/" style="font-size: 16.67px;">转载搬运</a> <a href="/tags/鹿乃/" style="font-size: 10px;">鹿乃</a>
+            <a href="/tags/3D/" style="font-size: 10px;">3D</a> <a href="/tags/3d/" style="font-size: 10px;">3d</a> <a href="/tags/3d-graphics/" style="font-size: 10px;">3d graphics</a> <a href="/tags/BI/" style="font-size: 10px;">BI</a> <a href="/tags/Chinese/" style="font-size: 10px;">Chinese</a> <a href="/tags/Chinese-rural-dog/" style="font-size: 10px;">Chinese rural dog</a> <a href="/tags/CodeProject/" style="font-size: 15px;">CodeProject</a> <a href="/tags/Compiler/" style="font-size: 10px;">Compiler</a> <a href="/tags/Desktop/" style="font-size: 10px;">Desktop</a> <a href="/tags/Enigma/" style="font-size: 13.33px;">Enigma</a> <a href="/tags/GCModeller/" style="font-size: 11.67px;">GCModeller</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Linq/" style="font-size: 10px;">Linq</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/PDB/" style="font-size: 10px;">PDB</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/SDK-document/" style="font-size: 10px;">SDK document</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Syntax/" style="font-size: 10px;">Syntax</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/VisualStudio/" style="font-size: 10px;">VisualStudio</a> <a href="/tags/WPF/" style="font-size: 10px;">WPF</a> <a href="/tags/XAML/" style="font-size: 10px;">XAML</a> <a href="/tags/YAML/" style="font-size: 10px;">YAML</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/architecture/" style="font-size: 11.67px;">architecture</a> <a href="/tags/art-work/" style="font-size: 10px;">art work</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/check-point/" style="font-size: 10px;">check-point</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/circos/" style="font-size: 11.67px;">circos</a> <a href="/tags/d3js/" style="font-size: 13.33px;">d3js</a> <a href="/tags/data-analysis/" style="font-size: 10px;">data analysis</a> <a href="/tags/data-visualization/" style="font-size: 10px;">data visualization</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/elementary-os/" style="font-size: 10px;">elementary os</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/force-directed/" style="font-size: 10px;">force directed</a> <a href="/tags/gdi/" style="font-size: 11.67px;">gdi+</a> <a href="/tags/genetics/" style="font-size: 10px;">genetics</a> <a href="/tags/github/" style="font-size: 13.33px;">github</a> <a href="/tags/interface/" style="font-size: 10px;">interface</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/languages/" style="font-size: 10px;">languages</a> <a href="/tags/libzplay/" style="font-size: 10px;">libzplay</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/music/" style="font-size: 16.67px;">music</a> <a href="/tags/my-works/" style="font-size: 10px;">my works</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/note/" style="font-size: 18.33px;">note</a> <a href="/tags/open-source/" style="font-size: 10px;">open-source</a> <a href="/tags/perl/" style="font-size: 10px;">perl</a> <a href="/tags/re0/" style="font-size: 10px;">re0</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/repost/" style="font-size: 16.67px;">repost</a> <a href="/tags/statics/" style="font-size: 10px;">statics</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/threading/" style="font-size: 10px;">threading</a> <a href="/tags/threadpool/" style="font-size: 10px;">threadpool</a> <a href="/tags/tricks/" style="font-size: 10px;">tricks</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/user-agent/" style="font-size: 10px;">user-agent</a> <a href="/tags/vb-net/" style="font-size: 20px;">vb.net</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-server/" style="font-size: 10px;">web server</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/works/" style="font-size: 10px;">works</a> <a href="/tags/中華田園犬/" style="font-size: 10px;">中華田園犬</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/前端设计/" style="font-size: 13.33px;">前端设计</a> <a href="/tags/数据视图/" style="font-size: 10px;">数据视图</a> <a href="/tags/架构/" style="font-size: 11.67px;">架构</a> <a href="/tags/架构设计/" style="font-size: 10px;">架构设计</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/转载搬运/" style="font-size: 16.67px;">转载搬运</a> <a href="/tags/鹿乃/" style="font-size: 10px;">鹿乃</a>
         </div>
     </div>
 
     
         
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
+        <h3 class="widget-title">链接</h3>
         <div class="widget">
             <ul>
                 

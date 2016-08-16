@@ -6,19 +6,25 @@
     <title>Javascript 异步加载详解 | 拾荒者</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
     <meta name="description" content="本文总结一下浏览器在 javascript 的加载方式。
-关键词：异步加载 async loading, 延迟加载 lazy loading, 延迟执行 lazy execution, async 属性, defer 属性">
+关键词：异步加载 async loading, 延迟加载 lazy loading, 延迟执行 lazy execution, async 属性, defer 属性
+一、同步加载与异步加载的形式1. 同步加载我们平时最常使用的就是这种同步加载形式：
+1&amp;lt;script src=&quot;http://yourdomain.com/script.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Javascript 异步加载详解">
 <meta property="og:url" content="http://blog.xieguigang.me/2016/08/08/javascript_async_loading/index.html">
 <meta property="og:site_name" content="拾荒者">
 <meta property="og:description" content="本文总结一下浏览器在 javascript 的加载方式。
-关键词：异步加载 async loading, 延迟加载 lazy loading, 延迟执行 lazy execution, async 属性, defer 属性">
+关键词：异步加载 async loading, 延迟加载 lazy loading, 延迟执行 lazy execution, async 属性, defer 属性
+一、同步加载与异步加载的形式1. 同步加载我们平时最常使用的就是这种同步加载形式：
+1&amp;lt;script src=&quot;http://yourdomain.com/script.">
 <meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/qrcode/javascript_async_loading.png">
-<meta property="og:updated_time" content="2016-08-08T16:06:20.041Z">
+<meta property="og:updated_time" content="2016-08-16T11:03:53.350Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Javascript 异步加载详解">
 <meta name="twitter:description" content="本文总结一下浏览器在 javascript 的加载方式。
-关键词：异步加载 async loading, 延迟加载 lazy loading, 延迟执行 lazy execution, async 属性, defer 属性">
+关键词：异步加载 async loading, 延迟加载 lazy loading, 延迟执行 lazy execution, async 属性, defer 属性
+一、同步加载与异步加载的形式1. 同步加载我们平时最常使用的就是这种同步加载形式：
+1&amp;lt;script src=&quot;http://yourdomain.com/script.">
 <meta name="twitter:image" content="https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/qrcode/javascript_async_loading.png">
     
 
@@ -81,14 +87,14 @@
             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -100,11 +106,11 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -132,7 +138,7 @@
                 <td>
                     
     <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
     </div>
 
                 </td>
@@ -152,16 +158,16 @@
             <h2 id="name">xieguigang</h2>
             <h3 id="title">GCModeller chief developer</h3>
             <span id="location"><i class="fa fa-map-marker"></i>GuiLin, China (中國 · 桂林)</span>
-            <a id="follow" target="_blank" href="https://github.com/xieguigang">FOLLOW</a>
+            <a id="follow" target="_blank" href="https://github.com/xieguigang">关注我</a>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
                 40
-                <span>posts</span>
+                <span>文章</span>
             </div>
             <div class="article-info-block">
-                82
-                <span>tags</span>
+                83
+                <span>标签</span>
             </div>
         </div>
         
@@ -236,10 +242,9 @@
             
             <p>本文总结一下浏览器在 <code>javascript</code> 的加载方式。</p>
 <p><strong>关键词</strong>：异步加载 <code>async loading</code>, 延迟加载 <code>lazy loading</code>, 延迟执行 <code>lazy execution</code>, <code>async</code> 属性, <code>defer</code> 属性</p>
-<a id="more"></a>
 <h2 id="一、同步加载与异步加载的形式"><a href="#一、同步加载与异步加载的形式" class="headerlink" title="一、同步加载与异步加载的形式"></a>一、同步加载与异步加载的形式</h2><h3 id="1-同步加载"><a href="#1-同步加载" class="headerlink" title="1. 同步加载"></a>1. 同步加载</h3><p>我们平时最常使用的就是这种同步加载形式：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://yourdomain.com/script.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<p>同步模式，又称阻塞模式，会阻止浏览器的后续处理，停止了后续的解析，因此停止了后续的文件加载（如图像）、渲染、代码执行。<br><code>js</code>之所以要同步执行，是因为<code>js</code>中可能有输出<code>document</code>内容、修改<code>dom</code>、重定向等行为，所以默认同步执行才是安全的。<br>以前的一般建议是把<code>&lt;script&gt;</code>放在页面末尾<code>&lt;/body&gt;</code>之前，这样尽可能减少这种阻塞行为，而先让页面展示出来。<br>简单说：加载的网络<code>timeline</code>是瀑布模型，而异步加载的<code>timeline</code>是并发模型。</p>
+<p>同步模式，又称阻塞模式，会阻止浏览器的后续处理，停止了后续的解析，因此停止了后续的文件加载（如图像）、渲染、代码执行。<br><code>js</code>之所以要同步执行，是因为<code>js</code>中可能有输出<code>document</code>内容、修改<code>dom</code>、重定向等行为，所以默认同步执行才是安全的。<br>以前的一般建议是把<code>&lt;script&gt;</code>放在页面末尾<code>&lt;/body&gt;</code>之前，这样尽可能减少这种阻塞行为，而先让页面展示出来。<br>简单说：加载的网络<code>timeline</code>是瀑布模型，而异步加载的<code>timeline</code>是并发模型。<br><a id="more"></a></p>
 <h3 id="2-常见异步加载（Script-DOM-Element）"><a href="#2-常见异步加载（Script-DOM-Element）" class="headerlink" title="2. 常见异步加载（Script DOM Element）"></a>2. 常见异步加载（Script DOM Element）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> s = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">    s.type = <span class="string">'text/javascript'</span>;</span><br><span class="line">    s.async = <span class="literal">true</span>;</span><br><span class="line">    s.src = <span class="string">'http://yourdomain.com/script.js'</span>;</span><br><span class="line">    <span class="keyword">var</span> x = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'script'</span>)[<span class="number">0</span>];</span><br><span class="line">    x.parentNode.insertBefore(s, x);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
 <p>异步加载又叫非阻塞，浏览器在下载执行 js 同时，还会继续进行后续页面的处理。<br>这种方法是在页面中<code>&lt;script&gt;</code>标签内，用 js 创建一个<code>script</code>元素并插入到<code>document</code>中。这样就做到了非阻塞的下载 js 代码。<br>async属性是HTML5中新增的异步支持，见后文解释，加上好（不加也不影响）。<br>此方法被称为 Script DOM Element 法，不要求 js 同源。<br>将js代码包裹在匿名函数中并立即执行的方式是为了保护变量名泄露到外部可见，这是很常见的方式，尤其是在 js 库中被普遍使用。<br>例如 Google Analytics 和 Google+ Badge 都使用了这种异步加载代码：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">     <span class="keyword">var</span> ga = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>); ga.type = <span class="string">'text/javascript'</span>; ga.async = <span class="literal">true</span>;</span><br><span class="line">     ga.src = (<span class="string">'https:'</span> == <span class="built_in">document</span>.location.protocol ? <span class="string">'https://ssl'</span> : <span class="string">'http://www'</span>) + <span class="string">'.google-analytics.com/ga.js'</span>;</span><br><span class="line">     <span class="keyword">var</span> s = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'script'</span>)[<span class="number">0</span>]; s.parentNode.insertBefore(ga, s);</span><br><span class="line">&#125;)();</span><br><span class="line"></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span><br><span class="line">    </span>&#123;<span class="keyword">var</span> po = <span class="built_in">document</span>.createElement(<span class="string">"script"</span>);</span><br><span class="line">    po.type = <span class="string">"text/javascript"</span>; po.async = <span class="literal">true</span>;po.src = <span class="string">"https://apis.google.com/js/plusone.js"</span>;</span><br><span class="line">    <span class="keyword">var</span> s = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"script"</span>)[<span class="number">0</span>];</span><br><span class="line">    s.parentNode.insertBefore(po, s);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
@@ -319,7 +324,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/08/javascript_async_loading/" data-id="cirm86gfo000050v4jq698oe2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/08/javascript_async_loading/" data-id="cirm86gfo000050v4jq698oe2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -387,7 +392,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/08/javascript_async_loading/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/08/javascript_async_loading/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/08/08/javascript_async_loading/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/08/javascript_async_loading/">评论</a>
     
 
         </footer>
@@ -397,7 +402,7 @@
 <nav id="article-nav">
     
         <a href="/2016/08/09/jquery_loadmore/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
+            <strong class="article-nav-caption">上一篇</strong>
             <div class="article-nav-title">
                 
                     Loading More Results From Database Using jQuery Ajax
@@ -407,7 +412,7 @@
     
     
         <a href="/2016/08/07/mysql_analysis/" id="article-nav-older" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Older</strong>
+            <strong class="article-nav-caption">下一篇</strong>
             <div class="article-nav-title">MySql data analysis notes</div>
         </a>
     
@@ -437,7 +442,7 @@
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">archives</h3>
+        <h3 class="widget-title">归档</h3>
         <div class="widget">
             <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">22</span></li></ul>
         </div>
@@ -446,16 +451,16 @@
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">tag cloud</h3>
+        <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/3D/" style="font-size: 10px;">3D</a> <a href="/tags/3d/" style="font-size: 10px;">3d</a> <a href="/tags/3d-graphics/" style="font-size: 10px;">3d graphics</a> <a href="/tags/BI/" style="font-size: 10px;">BI</a> <a href="/tags/Chinese/" style="font-size: 10px;">Chinese</a> <a href="/tags/Chinese-rural-dog/" style="font-size: 10px;">Chinese rural dog</a> <a href="/tags/CodeProject/" style="font-size: 15px;">CodeProject</a> <a href="/tags/Compiler/" style="font-size: 10px;">Compiler</a> <a href="/tags/Desktop/" style="font-size: 10px;">Desktop</a> <a href="/tags/Enigma/" style="font-size: 13.33px;">Enigma</a> <a href="/tags/GCModeller/" style="font-size: 11.67px;">GCModeller</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Linq/" style="font-size: 10px;">Linq</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/PDB/" style="font-size: 10px;">PDB</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/SDK-document/" style="font-size: 10px;">SDK document</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Syntax/" style="font-size: 10px;">Syntax</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/VisualStudio/" style="font-size: 10px;">VisualStudio</a> <a href="/tags/WPF/" style="font-size: 10px;">WPF</a> <a href="/tags/XAML/" style="font-size: 10px;">XAML</a> <a href="/tags/YAML/" style="font-size: 10px;">YAML</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/architecture/" style="font-size: 11.67px;">architecture</a> <a href="/tags/art-work/" style="font-size: 10px;">art work</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/check-point/" style="font-size: 10px;">check-point</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/circos/" style="font-size: 11.67px;">circos</a> <a href="/tags/d3js/" style="font-size: 13.33px;">d3js</a> <a href="/tags/data-analysis/" style="font-size: 10px;">data analysis</a> <a href="/tags/data-visualization/" style="font-size: 10px;">data visualization</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/elementary-os/" style="font-size: 10px;">elementary os</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/force-directed/" style="font-size: 10px;">force directed</a> <a href="/tags/gdi/" style="font-size: 11.67px;">gdi+</a> <a href="/tags/genetics/" style="font-size: 10px;">genetics</a> <a href="/tags/github/" style="font-size: 13.33px;">github</a> <a href="/tags/interface/" style="font-size: 10px;">interface</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/languages/" style="font-size: 10px;">languages</a> <a href="/tags/libzplay/" style="font-size: 10px;">libzplay</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/music/" style="font-size: 16.67px;">music</a> <a href="/tags/my-works/" style="font-size: 10px;">my works</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/note/" style="font-size: 18.33px;">note</a> <a href="/tags/open-source/" style="font-size: 10px;">open-source</a> <a href="/tags/perl/" style="font-size: 10px;">perl</a> <a href="/tags/re0/" style="font-size: 10px;">re0</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/repost/" style="font-size: 16.67px;">repost</a> <a href="/tags/statics/" style="font-size: 10px;">statics</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/threading/" style="font-size: 10px;">threading</a> <a href="/tags/threadpool/" style="font-size: 10px;">threadpool</a> <a href="/tags/tricks/" style="font-size: 10px;">tricks</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/user-agent/" style="font-size: 10px;">user-agent</a> <a href="/tags/vb-net/" style="font-size: 20px;">vb.net</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-server/" style="font-size: 10px;">web server</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/works/" style="font-size: 10px;">works</a> <a href="/tags/中華田園犬/" style="font-size: 10px;">中華田園犬</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/前端设计/" style="font-size: 13.33px;">前端设计</a> <a href="/tags/架构/" style="font-size: 11.67px;">架构</a> <a href="/tags/架构设计/" style="font-size: 10px;">架构设计</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/转载搬运/" style="font-size: 16.67px;">转载搬运</a> <a href="/tags/鹿乃/" style="font-size: 10px;">鹿乃</a>
+            <a href="/tags/3D/" style="font-size: 10px;">3D</a> <a href="/tags/3d/" style="font-size: 10px;">3d</a> <a href="/tags/3d-graphics/" style="font-size: 10px;">3d graphics</a> <a href="/tags/BI/" style="font-size: 10px;">BI</a> <a href="/tags/Chinese/" style="font-size: 10px;">Chinese</a> <a href="/tags/Chinese-rural-dog/" style="font-size: 10px;">Chinese rural dog</a> <a href="/tags/CodeProject/" style="font-size: 15px;">CodeProject</a> <a href="/tags/Compiler/" style="font-size: 10px;">Compiler</a> <a href="/tags/Desktop/" style="font-size: 10px;">Desktop</a> <a href="/tags/Enigma/" style="font-size: 13.33px;">Enigma</a> <a href="/tags/GCModeller/" style="font-size: 11.67px;">GCModeller</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Linq/" style="font-size: 10px;">Linq</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/PDB/" style="font-size: 10px;">PDB</a> <a href="/tags/R/" style="font-size: 10px;">R</a> <a href="/tags/SDK-document/" style="font-size: 10px;">SDK document</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Syntax/" style="font-size: 10px;">Syntax</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/VisualStudio/" style="font-size: 10px;">VisualStudio</a> <a href="/tags/WPF/" style="font-size: 10px;">WPF</a> <a href="/tags/XAML/" style="font-size: 10px;">XAML</a> <a href="/tags/YAML/" style="font-size: 10px;">YAML</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/architecture/" style="font-size: 11.67px;">architecture</a> <a href="/tags/art-work/" style="font-size: 10px;">art work</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/check-point/" style="font-size: 10px;">check-point</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/circos/" style="font-size: 11.67px;">circos</a> <a href="/tags/d3js/" style="font-size: 13.33px;">d3js</a> <a href="/tags/data-analysis/" style="font-size: 10px;">data analysis</a> <a href="/tags/data-visualization/" style="font-size: 10px;">data visualization</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/elementary-os/" style="font-size: 10px;">elementary os</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/force-directed/" style="font-size: 10px;">force directed</a> <a href="/tags/gdi/" style="font-size: 11.67px;">gdi+</a> <a href="/tags/genetics/" style="font-size: 10px;">genetics</a> <a href="/tags/github/" style="font-size: 13.33px;">github</a> <a href="/tags/interface/" style="font-size: 10px;">interface</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/languages/" style="font-size: 10px;">languages</a> <a href="/tags/libzplay/" style="font-size: 10px;">libzplay</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/music/" style="font-size: 16.67px;">music</a> <a href="/tags/my-works/" style="font-size: 10px;">my works</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/note/" style="font-size: 18.33px;">note</a> <a href="/tags/open-source/" style="font-size: 10px;">open-source</a> <a href="/tags/perl/" style="font-size: 10px;">perl</a> <a href="/tags/re0/" style="font-size: 10px;">re0</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/repost/" style="font-size: 16.67px;">repost</a> <a href="/tags/statics/" style="font-size: 10px;">statics</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/threading/" style="font-size: 10px;">threading</a> <a href="/tags/threadpool/" style="font-size: 10px;">threadpool</a> <a href="/tags/tricks/" style="font-size: 10px;">tricks</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/user-agent/" style="font-size: 10px;">user-agent</a> <a href="/tags/vb-net/" style="font-size: 20px;">vb.net</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-server/" style="font-size: 10px;">web server</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/works/" style="font-size: 10px;">works</a> <a href="/tags/中華田園犬/" style="font-size: 10px;">中華田園犬</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/前端设计/" style="font-size: 13.33px;">前端设计</a> <a href="/tags/数据视图/" style="font-size: 10px;">数据视图</a> <a href="/tags/架构/" style="font-size: 11.67px;">架构</a> <a href="/tags/架构设计/" style="font-size: 10px;">架构设计</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/转载搬运/" style="font-size: 16.67px;">转载搬运</a> <a href="/tags/鹿乃/" style="font-size: 10px;">鹿乃</a>
         </div>
     </div>
 
     
         
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
+        <h3 class="widget-title">链接</h3>
         <div class="widget">
             <ul>
                 
