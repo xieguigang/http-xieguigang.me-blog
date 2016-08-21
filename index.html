@@ -150,11 +150,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                41
+                43
                 <span>posts</span>
             </div>
             <div class="article-info-block">
-                84
+                89
                 <span>tags</span>
             </div>
         </div>
@@ -191,6 +191,270 @@
 
             
             <section id="main">
+    <article id="post-LDheatmap" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/08/21/LDheatmap/">LDheatmap - An R Function for Graphical Display of Pairwise Linkage Disequilibria between Single Nucleotide Polymorphisms</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/08/21/LDheatmap/">
+            <time datetime="2016-08-20T16:00:00.000Z" itemprop="datePublished">2016-08-21</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/R/">R</a>, <a class="tag-link" href="/tags/R-squared/">R-squared</a>, <a class="tag-link" href="/tags/SNP/">SNP</a>, <a class="tag-link" href="/tags/genetics/">genetics</a>, <a class="tag-link" href="/tags/heatmap/">heatmap</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>We describe the R function <code>LDheatmap()</code> which produces a graphical display, as a heat map, of pairwise linkage disequilibrium measurements between single nucleotide polymorphisms within a genomic region. <code>LDheatmap()</code> uses the grid graphics system, an alternative to the traditional R graphics system. The features of the <code>LDheatmap()</code> function and the use of tools from the grid package to modify heat maps are illustrated by examples.</p>
+<p><strong>Keywords:</strong> single nucleotide polymorphisms, linkage disequilibrium, grid graphics.</p></p>
+            <p class="article-more-link">
+                <a href="/2016/08/21/LDheatmap/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://blog.xieguigang.me/2016/08/21/LDheatmap/" data-id="cis4u5mhp0000ssv4pvbk7szc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://blog.xieguigang.me/2016/08/21/LDheatmap/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/21/LDheatmap/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-OMIM" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/08/20/OMIM/">OMIM API tools manual</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/08/20/OMIM/">
+            <time datetime="2016-08-19T16:00:00.000Z" itemprop="datePublished">2016-08-20</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/OMIM/">OMIM</a>, <a class="tag-link" href="/tags/genetics/">genetics</a>, <a class="tag-link" href="/tags/vb-net/">vb.net</a>, <a class="tag-link" href="/tags/web-api/">web api</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p>﻿# OMIM_CLI [version 1.0.0.0]</p>
+<blockquote>
+<h3 id="OMIM®-Online-Mendelian-Inheritance-in-Man®"><a href="#OMIM®-Online-Mendelian-Inheritance-in-Man®" class="headerlink" title="OMIM® - Online Mendelian Inheritance in Man®"></a>OMIM® - Online Mendelian Inheritance in Man®</h3><p>Welcome to OMIM®, Online Mendelian Inheritance in Man®. OMIM is a comprehensive, authoritative compendium of human genes and genetic phenotypes that is freely available and updated daily.<br>The full-text, referenced overviews in OMIM contain information on all known mendelian disorders and over 15,000 genes. OMIM focuses on the relationship between phenotype and genotype.<br>It is updated daily, and the entries contain copious links to other genetics resources.        </p>
+<p>This database was initiated in the early 1960s by Dr. Victor A. McKusick as a catalog of mendelian traits and disorders, entitled Mendelian Inheritance in Man (MIM).<br>Twelve book editions of MIM were published between 1966 and 1998. The online version, OMIM, was created in 1985 by a collaboration between the National Library of Medicine and the William H. Welch Medical Library at Johns Hopkins.<br>It was made generally available on the internet starting in 1987. In 1995, OMIM was developed for the World Wide Web by NCBI, the National Center for Biotechnology Information.</p>
+<p>OMIM is authored and edited at the McKusick-Nathans Institute of Genetic Medicine, Johns Hopkins University School of Medicine, under the direction of Dr. Ada Hamosh.</p>
+<p>Copyright® 1966-2016 Johns Hopkins University.</p>
+<p>The OMIM® database including the collective data contained therein is the property of the Johns Hopkins University, which holds the copyright thereto.<br>The OMIM database is made available to the general public subject to certain restrictions. You may use the OMIM database and data obtained from this site for your personal use, for educational or scholarly use, or for research purposes only.<br>The OMIM database may not be copied, distributed, transmitted, duplicated, reduced or altered in any way for commercial purposes, or for the purpose of redistribution, without a license from the Johns Hopkins University.<br>Requests for information regarding a license for commercial use or redistribution of the OMIM database may be sent via e-mail to JHTT-Communications@jhmi.edu.</p>
+</blockquote></p>
+            <p class="article-more-link">
+                <a href="/2016/08/20/OMIM/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://blog.xieguigang.me/2016/08/20/OMIM/" data-id="cis2jwhn20000z0v4tw6xxyyv" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://blog.xieguigang.me/2016/08/20/OMIM/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/20/OMIM/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-d3js_datelines" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -1267,267 +1531,6 @@
 
 
 
-    <article id="post-chinese_rural_dog" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/08/05/chinese_rural_dog/">为什么我们瞧不起土狗？</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/08/05/chinese_rural_dog/">
-            <time datetime="2016-08-04T16:00:00.000Z" itemprop="datePublished">2016-08-05</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Chinese-rural-dog/">Chinese rural dog</a>, <a class="tag-link" href="/tags/中華田園犬/">中華田園犬</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p><strong>不是狗土，是你土。</strong></p>
-<p><img src="https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/dogs/photo/p1.jpg" alt=""></p>
-<p>中国的语言文字是美丽丰富的，但却没能给中国土狗取一个名字。<br>不是已经说了叫<strong>土狗</strong>吗？柴狗、黄狗、草狗、中华田园犬，不都是名字？</p>
-<p><strong>不是。</strong><br></p>
-            <p class="article-more-link">
-                <a href="/2016/08/05/chinese_rural_dog/#more">Read More</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://blog.xieguigang.me/2016/08/05/chinese_rural_dog/" data-id="cirgqpn190001i0v4j9p07q8j" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://blog.xieguigang.me/2016/08/05/chinese_rural_dog/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/05/chinese_rural_dog/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-Voyageur" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/08/05/Voyageur/">Voyageur</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/08/05/Voyageur/">
-            <time datetime="2016-08-04T16:00:00.000Z" itemprop="datePublished">2016-08-05</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Enigma/">Enigma</a>, <a class="tag-link" href="/tags/music/">music</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p><img src="http://p3.music.126.net/-mwfAZdT_g0W_JM-Po40gg==/2540971372876558.jpg?param=177y177" alt="Voyageur"></p>
-<p><strong>Voyageur</strong></p>
-<p>歌手： Enigma<br>发行时间：2005-04-11<br>发行公司： Virgin Germany<br></p>
-            <p class="article-more-link">
-                <a href="/2016/08/05/Voyageur/#more">Read More</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://blog.xieguigang.me/2016/08/05/Voyageur/" data-id="cirgqpn0p0000i0v4ddn1f7jd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://blog.xieguigang.me/2016/08/05/Voyageur/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/05/Voyageur/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
     <nav id="page-nav">
         <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
@@ -1541,7 +1544,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">14</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">22</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">16</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">22</span></li></ul>
         </div>
     </div>
 
@@ -1550,7 +1553,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/tags/3D/" style="font-size: 10px;">3D</a> <a href="/tags/3d/" style="font-size: 10px;">3d</a> <a href="/tags/3d-graphics/" style="font-size: 10px;">3d graphics</a> <a href="/tags/BI/" style="font-size: 10px;">BI</a> <a href="/tags/Chinese/" style="font-size: 10px;">Chinese</a> <a href="/tags/Chinese-rural-dog/" style="font-size: 10px;">Chinese rural dog</a> <a href="/tags/CodeProject/" style="font-size: 15px;">CodeProject</a> <a href="/tags/Compiler/" style="font-size: 10px;">Compiler</a> <a href="/tags/Desktop/" style="font-size: 10px;">Desktop</a> <a href="/tags/Enigma/" style="font-size: 13.33px;">Enigma</a> <a href="/tags/GCModeller/" style="font-size: 11.67px;">GCModeller</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Linq/" style="font-size: 10px;">Linq</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/PDB/" style="font-size: 10px;">PDB</a> <a href="/tags/Phylostratigraphic/" style="font-size: 10px;">Phylostratigraphic</a> <a href="/tags/R/" style="font-size: 11.67px;">R</a> <a href="/tags/SDK-document/" style="font-size: 10px;">SDK document</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Syntax/" style="font-size: 10px;">Syntax</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/VisualStudio/" style="font-size: 10px;">VisualStudio</a> <a href="/tags/WPF/" style="font-size: 10px;">WPF</a> <a href="/tags/XAML/" style="font-size: 10px;">XAML</a> <a href="/tags/YAML/" style="font-size: 10px;">YAML</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/architecture/" style="font-size: 11.67px;">architecture</a> <a href="/tags/art-work/" style="font-size: 10px;">art work</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/check-point/" style="font-size: 10px;">check-point</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/circos/" style="font-size: 11.67px;">circos</a> <a href="/tags/d3js/" style="font-size: 13.33px;">d3js</a> <a href="/tags/data-analysis/" style="font-size: 10px;">data analysis</a> <a href="/tags/data-visualization/" style="font-size: 10px;">data visualization</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/elementary-os/" style="font-size: 10px;">elementary os</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/force-directed/" style="font-size: 10px;">force directed</a> <a href="/tags/gdi/" style="font-size: 11.67px;">gdi+</a> <a href="/tags/genetics/" style="font-size: 10px;">genetics</a> <a href="/tags/github/" style="font-size: 13.33px;">github</a> <a href="/tags/interface/" style="font-size: 10px;">interface</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/languages/" style="font-size: 10px;">languages</a> <a href="/tags/libzplay/" style="font-size: 10px;">libzplay</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/music/" style="font-size: 16.67px;">music</a> <a href="/tags/my-works/" style="font-size: 10px;">my works</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/note/" style="font-size: 18.33px;">note</a> <a href="/tags/open-source/" style="font-size: 10px;">open-source</a> <a href="/tags/perl/" style="font-size: 10px;">perl</a> <a href="/tags/re0/" style="font-size: 10px;">re0</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/repost/" style="font-size: 16.67px;">repost</a> <a href="/tags/statics/" style="font-size: 10px;">statics</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/threading/" style="font-size: 10px;">threading</a> <a href="/tags/threadpool/" style="font-size: 10px;">threadpool</a> <a href="/tags/tricks/" style="font-size: 10px;">tricks</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/user-agent/" style="font-size: 10px;">user-agent</a> <a href="/tags/vb-net/" style="font-size: 20px;">vb.net</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-server/" style="font-size: 10px;">web server</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/works/" style="font-size: 10px;">works</a> <a href="/tags/中華田園犬/" style="font-size: 10px;">中華田園犬</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/前端设计/" style="font-size: 13.33px;">前端设计</a> <a href="/tags/数据视图/" style="font-size: 10px;">数据视图</a> <a href="/tags/架构/" style="font-size: 11.67px;">架构</a> <a href="/tags/架构设计/" style="font-size: 10px;">架构设计</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/转载搬运/" style="font-size: 16.67px;">转载搬运</a> <a href="/tags/鹿乃/" style="font-size: 10px;">鹿乃</a>
+            <a href="/tags/3D/" style="font-size: 10px;">3D</a> <a href="/tags/3d/" style="font-size: 10px;">3d</a> <a href="/tags/3d-graphics/" style="font-size: 10px;">3d graphics</a> <a href="/tags/BI/" style="font-size: 10px;">BI</a> <a href="/tags/Chinese/" style="font-size: 10px;">Chinese</a> <a href="/tags/Chinese-rural-dog/" style="font-size: 10px;">Chinese rural dog</a> <a href="/tags/CodeProject/" style="font-size: 15px;">CodeProject</a> <a href="/tags/Compiler/" style="font-size: 10px;">Compiler</a> <a href="/tags/Desktop/" style="font-size: 10px;">Desktop</a> <a href="/tags/Enigma/" style="font-size: 13.33px;">Enigma</a> <a href="/tags/GCModeller/" style="font-size: 11.67px;">GCModeller</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Linq/" style="font-size: 10px;">Linq</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OMIM/" style="font-size: 10px;">OMIM</a> <a href="/tags/PDB/" style="font-size: 10px;">PDB</a> <a href="/tags/Phylostratigraphic/" style="font-size: 10px;">Phylostratigraphic</a> <a href="/tags/R/" style="font-size: 13.33px;">R</a> <a href="/tags/R-squared/" style="font-size: 10px;">R-squared</a> <a href="/tags/SDK-document/" style="font-size: 10px;">SDK document</a> <a href="/tags/SNP/" style="font-size: 10px;">SNP</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Syntax/" style="font-size: 10px;">Syntax</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/VisualStudio/" style="font-size: 10px;">VisualStudio</a> <a href="/tags/WPF/" style="font-size: 10px;">WPF</a> <a href="/tags/XAML/" style="font-size: 10px;">XAML</a> <a href="/tags/YAML/" style="font-size: 10px;">YAML</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/architecture/" style="font-size: 11.67px;">architecture</a> <a href="/tags/art-work/" style="font-size: 10px;">art work</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/check-point/" style="font-size: 10px;">check-point</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/circos/" style="font-size: 11.67px;">circos</a> <a href="/tags/d3js/" style="font-size: 13.33px;">d3js</a> <a href="/tags/data-analysis/" style="font-size: 10px;">data analysis</a> <a href="/tags/data-visualization/" style="font-size: 10px;">data visualization</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/elementary-os/" style="font-size: 10px;">elementary os</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/force-directed/" style="font-size: 10px;">force directed</a> <a href="/tags/gdi/" style="font-size: 11.67px;">gdi+</a> <a href="/tags/genetics/" style="font-size: 13.33px;">genetics</a> <a href="/tags/github/" style="font-size: 13.33px;">github</a> <a href="/tags/heatmap/" style="font-size: 10px;">heatmap</a> <a href="/tags/interface/" style="font-size: 10px;">interface</a> <a href="/tags/javascript/" style="font-size: 16.67px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/languages/" style="font-size: 10px;">languages</a> <a href="/tags/libzplay/" style="font-size: 10px;">libzplay</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/music/" style="font-size: 16.67px;">music</a> <a href="/tags/my-works/" style="font-size: 10px;">my works</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/note/" style="font-size: 18.33px;">note</a> <a href="/tags/open-source/" style="font-size: 10px;">open-source</a> <a href="/tags/perl/" style="font-size: 10px;">perl</a> <a href="/tags/re0/" style="font-size: 10px;">re0</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/repost/" style="font-size: 16.67px;">repost</a> <a href="/tags/statics/" style="font-size: 10px;">statics</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/threading/" style="font-size: 10px;">threading</a> <a href="/tags/threadpool/" style="font-size: 10px;">threadpool</a> <a href="/tags/tricks/" style="font-size: 10px;">tricks</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/user-agent/" style="font-size: 10px;">user-agent</a> <a href="/tags/vb-net/" style="font-size: 20px;">vb.net</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-api/" style="font-size: 10px;">web api</a> <a href="/tags/web-server/" style="font-size: 10px;">web server</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/works/" style="font-size: 10px;">works</a> <a href="/tags/中華田園犬/" style="font-size: 10px;">中華田園犬</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/前端设计/" style="font-size: 13.33px;">前端设计</a> <a href="/tags/数据视图/" style="font-size: 10px;">数据视图</a> <a href="/tags/架构/" style="font-size: 11.67px;">架构</a> <a href="/tags/架构设计/" style="font-size: 10px;">架构设计</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/转载搬运/" style="font-size: 16.67px;">转载搬运</a> <a href="/tags/鹿乃/" style="font-size: 10px;">鹿乃</a>
         </div>
     </div>
 
