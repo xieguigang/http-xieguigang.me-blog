@@ -15,16 +15,16 @@ Manhattan plotA Manhattan plot is a type of scatter plot, usually used to displa
 <meta property="og:description" content="Manhattan plot in VisualBasicGithub: https://github.com/xieguigang/ManhattanPlot
 
 Manhattan plotA Manhattan plot is a type of scatter plot, usually used to display data with a large number of data-po">
-<meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/ManhattanPlot/master/manhattan_plot_test.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/ManhattanPlot/master/manhattan_plot_test_sampleName.png">
-<meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/ManhattanPlot/master/manhattan_plot_test_interval.png">
-<meta property="og:updated_time" content="2016-08-24T17:03:32.361Z">
+<meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/ManhattanPlot/master/example/manhattan_plot_test_chr.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/ManhattanPlot/master/example/manhattan_plot_test_sampleName.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/xieguigang/ManhattanPlot/master/example/manhattan_plot_test_interval.png">
+<meta property="og:updated_time" content="2016-08-25T12:32:48.099Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ManhattanPlot">
 <meta name="twitter:description" content="Manhattan plot in VisualBasicGithub: https://github.com/xieguigang/ManhattanPlot
 
 Manhattan plotA Manhattan plot is a type of scatter plot, usually used to display data with a large number of data-po">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/xieguigang/ManhattanPlot/master/manhattan_plot_test.png">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/xieguigang/ManhattanPlot/master/example/manhattan_plot_test_chr.png">
     
 
     
@@ -256,11 +256,11 @@ Manhattan plotA Manhattan plot is a type of scatter plot, usually used to displa
 <p>Canvas drawing of the <code>Manhattan Plot</code> is super easy by using just one function:</p>
 <figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Canvas.Plot(System.Collections.Generic.IEnumerable(<span class="keyword">Of</span> ManhattanPlot.SNP), <span class="built_in">Integer</span>, <span class="built_in">Integer</span>, System.Collections.Generic.Dictionary(<span class="keyword">Of</span> <span class="built_in">String</span>, <span class="built_in">String</span>), System.Drawing.Size, <span class="built_in">Integer</span>, <span class="built_in">Boolean</span>, <span class="built_in">Boolean</span>, <span class="built_in">Boolean</span>, <span class="built_in">String</span>, <span class="built_in">String</span>) <span class="keyword">As</span> System.Drawing.Bitmap</span><br></pre></td></tr></table></figure>
 <h4 id="Color-patterns"><a href="#Color-patterns" class="headerlink" title="Color patterns"></a>Color patterns</h4><figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> image <span class="keyword">As</span> Bitmap = data.Plot(colorPattern:=<span class="string">"chr"</span>)</span><br><span class="line"><span class="keyword">Call</span> image.SaveAs(<span class="string">"./manhattan_plot_test.png"</span>, ImageFormats.Png)</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/xieguigang/ManhattanPlot/master/manhattan_plot_test.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/xieguigang/ManhattanPlot/master/example/manhattan_plot_test_chr.png" alt=""></p>
 <figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> image <span class="keyword">As</span> Bitmap = data.Plot(colorPattern:=<span class="string">"sampleName"</span>)</span><br><span class="line"><span class="keyword">Call</span> image.SaveAs(<span class="string">"./manhattan_plot_test_sampleName.png"</span>, ImageFormats.Png)</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/xieguigang/ManhattanPlot/master/manhattan_plot_test_sampleName.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/xieguigang/ManhattanPlot/master/example/manhattan_plot_test_sampleName.png" alt=""></p>
 <figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> image <span class="keyword">As</span> Bitmap = data.Plot(colorPattern:=<span class="string">"interval"</span>)</span><br><span class="line"><span class="keyword">Call</span> image.SaveAs(<span class="string">"./manhattan_plot_test_interval.png"</span>, ImageFormats.Png)</span><br></pre></td></tr></table></figure>
-<p><img src="https://raw.githubusercontent.com/xieguigang/ManhattanPlot/master/manhattan_plot_test_interval.png" alt=""></p>
+<p><img src="https://raw.githubusercontent.com/xieguigang/ManhattanPlot/master/example/manhattan_plot_test_interval.png" alt=""></p>
 
         
         </div>
