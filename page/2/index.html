@@ -75,14 +75,14 @@
             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -94,11 +94,11 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -126,7 +126,7 @@
                 <td>
                     
     <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
     </div>
 
                 </td>
@@ -146,16 +146,16 @@
             <h2 id="name">xieguigang</h2>
             <h3 id="title">GCModeller chief developer</h3>
             <span id="location"><i class="fa fa-map-marker"></i>GuiLin, China (中國 · 桂林)</span>
-            <a id="follow" target="_blank" href="https://github.com/xieguigang">FOLLOW</a>
+            <a id="follow" target="_blank" href="https://github.com/xieguigang">关注我</a>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                50
-                <span>posts</span>
+                51
+                <span>文章</span>
             </div>
             <div class="article-info-block">
-                102
-                <span>tags</span>
+                105
+                <span>标签</span>
             </div>
         </div>
         
@@ -191,7 +191,7 @@
 
             
             <section id="main">
-    <article id="post-vbnet_threadpool" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-d3js_datelines" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -200,7 +200,7 @@
                 
     
         <h1 itemprop="name">
-            <a class="article-title" href="/2016/08/13/vbnet_threadpool/">VB.NET 线程池</a>
+            <a class="article-title" href="/2016/08/13/d3js_datelines/">D3.js制作日期折线图</a>
         </h1>
     
 
@@ -209,7 +209,7 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2016/08/13/vbnet_threadpool/">
+        <a href="/2016/08/13/d3js_datelines/">
             <time datetime="2016-08-12T16:00:00.000Z" itemprop="datePublished">2016-08-13</time>
         </a>
     </div>
@@ -219,7 +219,7 @@
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/threading/">threading</a>, <a class="tag-link" href="/tags/threadpool/">threadpool</a>, <a class="tag-link" href="/tags/vb-net/">vb.net</a>, <a class="tag-link" href="/tags/web-server/">web server</a>, <a class="tag-link" href="/tags/线程池/">线程池</a>
+        <a class="tag-link" href="/tags/d3js/">d3js</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
     </div>
 
                     </div>
@@ -228,14 +228,12 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            <p><blockquote>
-<p>水是生命之源，计算机资源也一样。</p>
-</blockquote>
-<p>每一线程尤如一滴水，你花一滴，我花一滴，你还一滴，我还一滴，就象游兵散将一样，线程越多，越复杂混乱。<strong>而每一个线程创建需要开销，活动的线程也需要开销。过多的线程导致系统内存占用过度或系统资源不足。</strong>为了解决线程生命周期开销问题和资源不足问题，创建线程池，让每滴水（线程）纳入统一管理。特别是那些生存期比较短暂的线程。使用线程池执行任务比每次完成一个任务时都创建一个全新的线程，随后又删除掉的做法更有效率。</p>
-<h2 id="一、线程池管理"><a href="#一、线程池管理" class="headerlink" title="一、线程池管理"></a>一、线程池管理</h2><p>线程池管埋是指在多线程应用程序的初始化过程屮创建线程的一个集合，当需要线程时，为新任务重用这些线程，而不是创建新的线程的过程。这个过程中创建的线程数量通常部是固定的。然而，增加可用的线程数量也是可以的。池中的每个线程都被分派一个任务，当任务完成时，线程就返回线程池中等待下一次分派。</p>
-<p><img src="https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/vbnet/threadpool/20160616100734269.png" alt="进程池模型"></p></p>
+            <p><h3 id="一、引入文件"><a href="#一、引入文件" class="headerlink" title="一、引入文件"></a>一、引入文件</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://d3js.org/d3.v3.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="二、创建容器"><a href="#二、创建容器" class="headerlink" title="二、创建容器"></a>二、创建容器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> margin = &#123;top: <span class="number">20</span>, right: <span class="number">20</span>, bottom: <span class="number">30</span>, left: <span class="number">50</span>&#125;,</span><br><span class="line">    width = <span class="number">590</span> - margin.left - margin.right,</span><br><span class="line">    height = <span class="number">300</span> - margin.top - margin.bottom;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> svg = d3.select(<span class="string">"body"</span>).append(<span class="string">"svg"</span>)</span><br><span class="line">    .attr(<span class="string">"width"</span>, width + margin.left + margin.right)</span><br><span class="line">    .attr(<span class="string">"height"</span>, height + margin.top + margin.bottom)</span><br><span class="line">    .append(<span class="string">"g"</span>)</span><br><span class="line">    .attr(<span class="string">"transform"</span>, <span class="string">"translate("</span> + margin.left + <span class="string">","</span> + margin.top + <span class="string">")"</span>);</span><br></pre></td></tr></table></figure>
+<p>需要注意的几个尺寸：svg画布的尺寸、chart图片的尺寸、margin值，另外svg的坐标原点是左上角，向右为正，向下为正。这对之后的各种元素的<code>transition</code>很重要。</p>
+<p>可以参考一下这篇文章：<a href="http://bl.ocks.org/mbostock/3019563">Margin Convention</a><br></p>
             <p class="article-more-link">
-                <a href="/2016/08/13/vbnet_threadpool/#more">Read More</a>
+                <a href="/2016/08/13/d3js_datelines/#more">查看更多</a>
             </p>
         
         </div>
@@ -246,7 +244,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/13/vbnet_threadpool/" data-id="cirtav7520000asv437dp6ftn" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/13/d3js_datelines/" data-id="cirtbc9zl00007sv4eacw55q1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -314,7 +312,140 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/13/vbnet_threadpool/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/13/vbnet_threadpool/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/08/13/d3js_datelines/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/13/d3js_datelines/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-vbnet_threadpool" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/08/13/vbnet_threadpool/">VB.NET 线程池</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/08/13/vbnet_threadpool/">
+            <time datetime="2016-08-12T16:00:00.000Z" itemprop="datePublished">2016-08-13</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/threading/">threading</a>, <a class="tag-link" href="/tags/threadpool/">threadpool</a>, <a class="tag-link" href="/tags/vb-net/">vb.net</a>, <a class="tag-link" href="/tags/web-server/">web server</a>, <a class="tag-link" href="/tags/线程池/">线程池</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><blockquote>
+<p>水是生命之源，计算机资源也一样。</p>
+</blockquote>
+<p>每一线程尤如一滴水，你花一滴，我花一滴，你还一滴，我还一滴，就象游兵散将一样，线程越多，越复杂混乱。<strong>而每一个线程创建需要开销，活动的线程也需要开销。过多的线程导致系统内存占用过度或系统资源不足。</strong>为了解决线程生命周期开销问题和资源不足问题，创建线程池，让每滴水（线程）纳入统一管理。特别是那些生存期比较短暂的线程。使用线程池执行任务比每次完成一个任务时都创建一个全新的线程，随后又删除掉的做法更有效率。</p>
+<h2 id="一、线程池管理"><a href="#一、线程池管理" class="headerlink" title="一、线程池管理"></a>一、线程池管理</h2><p>线程池管埋是指在多线程应用程序的初始化过程屮创建线程的一个集合，当需要线程时，为新任务重用这些线程，而不是创建新的线程的过程。这个过程中创建的线程数量通常部是固定的。然而，增加可用的线程数量也是可以的。池中的每个线程都被分派一个任务，当任务完成时，线程就返回线程池中等待下一次分派。</p>
+<p><img src="https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/vbnet/threadpool/20160616100734269.png" alt="进程池模型"></p></p>
+            <p class="article-more-link">
+                <a href="/2016/08/13/vbnet_threadpool/#more">查看更多</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://blog.xieguigang.me/2016/08/13/vbnet_threadpool/" data-id="cirtav7520000asv437dp6ftn" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://blog.xieguigang.me/2016/08/13/vbnet_threadpool/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/13/vbnet_threadpool/">评论</a>
     
 
         </footer>
@@ -368,7 +499,7 @@
 <p>据新华社报道，截至 2014 年 3 月，全球汉语学习人数已超过一亿。孔子学院开遍世界、各国中小学生争相学汉语的报道也屡见于国内媒体。似乎今天谁不学汉语，谁就要落后于时代。看起来，汉语已随着中国国力的提升成为除英语外世界上最重要的语言。</p>
 <p>可事实真的如此吗？<br></p>
             <p class="article-more-link">
-                <a href="/2016/08/09/chinese_language_not_so_strong/#more">Read More</a>
+                <a href="/2016/08/09/chinese_language_not_so_strong/#more">查看更多</a>
             </p>
         
         </div>
@@ -379,7 +510,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/09/chinese_language_not_so_strong/" data-id="cirmxtnid0000f4v4p022xbmi" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/09/chinese_language_not_so_strong/" data-id="cirmxtnid0000f4v4p022xbmi" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -447,7 +578,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/09/chinese_language_not_so_strong/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/09/chinese_language_not_so_strong/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/08/09/chinese_language_not_so_strong/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/09/chinese_language_not_so_strong/">评论</a>
     
 
         </footer>
@@ -501,7 +632,7 @@
 </blockquote>
 <p><img src="https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/ajax-loader.gif" alt="load more"></p></p>
             <p class="article-more-link">
-                <a href="/2016/08/09/jquery_loadmore/#more">Read More</a>
+                <a href="/2016/08/09/jquery_loadmore/#more">查看更多</a>
             </p>
         
         </div>
@@ -512,7 +643,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/09/jquery_loadmore/" data-id="cirmdnzb800005cv4k7kxk2b1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/09/jquery_loadmore/" data-id="cirmdnzb800005cv4k7kxk2b1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -580,7 +711,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/09/jquery_loadmore/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/09/jquery_loadmore/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/08/09/jquery_loadmore/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/09/jquery_loadmore/">评论</a>
     
 
         </footer>
@@ -633,7 +764,7 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://yourdomain.com/script.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>同步模式，又称阻塞模式，会阻止浏览器的后续处理，停止了后续的解析，因此停止了后续的文件加载（如图像）、渲染、代码执行。<br><code>js</code>之所以要同步执行，是因为<code>js</code>中可能有输出<code>document</code>内容、修改<code>dom</code>、重定向等行为，所以默认同步执行才是安全的。<br>以前的一般建议是把<code>&lt;script&gt;</code>放在页面末尾<code>&lt;/body&gt;</code>之前，这样尽可能减少这种阻塞行为，而先让页面展示出来。<br>简单说：加载的网络<code>timeline</code>是瀑布模型，而异步加载的<code>timeline</code>是并发模型。<br></p>
             <p class="article-more-link">
-                <a href="/2016/08/08/javascript_async_loading/#more">Read More</a>
+                <a href="/2016/08/08/javascript_async_loading/#more">查看更多</a>
             </p>
         
         </div>
@@ -644,7 +775,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/08/javascript_async_loading/" data-id="cirm86gfo000050v4jq698oe2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/08/javascript_async_loading/" data-id="cirm86gfo000050v4jq698oe2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -712,7 +843,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/08/javascript_async_loading/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/08/javascript_async_loading/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/08/08/javascript_async_loading/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/08/javascript_async_loading/">评论</a>
     
 
         </footer>
@@ -787,7 +918,7 @@
 <h6 id="Server-Code"><a href="#Server-Code" class="headerlink" title="Server Code"></a>Server Code</h6><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Dim dt As DataTable = mysql.Fetch(SQL).Tables(0)</span><br><span class="line">Dim data As date_count() &lt;=</span><br><span class="line"></span><br><span class="line">    From row As DataRow</span><br><span class="line">    In dt.Rows</span><br><span class="line">    Select dd = New date_count With &#123;</span><br><span class="line">        .date = CStr(row(MySqlREST.[date])),</span><br><span class="line">        .count = CInt(row(MySqlREST.count))</span><br><span class="line">    &#125;</span><br><span class="line">    Order By dd.date Ascending</span><br><span class="line"></span><br><span class="line">Call response.WriteJSON(data)</span><br></pre></td></tr></table></figure>
 <h6 id="JSON-output-Example"><a href="#JSON-output-Example" class="headerlink" title="JSON output Example"></a>JSON output Example</h6><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"count"</span>: <span class="number">84</span>,</span><br><span class="line">    <span class="attr">"date"</span>: <span class="string">"2016-07-08"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"count"</span>: <span class="number">141</span>,</span><br><span class="line">    <span class="attr">"date"</span>: <span class="string">"2016-07-09"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"count"</span>: <span class="number">33</span>,</span><br><span class="line">    <span class="attr">"date"</span>: <span class="string">"2016-07-10"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"count"</span>: <span class="number">41</span>,</span><br><span class="line">    <span class="attr">"date"</span>: <span class="string">"2016-07-11"</span></span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
             <p class="article-more-link">
-                <a href="/2016/08/07/mysql_analysis/#more">Read More</a>
+                <a href="/2016/08/07/mysql_analysis/#more">查看更多</a>
             </p>
         
         </div>
@@ -798,7 +929,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/07/mysql_analysis/" data-id="cirm86ggb000150v432dpsmq2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/07/mysql_analysis/" data-id="cirm86ggb000150v432dpsmq2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -866,7 +997,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/07/mysql_analysis/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/07/mysql_analysis/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/08/07/mysql_analysis/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/07/mysql_analysis/">评论</a>
     
 
         </footer>
@@ -920,7 +1051,7 @@
 <li>3D Projection</li>
 </ul></p>
             <p class="article-more-link">
-                <a href="/2016/08/07/network_canvas_3d/#more">Read More</a>
+                <a href="/2016/08/07/network_canvas_3d/#more">查看更多</a>
             </p>
         
         </div>
@@ -931,7 +1062,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/07/network_canvas_3d/" data-id="cirkaum120000psv4yemq3azu" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/07/network_canvas_3d/" data-id="cirkaum120000psv4yemq3azu" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -999,7 +1130,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/07/network_canvas_3d/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/07/network_canvas_3d/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/08/07/network_canvas_3d/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/07/network_canvas_3d/">评论</a>
     
 
         </footer>
@@ -1058,7 +1189,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/06/pdb_mol_viewer/" data-id="cirkaum1y0001psv4of8lpynd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/06/pdb_mol_viewer/" data-id="cirkaum1y0001psv4of8lpynd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1126,7 +1257,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/06/pdb_mol_viewer/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/06/pdb_mol_viewer/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/08/06/pdb_mol_viewer/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/06/pdb_mol_viewer/">评论</a>
     
 
         </footer>
@@ -1178,7 +1309,7 @@
 <p>中国的语言文字是美丽丰富的，但却没能给中国土狗取一个名字。<br>不是已经说了叫<strong>土狗</strong>吗？柴狗、黄狗、草狗、中华田园犬，不都是名字？</p>
 <p><strong>不是。</strong><br></p>
             <p class="article-more-link">
-                <a href="/2016/08/05/chinese_rural_dog/#more">Read More</a>
+                <a href="/2016/08/05/chinese_rural_dog/#more">查看更多</a>
             </p>
         
         </div>
@@ -1189,7 +1320,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/05/chinese_rural_dog/" data-id="cirgqpn190001i0v4j9p07q8j" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/05/chinese_rural_dog/" data-id="cirgqpn190001i0v4j9p07q8j" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1257,7 +1388,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/05/chinese_rural_dog/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/05/chinese_rural_dog/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/08/05/chinese_rural_dog/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/05/chinese_rural_dog/">评论</a>
     
 
         </footer>
@@ -1308,7 +1439,7 @@
 <p><strong>Voyageur</strong></p>
 <p>歌手： Enigma<br>发行时间：2005-04-11<br>发行公司： Virgin Germany<br></p>
             <p class="article-more-link">
-                <a href="/2016/08/05/Voyageur/#more">Read More</a>
+                <a href="/2016/08/05/Voyageur/#more">查看更多</a>
             </p>
         
         </div>
@@ -1319,7 +1450,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/05/Voyageur/" data-id="cirgqpn0p0000i0v4ddn1f7jd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/05/Voyageur/" data-id="cirgqpn0p0000i0v4ddn1f7jd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1387,137 +1518,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/05/Voyageur/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/05/Voyageur/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-The_Screen_Behind_The_Mirror" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/08/04/The_Screen_Behind_The_Mirror/">The Screen Behind The Mirror</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/08/04/The_Screen_Behind_The_Mirror/">
-            <time datetime="2016-08-03T16:00:00.000Z" itemprop="datePublished">2016-08-04</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/Enigma/">Enigma</a>, <a class="tag-link" href="/tags/music/">music</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><p><img src="http://p3.music.126.net/Mj0slt54KXyfpdVQn4FPdw==/2540971372169531.jpg?param=177y177" alt="The Screen Behind The Mirror"></p>
-<p><strong>The Screen Behind The Mirror</strong></p>
-<p>歌手： Enigma<br>发行时间：2004-10-11<br>发行公司： Virgin Germany</p></p>
-            <p class="article-more-link">
-                <a href="/2016/08/04/The_Screen_Behind_The_Mirror/#more">Read More</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://blog.xieguigang.me/2016/08/04/The_Screen_Behind_The_Mirror/" data-id="cirfgfxfy0000mwv467iktamx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://blog.xieguigang.me/2016/08/04/The_Screen_Behind_The_Mirror/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/04/The_Screen_Behind_The_Mirror/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/08/05/Voyageur/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/05/Voyageur/">评论</a>
     
 
         </footer>
@@ -1528,7 +1529,7 @@
 
 
     <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+        <a class="extend prev" rel="prev" href="/">&laquo; 上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/3/">下一页 &raquo;</a>
     </nav>
 </section>
             
@@ -1538,25 +1539,25 @@
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">archives</h3>
+        <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">22</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">22</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">tag cloud</h3>
+        <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/3D/" style="font-size: 10px;">3D</a> <a href="/tags/3d/" style="font-size: 10px;">3d</a> <a href="/tags/3d-graphics/" style="font-size: 10px;">3d graphics</a> <a href="/tags/BI/" style="font-size: 10px;">BI</a> <a href="/tags/CLI/" style="font-size: 10px;">CLI</a> <a href="/tags/Chinese/" style="font-size: 10px;">Chinese</a> <a href="/tags/Chinese-rural-dog/" style="font-size: 10px;">Chinese rural dog</a> <a href="/tags/CodeProject/" style="font-size: 14.29px;">CodeProject</a> <a href="/tags/Compiler/" style="font-size: 10px;">Compiler</a> <a href="/tags/Desktop/" style="font-size: 10px;">Desktop</a> <a href="/tags/Enigma/" style="font-size: 12.86px;">Enigma</a> <a href="/tags/GAM/" style="font-size: 10px;">GAM</a> <a href="/tags/GCModeller/" style="font-size: 11.43px;">GCModeller</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Linq/" style="font-size: 10px;">Linq</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Manhattan-Plot/" style="font-size: 10px;">Manhattan Plot</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OMIM/" style="font-size: 10px;">OMIM</a> <a href="/tags/PDB/" style="font-size: 10px;">PDB</a> <a href="/tags/Phylostratigraphic/" style="font-size: 10px;">Phylostratigraphic</a> <a href="/tags/R/" style="font-size: 14.29px;">R</a> <a href="/tags/R-squared/" style="font-size: 10px;">R-squared</a> <a href="/tags/SDK-document/" style="font-size: 10px;">SDK document</a> <a href="/tags/SNP/" style="font-size: 14.29px;">SNP</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Syntax/" style="font-size: 10px;">Syntax</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/VisualStudio/" style="font-size: 10px;">VisualStudio</a> <a href="/tags/WPF/" style="font-size: 10px;">WPF</a> <a href="/tags/XAML/" style="font-size: 10px;">XAML</a> <a href="/tags/YAML/" style="font-size: 10px;">YAML</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/architecture/" style="font-size: 11.43px;">architecture</a> <a href="/tags/art-work/" style="font-size: 10px;">art work</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/check-point/" style="font-size: 10px;">check-point</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/circos/" style="font-size: 11.43px;">circos</a> <a href="/tags/cytoscape-js/" style="font-size: 10px;">cytoscape.js</a> <a href="/tags/d3js/" style="font-size: 12.86px;">d3js</a> <a href="/tags/data-analysis/" style="font-size: 10px;">data analysis</a> <a href="/tags/data-visualization/" style="font-size: 10px;">data visualization</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/elementary-os/" style="font-size: 10px;">elementary os</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/force-directed/" style="font-size: 10px;">force directed</a> <a href="/tags/gdi/" style="font-size: 11.43px;">gdi+</a> <a href="/tags/genetics/" style="font-size: 12.86px;">genetics</a> <a href="/tags/github/" style="font-size: 14.29px;">github</a> <a href="/tags/heatmap/" style="font-size: 10px;">heatmap</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/interface/" style="font-size: 10px;">interface</a> <a href="/tags/javascript/" style="font-size: 17.14px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/languages/" style="font-size: 10px;">languages</a> <a href="/tags/libzplay/" style="font-size: 10px;">libzplay</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/mgcv/" style="font-size: 10px;">mgcv</a> <a href="/tags/music/" style="font-size: 15.71px;">music</a> <a href="/tags/my-works/" style="font-size: 10px;">my works</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/note/" style="font-size: 18.57px;">note</a> <a href="/tags/open-source/" style="font-size: 10px;">open-source</a> <a href="/tags/perl/" style="font-size: 10px;">perl</a> <a href="/tags/pipeline/" style="font-size: 10px;">pipeline</a> <a href="/tags/re0/" style="font-size: 10px;">re0</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/repost/" style="font-size: 15.71px;">repost</a> <a href="/tags/statics/" style="font-size: 10px;">statics</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/threading/" style="font-size: 10px;">threading</a> <a href="/tags/threadpool/" style="font-size: 10px;">threadpool</a> <a href="/tags/tricks/" style="font-size: 10px;">tricks</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/user-agent/" style="font-size: 10px;">user-agent</a> <a href="/tags/vb-net/" style="font-size: 20px;">vb.net</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-api/" style="font-size: 10px;">web api</a> <a href="/tags/web-server/" style="font-size: 10px;">web server</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/works/" style="font-size: 10px;">works</a> <a href="/tags/中華田園犬/" style="font-size: 10px;">中華田園犬</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/前端设计/" style="font-size: 12.86px;">前端设计</a> <a href="/tags/数据分析/" style="font-size: 10px;">数据分析</a> <a href="/tags/数据可视化/" style="font-size: 11.43px;">数据可视化</a> <a href="/tags/数据视图/" style="font-size: 10px;">数据视图</a> <a href="/tags/架构/" style="font-size: 11.43px;">架构</a> <a href="/tags/架构设计/" style="font-size: 10px;">架构设计</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/转载搬运/" style="font-size: 15.71px;">转载搬运</a> <a href="/tags/连锁不平衡/" style="font-size: 11.43px;">连锁不平衡</a> <a href="/tags/遗传学/" style="font-size: 11.43px;">遗传学</a> <a href="/tags/非线性拟合/" style="font-size: 10px;">非线性拟合</a> <a href="/tags/鹿乃/" style="font-size: 10px;">鹿乃</a>
+            <a href="/tags/3D/" style="font-size: 10px;">3D</a> <a href="/tags/3d/" style="font-size: 10px;">3d</a> <a href="/tags/3d-graphics/" style="font-size: 10px;">3d graphics</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/BI/" style="font-size: 10px;">BI</a> <a href="/tags/CLI/" style="font-size: 10px;">CLI</a> <a href="/tags/Chinese/" style="font-size: 10px;">Chinese</a> <a href="/tags/Chinese-rural-dog/" style="font-size: 10px;">Chinese rural dog</a> <a href="/tags/CodeProject/" style="font-size: 14.29px;">CodeProject</a> <a href="/tags/Compiler/" style="font-size: 10px;">Compiler</a> <a href="/tags/Desktop/" style="font-size: 10px;">Desktop</a> <a href="/tags/Dictionary/" style="font-size: 10px;">Dictionary</a> <a href="/tags/Enigma/" style="font-size: 12.86px;">Enigma</a> <a href="/tags/GAM/" style="font-size: 10px;">GAM</a> <a href="/tags/GCModeller/" style="font-size: 11.43px;">GCModeller</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Linq/" style="font-size: 10px;">Linq</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Manhattan-Plot/" style="font-size: 10px;">Manhattan Plot</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OMIM/" style="font-size: 10px;">OMIM</a> <a href="/tags/PDB/" style="font-size: 10px;">PDB</a> <a href="/tags/Phylostratigraphic/" style="font-size: 10px;">Phylostratigraphic</a> <a href="/tags/R/" style="font-size: 14.29px;">R</a> <a href="/tags/R-squared/" style="font-size: 10px;">R-squared</a> <a href="/tags/SDK-document/" style="font-size: 10px;">SDK document</a> <a href="/tags/SNP/" style="font-size: 14.29px;">SNP</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Syntax/" style="font-size: 10px;">Syntax</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/VisualStudio/" style="font-size: 10px;">VisualStudio</a> <a href="/tags/WPF/" style="font-size: 10px;">WPF</a> <a href="/tags/XAML/" style="font-size: 10px;">XAML</a> <a href="/tags/YAML/" style="font-size: 10px;">YAML</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/architecture/" style="font-size: 11.43px;">architecture</a> <a href="/tags/art-work/" style="font-size: 10px;">art work</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/check-point/" style="font-size: 10px;">check-point</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/circos/" style="font-size: 11.43px;">circos</a> <a href="/tags/cytoscape-js/" style="font-size: 11.43px;">cytoscape.js</a> <a href="/tags/d3js/" style="font-size: 12.86px;">d3js</a> <a href="/tags/data-analysis/" style="font-size: 10px;">data analysis</a> <a href="/tags/data-visualization/" style="font-size: 10px;">data visualization</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/elementary-os/" style="font-size: 10px;">elementary os</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/force-directed/" style="font-size: 10px;">force directed</a> <a href="/tags/gdi/" style="font-size: 11.43px;">gdi+</a> <a href="/tags/genetics/" style="font-size: 12.86px;">genetics</a> <a href="/tags/github/" style="font-size: 14.29px;">github</a> <a href="/tags/heatmap/" style="font-size: 10px;">heatmap</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/interface/" style="font-size: 10px;">interface</a> <a href="/tags/javascript/" style="font-size: 17.14px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/languages/" style="font-size: 10px;">languages</a> <a href="/tags/libzplay/" style="font-size: 10px;">libzplay</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/mgcv/" style="font-size: 10px;">mgcv</a> <a href="/tags/music/" style="font-size: 15.71px;">music</a> <a href="/tags/my-works/" style="font-size: 10px;">my works</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/note/" style="font-size: 18.57px;">note</a> <a href="/tags/open-source/" style="font-size: 10px;">open-source</a> <a href="/tags/perl/" style="font-size: 10px;">perl</a> <a href="/tags/pipeline/" style="font-size: 10px;">pipeline</a> <a href="/tags/re0/" style="font-size: 10px;">re0</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/repost/" style="font-size: 15.71px;">repost</a> <a href="/tags/statics/" style="font-size: 10px;">statics</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/threading/" style="font-size: 10px;">threading</a> <a href="/tags/threadpool/" style="font-size: 10px;">threadpool</a> <a href="/tags/tricks/" style="font-size: 10px;">tricks</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/user-agent/" style="font-size: 10px;">user-agent</a> <a href="/tags/vb-net/" style="font-size: 20px;">vb.net</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-api/" style="font-size: 10px;">web api</a> <a href="/tags/web-server/" style="font-size: 10px;">web server</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/works/" style="font-size: 10px;">works</a> <a href="/tags/中華田園犬/" style="font-size: 10px;">中華田園犬</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/前端设计/" style="font-size: 12.86px;">前端设计</a> <a href="/tags/数据分析/" style="font-size: 10px;">数据分析</a> <a href="/tags/数据可视化/" style="font-size: 11.43px;">数据可视化</a> <a href="/tags/数据视图/" style="font-size: 10px;">数据视图</a> <a href="/tags/架构/" style="font-size: 11.43px;">架构</a> <a href="/tags/架构设计/" style="font-size: 10px;">架构设计</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/转载搬运/" style="font-size: 15.71px;">转载搬运</a> <a href="/tags/连锁不平衡/" style="font-size: 11.43px;">连锁不平衡</a> <a href="/tags/遗传学/" style="font-size: 11.43px;">遗传学</a> <a href="/tags/非线性拟合/" style="font-size: 10px;">非线性拟合</a> <a href="/tags/鹿乃/" style="font-size: 10px;">鹿乃</a>
         </div>
     </div>
 
     
         
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
+        <h3 class="widget-title">链接</h3>
         <div class="widget">
             <ul>
                 

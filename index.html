@@ -75,14 +75,14 @@
             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -94,11 +94,11 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: 'Posts',
-            PAGES: 'Pages',
-            CATEGORIES: 'Categories',
-            TAGS: 'Tags',
-            UNTITLED: '(Untitled)',
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -126,7 +126,7 @@
                 <td>
                     
     <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
     </div>
 
                 </td>
@@ -146,16 +146,16 @@
             <h2 id="name">xieguigang</h2>
             <h3 id="title">GCModeller chief developer</h3>
             <span id="location"><i class="fa fa-map-marker"></i>GuiLin, China (中國 · 桂林)</span>
-            <a id="follow" target="_blank" href="https://github.com/xieguigang">FOLLOW</a>
+            <a id="follow" target="_blank" href="https://github.com/xieguigang">关注我</a>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                50
-                <span>posts</span>
+                51
+                <span>文章</span>
             </div>
             <div class="article-info-block">
-                102
-                <span>tags</span>
+                105
+                <span>标签</span>
             </div>
         </div>
         
@@ -191,6 +191,142 @@
 
             
             <section id="main">
+    <article id="post-js_string_array" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2016/09/02/js_string_array/">Javascript 中的String对象、Array对象、Dictionary</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/09/02/js_string_array/">
+            <time datetime="2016-09-01T16:00:00.000Z" itemprop="datePublished">2016-09-02</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Array/">Array</a>, <a class="tag-link" href="/tags/Dictionary/">Dictionary</a>, <a class="tag-link" href="/tags/String/">String</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><h2 id="String对象"><a href="#String对象" class="headerlink" title="String对象"></a>String对象</h2><ul>
+<li><code>length</code>属性<br>  获取字符串的字符个数。（无论中文字符还是英文字符都算1个字符。）</li>
+<li><code>charAt(index)</code>方法<br>  获取指定索引位置的字符。（索引从0开始）</li>
+<li><code>indexOf(‘字符串’,startIndex)</code>方法<br>  获取指定字符串第一次出现的位置。<code>startIndex</code>表示从第几个开始搜索。</li>
+<li><code>split(‘分隔符’,limit);</code><br>  根据分隔符将一个字符串返回为一个数组。<code>limit</code>表示要返回的数组的最大长度（可自定义）。</li>
+<li><code>substr(startIndex,len)</code><br>  从<code>startIndex</code>开始，截取<code>len</code>个字符。</li>
+<li><code>substring(startIndex,stopIndex)</code><br>  从<code>startIndex</code>开始，截取到<code>stopIndex</code>位置（不包括<code>stopIndex</code>所在的字符）。</li>
+<li><code>match()</code>、<code>replace()</code>、<code>search()</code>方法<br>  正则表达式相关。</li>
+</ul></p>
+            <p class="article-more-link">
+                <a href="/2016/09/02/js_string_array/#more">查看更多</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://blog.xieguigang.me/2016/09/02/js_string_array/" data-id="ciskpdgvh0000zcv47kraqiwd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://blog.xieguigang.me/2016/09/02/js_string_array/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/09/02/js_string_array/">评论</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-mgcv_GAM" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -233,7 +369,7 @@
 <p><img src="https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/GAM.png" alt="GAM"></p>
 <p>The functions <code>fi</code> may be functions with a specified parametric form (for example a polynomial, or a spline depending on the levels of a factor variable) or may be specified non-parametrically, or semi-parametrically, simply as ‘smooth functions’, to be estimated by non-parametric means. So a typical GAM might use a scatterplot smoothing function, such as a locally weighted mean, for <code>f1(x1)</code>, and then use a factor model for <code>f2(x2)</code>. This flexibility to allow non-parametric fits with relaxed assumptions on the actual relationship between response and predictor, provides the potential for better fits to data than purely parametric models, but arguably with some loss of interpretability.</p></p>
             <p class="article-more-link">
-                <a href="/2016/08/30/mgcv_GAM/#more">Read More</a>
+                <a href="/2016/08/30/mgcv_GAM/#more">查看更多</a>
             </p>
         
         </div>
@@ -244,7 +380,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/30/mgcv_GAM/" data-id="cisgcqsk4000158v44n5i7jk6" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/30/mgcv_GAM/" data-id="cisgcqsk4000158v44n5i7jk6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -312,7 +448,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/30/mgcv_GAM/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/30/mgcv_GAM/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/08/30/mgcv_GAM/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/30/mgcv_GAM/">评论</a>
     
 
         </footer>
@@ -350,7 +486,7 @@
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/html5/">html5</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
+        <a class="tag-link" href="/tags/cytoscape-js/">cytoscape.js</a>, <a class="tag-link" href="/tags/html5/">html5</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
     </div>
 
                     </div>
@@ -359,15 +495,16 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            
-            <blockquote>
-<p><a href="http://stackoverflow.com/questions/2897619/using-html5-javascript-to-generate-and-save-a-file" target="_blank" rel="external">http://stackoverflow.com/questions/2897619/using-html5-javascript-to-generate-and-save-a-file</a></p>
+            <p><blockquote>
+<p><a href="http://stackoverflow.com/questions/2897619/using-html5-javascript-to-generate-and-save-a-file">http://stackoverflow.com/questions/2897619/using-html5-javascript-to-generate-and-save-a-file</a></p>
 </blockquote>
 <p>Simple solution for HTML5 ready browsers…</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">download</span>(<span class="params">filename, text</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> pom = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</span><br><span class="line">    pom.setAttribute(<span class="string">'href'</span>, <span class="string">'data:text/plain;charset=utf-8,'</span> + <span class="built_in">encodeURIComponent</span>(text));</span><br><span class="line">    pom.setAttribute(<span class="string">'download'</span>, filename);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">document</span>.createEvent) &#123;</span><br><span class="line">        <span class="keyword">var</span> event = <span class="built_in">document</span>.createEvent(<span class="string">'MouseEvents'</span>);</span><br><span class="line">        event.initEvent(<span class="string">'click'</span>, <span class="literal">true</span>, <span class="literal">true</span>);</span><br><span class="line">        pom.dispatchEvent(event);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        pom.click();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Usage</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">download(<span class="string">'test.txt'</span>, <span class="string">'Hello world!'</span>);</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">download</span>(<span class="params">filename, text</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> pom = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>);</span><br><span class="line">    <span class="keyword">var</span> contentType = <span class="string">'data:text/plain;charset=utf-8,'</span>;</span><br><span class="line"></span><br><span class="line">    pom.setAttribute(<span class="string">'href'</span>, contentType + <span class="built_in">encodeURIComponent</span>(text));</span><br><span class="line">    pom.setAttribute(<span class="string">'download'</span>, filename);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">document</span>.createEvent) &#123;</span><br><span class="line">        <span class="keyword">var</span> event = <span class="built_in">document</span>.createEvent(<span class="string">'MouseEvents'</span>);</span><br><span class="line">        event.initEvent(<span class="string">'click'</span>, <span class="literal">true</span>, <span class="literal">true</span>);</span><br><span class="line">        pom.dispatchEvent(event);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        pom.click();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Usage:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">download(<span class="string">'test.txt'</span>, <span class="string">'Hello world!'</span>);</span><br></pre></td></tr></table></figure></p>
+            <p class="article-more-link">
+                <a href="/2016/08/28/saveFile_html5/#more">查看更多</a>
+            </p>
         
         </div>
         <footer class="article-footer">
@@ -377,7 +514,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/28/saveFile_html5/" data-id="cisgcqsmw000f58v4uo4v58yg" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/28/saveFile_html5/" data-id="cisgcqsmw000f58v4uo4v58yg" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -445,7 +582,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/28/saveFile_html5/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/28/saveFile_html5/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/08/28/saveFile_html5/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/28/saveFile_html5/">评论</a>
     
 
         </footer>
@@ -492,23 +629,28 @@
         
         <div class="article-entry" itemprop="articleBody">
         
-            
-            <p>Event object </p>
-<p>Events passed to handler callbacks are similar to jQuery event objects in that they wrap native event objects, mimicking their API.</p>
+            <p><h2 id="Event-object"><a href="#Event-object" class="headerlink" title="Event object"></a>Event object</h2><p>Events passed to handler callbacks are similar to <code>jQuery event objects</code> in that they wrap native event objects, mimicking their API.</p>
 <p>Fields:</p>
-<p>cy : a reference to the corresponding core instance<br>cyTarget : indicates the element or core that first caused the event<br>type : the event type string (e.g. “tap”)<br>namespace : the event namespace string (e.g. “foo” for “foo.tap”)<br>data : additional data object passed by .trigger()<br>timeStamp : Unix epoch time of event<br>Fields for only user input device events:</p>
-<p>cyPosition : indicates the model position of the event<br>cyRenderedPosition : indicates the rendered position of the event<br>originalEvent : the original user input device event object<br>Fields for only layout events:</p>
-<p>layout : indicates the corresponding layout that triggered the event (useful if running multiple layouts simultaneously)<br>Event bubbling </p>
-<p>All events that occur on elements get bubbled up to compound parents and then to the core. You must take this into consideration when binding to the core so you can differentiate between events that happened on the background and ones that happened on elements. Use the eventObj.cyTarget field, which indicates the originator of the event (i.e. eventObj.cyTarget === cy || eventObj.cyTarget === someEle).</p>
-<p>User input device events </p>
-<p>These are normal browser events that you can bind to via Cytoscape.js. You can bind these events to the core and to collections.</p>
-<p>mousedown : when the mouse button is pressed<br>mouseup : when the mouse button is released<br>click : after mousedown then mouseup<br>mouseover : when the cursor is put on top of the target<br>mouseout : when the cursor is moved off of the target<br>mousemove : when the cursor is moved somewhere on top of the target<br>touchstart : when one or more fingers starts to touch the screen<br>touchmove : when one or more fingers are moved on the screen<br>touchend : when one or more fingers are removed from the screen<br>There are also some higher level events that you can use so you don’t have to bind to different events for mouse-input devices and for touch devices.</p>
-<p>tapstart or vmousedown : normalised tap start event (either mousedown or touchstart)<br>tapdrag or vmousemove : normalised move event (either touchmove or mousemove)<br>tapdragover : normalised over element event (either touchmove or mousemove/mouseover)<br>tapdragout : normalised off of element event (either touchmove or mousemove/mouseout)<br>tapend or vmouseup : normalised tap end event (either mouseup or touchend)<br>tap or vclick : normalised tap event (either click, or touchstart followed by touchend without touchmove)<br>taphold : normalised tap hold event<br>cxttapstart : normalised right-click mousedown or two-finger tapstart<br>cxttapend : normalised right-click mouseup or two-finger tapend<br>cxttap : normalised right-click or two-finger tap<br>cxtdrag : normalised mousemove or two-finger drag after cxttapstart but before cxttapend<br>cxtdragover : when going over a node via cxtdrag<br>cxtdragout : when going off a node via cxtdrag<br>boxstart : when starting box selection<br>boxend : when ending box selection<br>boxselect : triggered on elements when selected by box selection<br>box : triggered on elements when inside the box on boxend<br>Collection events </p>
-<p>These events are custom to Cytoscape.js. You can bind to these events for collections.</p>
-<p>add : when an element is added to the graph<br>remove : when an element is removed from the graph<br>select : when an element is selected<br>unselect : when an element is unselected<br>lock : when an element is locked<br>unlock : when an element is unlocked<br>grab : when an element is grabbed by the mouse cursor or a finger on a touch input<br>drag : when an element is grabbed and then moved<br>free : when an element is freed (i.e. let go from being grabbed)<br>position : when an element changes position<br>data : when an element’s data is changed<br>scratch : when an element’s scratchpad data is changed<br>style : when an element’s style is changed<br>Graph events</p>
-<p>These events are custom to Cytoscape.js, and they occur on the core.</p>
-<p>layoutstart : when a layout starts running<br>layoutready : when a layout has set initial positions for all the nodes (but perhaps not final positions)<br>layoutstop : when a layout has finished running completely or otherwise stopped running<br>ready : when a new instance of Cytoscape.js is ready to be interacted with<br>pan : when the viewport is panned<br>zoom : when the viewport is zoomed</p>
-
+<ul>
+<li><code>cy</code> : a reference to the corresponding core instance</li>
+<li><code>cyTarget</code> : indicates the element or core that first caused the event</li>
+<li><code>type</code> : the event type string (e.g. “tap”)</li>
+<li><code>namespace</code> : the event namespace string (e.g. “foo” for “foo.tap”)</li>
+<li><code>data</code> : additional data object passed by .trigger()</li>
+<li><code>timeStamp</code> : Unix epoch time of event</li>
+</ul>
+<p>Fields for only user input device events:</p>
+<ul>
+<li><code>cyPosition</code> : indicates the model position of the event</li>
+<li><code>cyRenderedPosition</code> : indicates the rendered position of the event</li>
+<li><code>originalEvent</code> : the original user input device event object</li>
+</ul>
+<p>Fields for only layout events:</p>
+<ul>
+<li><code>layout</code> : indicates the corresponding layout that triggered the event (useful if running multiple layouts simultaneously)</p>
+            <p class="article-more-link">
+                <a href="/2016/08/27/cytoscape_js_mouse_events/#more">查看更多</a>
+            </p>
         
         </div>
         <footer class="article-footer">
@@ -518,7 +660,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/27/cytoscape_js_mouse_events/" data-id="cisgcqsjm000058v4jhyr83sc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/27/cytoscape_js_mouse_events/" data-id="cisgcqsjm000058v4jhyr83sc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -586,7 +728,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/27/cytoscape_js_mouse_events/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/27/cytoscape_js_mouse_events/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/08/27/cytoscape_js_mouse_events/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/27/cytoscape_js_mouse_events/">评论</a>
     
 
         </footer>
@@ -641,7 +783,7 @@
 <h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><ul>
 <li>Gibson, Greg (2010). “Hints of hidden heritability in GWAS”. Nature Genetics. 42 (7): 558–560. doi:10.1038/ng0710-558. PMID 20581876.</p>
             <p class="article-more-link">
-                <a href="/2016/08/25/ManhattanPlot/#more">Read More</a>
+                <a href="/2016/08/25/ManhattanPlot/#more">查看更多</a>
             </p>
         
         </div>
@@ -652,7 +794,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/25/ManhattanPlot/" data-id="cis952xhd0000skv4q8ai7mwy" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/25/ManhattanPlot/" data-id="cis952xhd0000skv4q8ai7mwy" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -720,7 +862,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/25/ManhattanPlot/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/25/ManhattanPlot/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/08/25/ManhattanPlot/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/25/ManhattanPlot/">评论</a>
     
 
         </footer>
@@ -770,7 +912,7 @@
             <p><h2 id="一、单核苷酸多态性"><a href="#一、单核苷酸多态性" class="headerlink" title="一、单核苷酸多态性"></a>一、单核苷酸多态性</h2><h4 id="1-SNPs概念"><a href="#1-SNPs概念" class="headerlink" title="1. SNPs概念"></a>1. SNPs概念</h4><p>SNPs(single nucleotide polymorphisms, SNPs) 指染色体 DNA 序列中的某个位点由于单个核苷酸的变化而引起的多态性，在群体中的频率<code>&gt;1%</code>。</p>
 <p><img src="https://raw.githubusercontent.com/xieguigang/xieguigang.github.io-hexo/master/images/SNP_linkage_disequilibrium_analysis/1.png" alt=""><br></p>
             <p class="article-more-link">
-                <a href="/2016/08/22/SNP_linkage_disequilibrium_analysis/#more">Read More</a>
+                <a href="/2016/08/22/SNP_linkage_disequilibrium_analysis/#more">查看更多</a>
             </p>
         
         </div>
@@ -781,7 +923,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/22/SNP_linkage_disequilibrium_analysis/" data-id="cis94sm62000030v4yc61hmmd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/22/SNP_linkage_disequilibrium_analysis/" data-id="cis94sm62000030v4yc61hmmd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -849,7 +991,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/22/SNP_linkage_disequilibrium_analysis/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/22/SNP_linkage_disequilibrium_analysis/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/08/22/SNP_linkage_disequilibrium_analysis/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/22/SNP_linkage_disequilibrium_analysis/">评论</a>
     
 
         </footer>
@@ -906,7 +1048,7 @@
 </ol>
 <p>连锁不平衡分析在连锁不平衡程度的评估，复杂疾病精细定位以及研究人类的历史和迁移中得到了越来越广泛的应用。连锁不平衡又称等位基因关联（<code>allelic association</code>），其原理其实很简单。假定两个紧密连锁的位点1，2，各有两个等位型（<code>Aa</code>; <code>Bb</code>），那么在同一条染色体上将有四种可能的组合方式：<code>A—B</code>, <code>A—b</code>, <code>a—B</code>, 和<code>a—b</code>。假定等位型<code>A</code>的频率为<code>Pa</code>，<code>B</code>的频率为<code>Pb</code>，那么如果不存在连锁不平衡（如组成单倍型的等位型间相互独立，随机组合）单倍型<code>A—B</code>的频率就应为<code>PaPb</code>。<strong>而如果<code>A</code>与<code>B</code>是相关联的，单倍型<code>A—B</code>的频率则应为<code>PaPb＋D</code>，<code>D</code>是表示两位点间<code>LD</code>程度的值。如果位点2上的等位型<code>B</code>与疾病易患性有关，那么将会观察到等位型<code>A</code>的频率在病人群体中高于对照群体。换句话说，等位型<code>A</code>与该疾病性状相关。</strong>事实上，可以检测遍布基因组中的大量遗传标记位点，或者候选基因附近的遗传标记来寻找到因为与致病位点距离足够近而表现出与疾病相关的位点，这就是等位基因关联分析或连锁不平衡定位基因的基本思想。<br></p>
             <p class="article-more-link">
-                <a href="/2016/08/22/SNP_LD/#more">Read More</a>
+                <a href="/2016/08/22/SNP_LD/#more">查看更多</a>
             </p>
         
         </div>
@@ -917,7 +1059,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/22/SNP_LD/" data-id="cis56n52600003kv4yjlsmeyq" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/22/SNP_LD/" data-id="cis56n52600003kv4yjlsmeyq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -985,7 +1127,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/22/SNP_LD/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/22/SNP_LD/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/08/22/SNP_LD/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/22/SNP_LD/">评论</a>
     
 
         </footer>
@@ -1056,7 +1198,7 @@
 </tbody>
 </table></p>
             <p class="article-more-link">
-                <a href="/2016/08/22/vb_CLI_pipeline/#more">Read More</a>
+                <a href="/2016/08/22/vb_CLI_pipeline/#more">查看更多</a>
             </p>
         
         </div>
@@ -1067,7 +1209,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/22/vb_CLI_pipeline/" data-id="cis565xi800007cv4ybjxu7dd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/22/vb_CLI_pipeline/" data-id="cis565xi800007cv4ybjxu7dd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1135,7 +1277,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/22/vb_CLI_pipeline/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/22/vb_CLI_pipeline/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/08/22/vb_CLI_pipeline/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/22/vb_CLI_pipeline/">评论</a>
     
 
         </footer>
@@ -1185,7 +1327,7 @@
             <p><h2 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h2><p>We describe the R function <code>LDheatmap()</code> which produces a graphical display, as a heat map, of pairwise linkage disequilibrium measurements between single nucleotide polymorphisms within a genomic region. <code>LDheatmap()</code> uses the grid graphics system, an alternative to the traditional R graphics system. The features of the <code>LDheatmap()</code> function and the use of tools from the grid package to modify heat maps are illustrated by examples.</p>
 <p><strong>Keywords:</strong> single nucleotide polymorphisms, linkage disequilibrium, grid graphics.</p></p>
             <p class="article-more-link">
-                <a href="/2016/08/21/LDheatmap/#more">Read More</a>
+                <a href="/2016/08/21/LDheatmap/#more">查看更多</a>
             </p>
         
         </div>
@@ -1196,7 +1338,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/21/LDheatmap/" data-id="cis4u5mhp0000ssv4pvbk7szc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/21/LDheatmap/" data-id="cis4u5mhp0000ssv4pvbk7szc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1264,7 +1406,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/21/LDheatmap/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/21/LDheatmap/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/08/21/LDheatmap/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/21/LDheatmap/">评论</a>
     
 
         </footer>
@@ -1320,7 +1462,7 @@
 <p>The OMIM® database including the collective data contained therein is the property of the Johns Hopkins University, which holds the copyright thereto.<br>The OMIM database is made available to the general public subject to certain restrictions. You may use the OMIM database and data obtained from this site for your personal use, for educational or scholarly use, or for research purposes only.<br>The OMIM database may not be copied, distributed, transmitted, duplicated, reduced or altered in any way for commercial purposes, or for the purpose of redistribution, without a license from the Johns Hopkins University.<br>Requests for information regarding a license for commercial use or redistribution of the OMIM database may be sent via e-mail to JHTT-Communications@jhmi.edu.</p>
 </blockquote></p>
             <p class="article-more-link">
-                <a href="/2016/08/20/OMIM/#more">Read More</a>
+                <a href="/2016/08/20/OMIM/#more">查看更多</a>
             </p>
         
         </div>
@@ -1331,7 +1473,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/20/OMIM/" data-id="cis2jwhn20000z0v4tw6xxyyv" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/20/OMIM/" data-id="cis2jwhn20000z0v4tw6xxyyv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1399,138 +1541,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/20/OMIM/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/20/OMIM/">Comments</a>
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
-
-    <article id="post-d3js_datelines" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2016/08/13/d3js_datelines/">D3.js制作日期折线图</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2016/08/13/d3js_datelines/">
-            <time datetime="2016-08-12T16:00:00.000Z" itemprop="datePublished">2016-08-13</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/d3js/">d3js</a>, <a class="tag-link" href="/tags/javascript/">javascript</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            <p><h3 id="一、引入文件"><a href="#一、引入文件" class="headerlink" title="一、引入文件"></a>一、引入文件</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://d3js.org/d3.v3.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="二、创建容器"><a href="#二、创建容器" class="headerlink" title="二、创建容器"></a>二、创建容器</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> margin = &#123;top: <span class="number">20</span>, right: <span class="number">20</span>, bottom: <span class="number">30</span>, left: <span class="number">50</span>&#125;,</span><br><span class="line">    width = <span class="number">590</span> - margin.left - margin.right,</span><br><span class="line">    height = <span class="number">300</span> - margin.top - margin.bottom;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> svg = d3.select(<span class="string">"body"</span>).append(<span class="string">"svg"</span>)</span><br><span class="line">    .attr(<span class="string">"width"</span>, width + margin.left + margin.right)</span><br><span class="line">    .attr(<span class="string">"height"</span>, height + margin.top + margin.bottom)</span><br><span class="line">    .append(<span class="string">"g"</span>)</span><br><span class="line">    .attr(<span class="string">"transform"</span>, <span class="string">"translate("</span> + margin.left + <span class="string">","</span> + margin.top + <span class="string">")"</span>);</span><br></pre></td></tr></table></figure>
-<p>需要注意的几个尺寸：svg画布的尺寸、chart图片的尺寸、margin值，另外svg的坐标原点是左上角，向右为正，向下为正。这对之后的各种元素的<code>transition</code>很重要。</p>
-<p>可以参考一下这篇文章：<a href="http://bl.ocks.org/mbostock/3019563">Margin Convention</a><br></p>
-            <p class="article-more-link">
-                <a href="/2016/08/13/d3js_datelines/#more">Read More</a>
-            </p>
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://blog.xieguigang.me/2016/08/13/d3js_datelines/" data-id="cirtbc9zl00007sv4eacw55q1" class="article-share-link"><i class="fa fa-share"></i>Share</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-        <a href="http://blog.xieguigang.me/2016/08/13/d3js_datelines/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/13/d3js_datelines/">Comments</a>
+        <a href="http://blog.xieguigang.me/2016/08/20/OMIM/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/20/OMIM/">评论</a>
     
 
         </footer>
@@ -1541,7 +1552,7 @@
 
 
     <nav id="page-nav">
-        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
     </nav>
 </section>
             
@@ -1551,25 +1562,25 @@
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">archives</h3>
+        <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">22</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">22</span></li></ul>
         </div>
     </div>
 
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">tag cloud</h3>
+        <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/3D/" style="font-size: 10px;">3D</a> <a href="/tags/3d/" style="font-size: 10px;">3d</a> <a href="/tags/3d-graphics/" style="font-size: 10px;">3d graphics</a> <a href="/tags/BI/" style="font-size: 10px;">BI</a> <a href="/tags/CLI/" style="font-size: 10px;">CLI</a> <a href="/tags/Chinese/" style="font-size: 10px;">Chinese</a> <a href="/tags/Chinese-rural-dog/" style="font-size: 10px;">Chinese rural dog</a> <a href="/tags/CodeProject/" style="font-size: 14.29px;">CodeProject</a> <a href="/tags/Compiler/" style="font-size: 10px;">Compiler</a> <a href="/tags/Desktop/" style="font-size: 10px;">Desktop</a> <a href="/tags/Enigma/" style="font-size: 12.86px;">Enigma</a> <a href="/tags/GAM/" style="font-size: 10px;">GAM</a> <a href="/tags/GCModeller/" style="font-size: 11.43px;">GCModeller</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Linq/" style="font-size: 10px;">Linq</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Manhattan-Plot/" style="font-size: 10px;">Manhattan Plot</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OMIM/" style="font-size: 10px;">OMIM</a> <a href="/tags/PDB/" style="font-size: 10px;">PDB</a> <a href="/tags/Phylostratigraphic/" style="font-size: 10px;">Phylostratigraphic</a> <a href="/tags/R/" style="font-size: 14.29px;">R</a> <a href="/tags/R-squared/" style="font-size: 10px;">R-squared</a> <a href="/tags/SDK-document/" style="font-size: 10px;">SDK document</a> <a href="/tags/SNP/" style="font-size: 14.29px;">SNP</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/Syntax/" style="font-size: 10px;">Syntax</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/VisualStudio/" style="font-size: 10px;">VisualStudio</a> <a href="/tags/WPF/" style="font-size: 10px;">WPF</a> <a href="/tags/XAML/" style="font-size: 10px;">XAML</a> <a href="/tags/YAML/" style="font-size: 10px;">YAML</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/architecture/" style="font-size: 11.43px;">architecture</a> <a href="/tags/art-work/" style="font-size: 10px;">art work</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/check-point/" style="font-size: 10px;">check-point</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/circos/" style="font-size: 11.43px;">circos</a> <a href="/tags/cytoscape-js/" style="font-size: 10px;">cytoscape.js</a> <a href="/tags/d3js/" style="font-size: 12.86px;">d3js</a> <a href="/tags/data-analysis/" style="font-size: 10px;">data analysis</a> <a href="/tags/data-visualization/" style="font-size: 10px;">data visualization</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/elementary-os/" style="font-size: 10px;">elementary os</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/force-directed/" style="font-size: 10px;">force directed</a> <a href="/tags/gdi/" style="font-size: 11.43px;">gdi+</a> <a href="/tags/genetics/" style="font-size: 12.86px;">genetics</a> <a href="/tags/github/" style="font-size: 14.29px;">github</a> <a href="/tags/heatmap/" style="font-size: 10px;">heatmap</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/interface/" style="font-size: 10px;">interface</a> <a href="/tags/javascript/" style="font-size: 17.14px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/languages/" style="font-size: 10px;">languages</a> <a href="/tags/libzplay/" style="font-size: 10px;">libzplay</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/mgcv/" style="font-size: 10px;">mgcv</a> <a href="/tags/music/" style="font-size: 15.71px;">music</a> <a href="/tags/my-works/" style="font-size: 10px;">my works</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/note/" style="font-size: 18.57px;">note</a> <a href="/tags/open-source/" style="font-size: 10px;">open-source</a> <a href="/tags/perl/" style="font-size: 10px;">perl</a> <a href="/tags/pipeline/" style="font-size: 10px;">pipeline</a> <a href="/tags/re0/" style="font-size: 10px;">re0</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/repost/" style="font-size: 15.71px;">repost</a> <a href="/tags/statics/" style="font-size: 10px;">statics</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/threading/" style="font-size: 10px;">threading</a> <a href="/tags/threadpool/" style="font-size: 10px;">threadpool</a> <a href="/tags/tricks/" style="font-size: 10px;">tricks</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/user-agent/" style="font-size: 10px;">user-agent</a> <a href="/tags/vb-net/" style="font-size: 20px;">vb.net</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-api/" style="font-size: 10px;">web api</a> <a href="/tags/web-server/" style="font-size: 10px;">web server</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/works/" style="font-size: 10px;">works</a> <a href="/tags/中華田園犬/" style="font-size: 10px;">中華田園犬</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/前端设计/" style="font-size: 12.86px;">前端设计</a> <a href="/tags/数据分析/" style="font-size: 10px;">数据分析</a> <a href="/tags/数据可视化/" style="font-size: 11.43px;">数据可视化</a> <a href="/tags/数据视图/" style="font-size: 10px;">数据视图</a> <a href="/tags/架构/" style="font-size: 11.43px;">架构</a> <a href="/tags/架构设计/" style="font-size: 10px;">架构设计</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/转载搬运/" style="font-size: 15.71px;">转载搬运</a> <a href="/tags/连锁不平衡/" style="font-size: 11.43px;">连锁不平衡</a> <a href="/tags/遗传学/" style="font-size: 11.43px;">遗传学</a> <a href="/tags/非线性拟合/" style="font-size: 10px;">非线性拟合</a> <a href="/tags/鹿乃/" style="font-size: 10px;">鹿乃</a>
+            <a href="/tags/3D/" style="font-size: 10px;">3D</a> <a href="/tags/3d/" style="font-size: 10px;">3d</a> <a href="/tags/3d-graphics/" style="font-size: 10px;">3d graphics</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/BI/" style="font-size: 10px;">BI</a> <a href="/tags/CLI/" style="font-size: 10px;">CLI</a> <a href="/tags/Chinese/" style="font-size: 10px;">Chinese</a> <a href="/tags/Chinese-rural-dog/" style="font-size: 10px;">Chinese rural dog</a> <a href="/tags/CodeProject/" style="font-size: 14.29px;">CodeProject</a> <a href="/tags/Compiler/" style="font-size: 10px;">Compiler</a> <a href="/tags/Desktop/" style="font-size: 10px;">Desktop</a> <a href="/tags/Dictionary/" style="font-size: 10px;">Dictionary</a> <a href="/tags/Enigma/" style="font-size: 12.86px;">Enigma</a> <a href="/tags/GAM/" style="font-size: 10px;">GAM</a> <a href="/tags/GCModeller/" style="font-size: 11.43px;">GCModeller</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Linq/" style="font-size: 10px;">Linq</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Manhattan-Plot/" style="font-size: 10px;">Manhattan Plot</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OMIM/" style="font-size: 10px;">OMIM</a> <a href="/tags/PDB/" style="font-size: 10px;">PDB</a> <a href="/tags/Phylostratigraphic/" style="font-size: 10px;">Phylostratigraphic</a> <a href="/tags/R/" style="font-size: 14.29px;">R</a> <a href="/tags/R-squared/" style="font-size: 10px;">R-squared</a> <a href="/tags/SDK-document/" style="font-size: 10px;">SDK document</a> <a href="/tags/SNP/" style="font-size: 14.29px;">SNP</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Syntax/" style="font-size: 10px;">Syntax</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/VisualStudio/" style="font-size: 10px;">VisualStudio</a> <a href="/tags/WPF/" style="font-size: 10px;">WPF</a> <a href="/tags/XAML/" style="font-size: 10px;">XAML</a> <a href="/tags/YAML/" style="font-size: 10px;">YAML</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/architecture/" style="font-size: 11.43px;">architecture</a> <a href="/tags/art-work/" style="font-size: 10px;">art work</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/check-point/" style="font-size: 10px;">check-point</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/circos/" style="font-size: 11.43px;">circos</a> <a href="/tags/cytoscape-js/" style="font-size: 11.43px;">cytoscape.js</a> <a href="/tags/d3js/" style="font-size: 12.86px;">d3js</a> <a href="/tags/data-analysis/" style="font-size: 10px;">data analysis</a> <a href="/tags/data-visualization/" style="font-size: 10px;">data visualization</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/elementary-os/" style="font-size: 10px;">elementary os</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/force-directed/" style="font-size: 10px;">force directed</a> <a href="/tags/gdi/" style="font-size: 11.43px;">gdi+</a> <a href="/tags/genetics/" style="font-size: 12.86px;">genetics</a> <a href="/tags/github/" style="font-size: 14.29px;">github</a> <a href="/tags/heatmap/" style="font-size: 10px;">heatmap</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/interface/" style="font-size: 10px;">interface</a> <a href="/tags/javascript/" style="font-size: 17.14px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/languages/" style="font-size: 10px;">languages</a> <a href="/tags/libzplay/" style="font-size: 10px;">libzplay</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/mgcv/" style="font-size: 10px;">mgcv</a> <a href="/tags/music/" style="font-size: 15.71px;">music</a> <a href="/tags/my-works/" style="font-size: 10px;">my works</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/note/" style="font-size: 18.57px;">note</a> <a href="/tags/open-source/" style="font-size: 10px;">open-source</a> <a href="/tags/perl/" style="font-size: 10px;">perl</a> <a href="/tags/pipeline/" style="font-size: 10px;">pipeline</a> <a href="/tags/re0/" style="font-size: 10px;">re0</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/repost/" style="font-size: 15.71px;">repost</a> <a href="/tags/statics/" style="font-size: 10px;">statics</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/threading/" style="font-size: 10px;">threading</a> <a href="/tags/threadpool/" style="font-size: 10px;">threadpool</a> <a href="/tags/tricks/" style="font-size: 10px;">tricks</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/user-agent/" style="font-size: 10px;">user-agent</a> <a href="/tags/vb-net/" style="font-size: 20px;">vb.net</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-api/" style="font-size: 10px;">web api</a> <a href="/tags/web-server/" style="font-size: 10px;">web server</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/works/" style="font-size: 10px;">works</a> <a href="/tags/中華田園犬/" style="font-size: 10px;">中華田園犬</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/前端设计/" style="font-size: 12.86px;">前端设计</a> <a href="/tags/数据分析/" style="font-size: 10px;">数据分析</a> <a href="/tags/数据可视化/" style="font-size: 11.43px;">数据可视化</a> <a href="/tags/数据视图/" style="font-size: 10px;">数据视图</a> <a href="/tags/架构/" style="font-size: 11.43px;">架构</a> <a href="/tags/架构设计/" style="font-size: 10px;">架构设计</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/转载搬运/" style="font-size: 15.71px;">转载搬运</a> <a href="/tags/连锁不平衡/" style="font-size: 11.43px;">连锁不平衡</a> <a href="/tags/遗传学/" style="font-size: 11.43px;">遗传学</a> <a href="/tags/非线性拟合/" style="font-size: 10px;">非线性拟合</a> <a href="/tags/鹿乃/" style="font-size: 10px;">鹿乃</a>
         </div>
     </div>
 
     
         
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">links</h3>
+        <h3 class="widget-title">链接</h3>
         <div class="widget">
             <ul>
                 
