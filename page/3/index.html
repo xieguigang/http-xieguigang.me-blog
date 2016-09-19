@@ -75,14 +75,14 @@
             <div id="search-form-wrap">
 
     <form class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
         <button type="submit" class="search-form-submit"></button>
     </form>
     <div class="ins-search">
     <div class="ins-search-mask"></div>
     <div class="ins-search-container">
         <div class="ins-input-wrapper">
-            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
             <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
         </div>
         <div class="ins-section-wrapper">
@@ -94,11 +94,11 @@
 (function (window) {
     var INSIGHT_CONFIG = {
         TRANSLATION: {
-            POSTS: '文章',
-            PAGES: '页面',
-            CATEGORIES: '分类',
-            TAGS: '标签',
-            UNTITLED: '(未命名)',
+            POSTS: 'Posts',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categories',
+            TAGS: 'Tags',
+            UNTITLED: '(Untitled)',
         },
         ROOT_URL: '/',
         CONTENT_URL: '/content.json',
@@ -126,7 +126,7 @@
                 <td>
                     
     <div class="search-form">
-        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <input type="text" class="ins-search-input search-form-input" placeholder="Search" />
     </div>
 
                 </td>
@@ -146,16 +146,16 @@
             <h2 id="name">xieguigang</h2>
             <h3 id="title">GCModeller chief developer</h3>
             <span id="location"><i class="fa fa-map-marker"></i>GuiLin, China (中國 · 桂林)</span>
-            <a id="follow" target="_blank" href="https://github.com/xieguigang">关注我</a>
+            <a id="follow" target="_blank" href="https://github.com/xieguigang">FOLLOW</a>
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
                 58
-                <span>文章</span>
+                <span>posts</span>
             </div>
             <div class="article-info-block">
                 120
-                <span>标签</span>
+                <span>tags</span>
             </div>
         </div>
         
@@ -234,7 +234,7 @@
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://yourdomain.com/script.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>同步模式，又称阻塞模式，会阻止浏览器的后续处理，停止了后续的解析，因此停止了后续的文件加载（如图像）、渲染、代码执行。<br><code>js</code>之所以要同步执行，是因为<code>js</code>中可能有输出<code>document</code>内容、修改<code>dom</code>、重定向等行为，所以默认同步执行才是安全的。<br>以前的一般建议是把<code>&lt;script&gt;</code>放在页面末尾<code>&lt;/body&gt;</code>之前，这样尽可能减少这种阻塞行为，而先让页面展示出来。<br>简单说：加载的网络<code>timeline</code>是瀑布模型，而异步加载的<code>timeline</code>是并发模型。<br></p>
             <p class="article-more-link">
-                <a href="/2016/08/08/javascript_async_loading/#more">查看更多</a>
+                <a href="/2016/08/08/javascript_async_loading/#more">Read More</a>
             </p>
         
         </div>
@@ -245,7 +245,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/08/javascript_async_loading/" data-id="cirm86gfo000050v4jq698oe2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/08/javascript_async_loading/" data-id="cirm86gfo000050v4jq698oe2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -313,7 +313,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/08/javascript_async_loading/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/08/javascript_async_loading/">评论</a>
+        <a href="http://blog.xieguigang.me/2016/08/08/javascript_async_loading/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/08/javascript_async_loading/">Comments</a>
     
 
         </footer>
@@ -388,7 +388,7 @@
 <h6 id="Server-Code"><a href="#Server-Code" class="headerlink" title="Server Code"></a>Server Code</h6><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Dim dt As DataTable = mysql.Fetch(SQL).Tables(0)</span><br><span class="line">Dim data As date_count() &lt;=</span><br><span class="line"></span><br><span class="line">    From row As DataRow</span><br><span class="line">    In dt.Rows</span><br><span class="line">    Select dd = New date_count With &#123;</span><br><span class="line">        .date = CStr(row(MySqlREST.[date])),</span><br><span class="line">        .count = CInt(row(MySqlREST.count))</span><br><span class="line">    &#125;</span><br><span class="line">    Order By dd.date Ascending</span><br><span class="line"></span><br><span class="line">Call response.WriteJSON(data)</span><br></pre></td></tr></table></figure>
 <h6 id="JSON-output-Example"><a href="#JSON-output-Example" class="headerlink" title="JSON output Example"></a>JSON output Example</h6><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"count"</span>: <span class="number">84</span>,</span><br><span class="line">    <span class="attr">"date"</span>: <span class="string">"2016-07-08"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"count"</span>: <span class="number">141</span>,</span><br><span class="line">    <span class="attr">"date"</span>: <span class="string">"2016-07-09"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"count"</span>: <span class="number">33</span>,</span><br><span class="line">    <span class="attr">"date"</span>: <span class="string">"2016-07-10"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">"count"</span>: <span class="number">41</span>,</span><br><span class="line">    <span class="attr">"date"</span>: <span class="string">"2016-07-11"</span></span><br><span class="line">  &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p>
             <p class="article-more-link">
-                <a href="/2016/08/07/mysql_analysis/#more">查看更多</a>
+                <a href="/2016/08/07/mysql_analysis/#more">Read More</a>
             </p>
         
         </div>
@@ -399,7 +399,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/07/mysql_analysis/" data-id="cirm86ggb000150v432dpsmq2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/07/mysql_analysis/" data-id="cirm86ggb000150v432dpsmq2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -467,7 +467,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/07/mysql_analysis/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/07/mysql_analysis/">评论</a>
+        <a href="http://blog.xieguigang.me/2016/08/07/mysql_analysis/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/07/mysql_analysis/">Comments</a>
     
 
         </footer>
@@ -521,7 +521,7 @@
 <li>3D Projection</li>
 </ul></p>
             <p class="article-more-link">
-                <a href="/2016/08/07/network_canvas_3d/#more">查看更多</a>
+                <a href="/2016/08/07/network_canvas_3d/#more">Read More</a>
             </p>
         
         </div>
@@ -532,7 +532,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/07/network_canvas_3d/" data-id="cirkaum120000psv4yemq3azu" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/07/network_canvas_3d/" data-id="cirkaum120000psv4yemq3azu" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -600,7 +600,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/07/network_canvas_3d/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/07/network_canvas_3d/">评论</a>
+        <a href="http://blog.xieguigang.me/2016/08/07/network_canvas_3d/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/07/network_canvas_3d/">Comments</a>
     
 
         </footer>
@@ -659,7 +659,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/06/pdb_mol_viewer/" data-id="cirkaum1y0001psv4of8lpynd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/06/pdb_mol_viewer/" data-id="cirkaum1y0001psv4of8lpynd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -727,7 +727,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/06/pdb_mol_viewer/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/06/pdb_mol_viewer/">评论</a>
+        <a href="http://blog.xieguigang.me/2016/08/06/pdb_mol_viewer/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/06/pdb_mol_viewer/">Comments</a>
     
 
         </footer>
@@ -779,7 +779,7 @@
 <p>中国的语言文字是美丽丰富的，但却没能给中国土狗取一个名字。<br>不是已经说了叫<strong>土狗</strong>吗？柴狗、黄狗、草狗、中华田园犬，不都是名字？</p>
 <p><strong>不是。</strong><br></p>
             <p class="article-more-link">
-                <a href="/2016/08/05/chinese_rural_dog/#more">查看更多</a>
+                <a href="/2016/08/05/chinese_rural_dog/#more">Read More</a>
             </p>
         
         </div>
@@ -790,7 +790,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/05/chinese_rural_dog/" data-id="cirgqpn190001i0v4j9p07q8j" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/05/chinese_rural_dog/" data-id="cirgqpn190001i0v4j9p07q8j" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -858,7 +858,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/05/chinese_rural_dog/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/05/chinese_rural_dog/">评论</a>
+        <a href="http://blog.xieguigang.me/2016/08/05/chinese_rural_dog/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/05/chinese_rural_dog/">Comments</a>
     
 
         </footer>
@@ -909,7 +909,7 @@
 <p><strong>Voyageur</strong></p>
 <p>歌手： Enigma<br>发行时间：2005-04-11<br>发行公司： Virgin Germany<br></p>
             <p class="article-more-link">
-                <a href="/2016/08/05/Voyageur/#more">查看更多</a>
+                <a href="/2016/08/05/Voyageur/#more">Read More</a>
             </p>
         
         </div>
@@ -920,7 +920,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/05/Voyageur/" data-id="cirgqpn0p0000i0v4ddn1f7jd" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/05/Voyageur/" data-id="cirgqpn0p0000i0v4ddn1f7jd" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -988,7 +988,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/05/Voyageur/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/05/Voyageur/">评论</a>
+        <a href="http://blog.xieguigang.me/2016/08/05/Voyageur/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/05/Voyageur/">Comments</a>
     
 
         </footer>
@@ -1039,7 +1039,7 @@
 <p><strong>The Screen Behind The Mirror</strong></p>
 <p>歌手： Enigma<br>发行时间：2004-10-11<br>发行公司： Virgin Germany</p></p>
             <p class="article-more-link">
-                <a href="/2016/08/04/The_Screen_Behind_The_Mirror/#more">查看更多</a>
+                <a href="/2016/08/04/The_Screen_Behind_The_Mirror/#more">Read More</a>
             </p>
         
         </div>
@@ -1050,7 +1050,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/04/The_Screen_Behind_The_Mirror/" data-id="cirfgfxfy0000mwv467iktamx" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/04/The_Screen_Behind_The_Mirror/" data-id="cirfgfxfy0000mwv467iktamx" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1118,7 +1118,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/04/The_Screen_Behind_The_Mirror/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/04/The_Screen_Behind_The_Mirror/">评论</a>
+        <a href="http://blog.xieguigang.me/2016/08/04/The_Screen_Behind_The_Mirror/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/04/The_Screen_Behind_The_Mirror/">Comments</a>
     
 
         </footer>
@@ -1202,7 +1202,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Population 1:   500</span><br><span class="line">Population 2:   100</span><br><span class="line">Population 3:   1,000</span><br></pre></td></tr></table></figure>
 <p>Remember that the number of alleles is <strong>TWICE</strong> the number of genotypes.</p></p>
             <p class="article-more-link">
-                <a href="/2016/08/03/fst/#more">查看更多</a>
+                <a href="/2016/08/03/fst/#more">Read More</a>
             </p>
         
         </div>
@@ -1213,7 +1213,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/03/fst/" data-id="cire2riiv0001y8v46ro3pinw" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/03/fst/" data-id="cire2riiv0001y8v46ro3pinw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1281,7 +1281,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/03/fst/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/03/fst/">评论</a>
+        <a href="http://blog.xieguigang.me/2016/08/03/fst/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/03/fst/">Comments</a>
     
 
         </footer>
@@ -1332,7 +1332,7 @@
 <p><strong>MCMXC, A.D.</strong></p>
 <p>歌手： Enigma<br>发行时间：2006-11-28<br>发行公司： Capitol Catalog</p></p>
             <p class="article-more-link">
-                <a href="/2016/08/02/MCMXC_A_D/#more">查看更多</a>
+                <a href="/2016/08/02/MCMXC_A_D/#more">Read More</a>
             </p>
         
         </div>
@@ -1343,7 +1343,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/02/MCMXC_A_D/" data-id="cire2rihe0000y8v4oja7laby" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/02/MCMXC_A_D/" data-id="cire2rihe0000y8v4oja7laby" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1411,7 +1411,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/02/MCMXC_A_D/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/02/MCMXC_A_D/">评论</a>
+        <a href="http://blog.xieguigang.me/2016/08/02/MCMXC_A_D/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/02/MCMXC_A_D/">Comments</a>
     
 
         </footer>
@@ -1464,7 +1464,7 @@
 </ul>
 <p>我们将数轴分成若干个区间，所抽取的样本会分布在这些区间中。在原假设成立的条件下，我们便知道每个区间包含样本的个数的期望值。用实际值<code>Ni</code>与期望值<code>Npi</code>可以构造统计量<code>K</code>。皮尔森证明，<strong><code>n</code>趋向于无穷时，<code>k</code>收敛于<code>m-1</code>的塔防分布</strong>。<code>m</code>为我们分组的个数。有了这个分布，我们就可以做假设检验。</p></p>
             <p class="article-more-link">
-                <a href="/2016/08/01/R_hypothesis_testing/#more">查看更多</a>
+                <a href="/2016/08/01/R_hypothesis_testing/#more">Read More</a>
             </p>
         
         </div>
@@ -1475,7 +1475,7 @@
 
 </div>
 
-    <a data-url="http://blog.xieguigang.me/2016/08/01/R_hypothesis_testing/" data-id="cirat70p20000pcv44kxd9hso" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://blog.xieguigang.me/2016/08/01/R_hypothesis_testing/" data-id="cirat70p20000pcv44kxd9hso" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1543,7 +1543,7 @@
 
             
     
-        <a href="http://blog.xieguigang.me/2016/08/01/R_hypothesis_testing/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/01/R_hypothesis_testing/">评论</a>
+        <a href="http://blog.xieguigang.me/2016/08/01/R_hypothesis_testing/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://blog.xieguigang.me/2016/08/01/R_hypothesis_testing/">Comments</a>
     
 
         </footer>
@@ -1554,7 +1554,7 @@
 
 
     <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/page/2/">&laquo; 上一页</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">下一页 &raquo;</a>
+        <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
 </section>
             
@@ -1564,7 +1564,7 @@
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">归档</h3>
+        <h3 class="widget-title">archives</h3>
         <div class="widget">
             <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a><span class="archive-list-count">7</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">23</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">22</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">1</span></li></ul>
         </div>
@@ -1573,7 +1573,7 @@
     
         
     <div class="widget-wrap">
-        <h3 class="widget-title">标签云</h3>
+        <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
             <a href="/tags/3D/" style="font-size: 10px;">3D</a> <a href="/tags/3d/" style="font-size: 10px;">3d</a> <a href="/tags/3d-graphics/" style="font-size: 10px;">3d graphics</a> <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/BI/" style="font-size: 11.67px;">BI</a> <a href="/tags/CLI/" style="font-size: 10px;">CLI</a> <a href="/tags/Chinese/" style="font-size: 10px;">Chinese</a> <a href="/tags/Chinese-rural-dog/" style="font-size: 10px;">Chinese rural dog</a> <a href="/tags/CodeProject/" style="font-size: 15px;">CodeProject</a> <a href="/tags/Compiler/" style="font-size: 10px;">Compiler</a> <a href="/tags/Desktop/" style="font-size: 10px;">Desktop</a> <a href="/tags/Dictionary/" style="font-size: 10px;">Dictionary</a> <a href="/tags/Enigma/" style="font-size: 13.33px;">Enigma</a> <a href="/tags/GAM/" style="font-size: 10px;">GAM</a> <a href="/tags/GCModeller/" style="font-size: 11.67px;">GCModeller</a> <a href="/tags/HoloLens/" style="font-size: 10px;">HoloLens</a> <a href="/tags/IE/" style="font-size: 10px;">IE</a> <a href="/tags/Linq/" style="font-size: 10px;">Linq</a> <a href="/tags/Lumia/" style="font-size: 10px;">Lumia</a> <a href="/tags/MSDN/" style="font-size: 10px;">MSDN</a> <a href="/tags/Manhattan-Plot/" style="font-size: 10px;">Manhattan Plot</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/Microsoft/" style="font-size: 10px;">Microsoft</a> <a href="/tags/Monte-Carlo/" style="font-size: 10px;">Monte Carlo</a> <a href="/tags/ODE/" style="font-size: 10px;">ODE</a> <a href="/tags/OMIM/" style="font-size: 10px;">OMIM</a> <a href="/tags/PDB/" style="font-size: 10px;">PDB</a> <a href="/tags/Phylostratigraphic/" style="font-size: 10px;">Phylostratigraphic</a> <a href="/tags/PowerBI/" style="font-size: 10px;">PowerBI</a> <a href="/tags/R/" style="font-size: 15px;">R</a> <a href="/tags/R-squared/" style="font-size: 10px;">R-squared</a> <a href="/tags/RK2/" style="font-size: 10px;">RK2</a> <a href="/tags/RK4/" style="font-size: 10px;">RK4</a> <a href="/tags/SDK-document/" style="font-size: 10px;">SDK document</a> <a href="/tags/SNP/" style="font-size: 15px;">SNP</a> <a href="/tags/SVG/" style="font-size: 10px;">SVG</a> <a href="/tags/String/" style="font-size: 10px;">String</a> <a href="/tags/Surface-Book/" style="font-size: 10px;">Surface Book</a> <a href="/tags/Syntax/" style="font-size: 10px;">Syntax</a> <a href="/tags/UI/" style="font-size: 10px;">UI</a> <a href="/tags/VisualStudio/" style="font-size: 10px;">VisualStudio</a> <a href="/tags/WPF/" style="font-size: 10px;">WPF</a> <a href="/tags/XAML/" style="font-size: 10px;">XAML</a> <a href="/tags/YAML/" style="font-size: 10px;">YAML</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/architecture/" style="font-size: 11.67px;">architecture</a> <a href="/tags/art-work/" style="font-size: 10px;">art work</a> <a href="/tags/async/" style="font-size: 10px;">async</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/bootstrap/" style="font-size: 10px;">bootstrap</a> <a href="/tags/check-point/" style="font-size: 10px;">check-point</a> <a href="/tags/chrome/" style="font-size: 10px;">chrome</a> <a href="/tags/circos/" style="font-size: 11.67px;">circos</a> <a href="/tags/cytoscape-js/" style="font-size: 11.67px;">cytoscape.js</a> <a href="/tags/d3js/" style="font-size: 13.33px;">d3js</a> <a href="/tags/data-analysis/" style="font-size: 10px;">data analysis</a> <a href="/tags/data-visualization/" style="font-size: 10px;">data visualization</a> <a href="/tags/desktop/" style="font-size: 10px;">desktop</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/elementary-os/" style="font-size: 10px;">elementary os</a> <a href="/tags/eluer/" style="font-size: 10px;">eluer</a> <a href="/tags/firefox/" style="font-size: 10px;">firefox</a> <a href="/tags/force-directed/" style="font-size: 10px;">force directed</a> <a href="/tags/gdi/" style="font-size: 11.67px;">gdi+</a> <a href="/tags/genetics/" style="font-size: 13.33px;">genetics</a> <a href="/tags/github/" style="font-size: 16.67px;">github</a> <a href="/tags/heatmap/" style="font-size: 10px;">heatmap</a> <a href="/tags/html5/" style="font-size: 10px;">html5</a> <a href="/tags/interface/" style="font-size: 10px;">interface</a> <a href="/tags/javascript/" style="font-size: 18.33px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/json/" style="font-size: 11.67px;">json</a> <a href="/tags/language/" style="font-size: 10px;">language</a> <a href="/tags/languages/" style="font-size: 10px;">languages</a> <a href="/tags/libzplay/" style="font-size: 10px;">libzplay</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/math/" style="font-size: 10px;">math</a> <a href="/tags/mgcv/" style="font-size: 10px;">mgcv</a> <a href="/tags/music/" style="font-size: 16.67px;">music</a> <a href="/tags/my-works/" style="font-size: 10px;">my works</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/note/" style="font-size: 18.33px;">note</a> <a href="/tags/open-source/" style="font-size: 10px;">open-source</a> <a href="/tags/operators/" style="font-size: 10px;">operators</a> <a href="/tags/perl/" style="font-size: 10px;">perl</a> <a href="/tags/pipeline/" style="font-size: 10px;">pipeline</a> <a href="/tags/re0/" style="font-size: 10px;">re0</a> <a href="/tags/rem/" style="font-size: 10px;">rem</a> <a href="/tags/repost/" style="font-size: 16.67px;">repost</a> <a href="/tags/schema/" style="font-size: 11.67px;">schema</a> <a href="/tags/statics/" style="font-size: 10px;">statics</a> <a href="/tags/svg/" style="font-size: 10px;">svg</a> <a href="/tags/tags/" style="font-size: 10px;">tags</a> <a href="/tags/threading/" style="font-size: 10px;">threading</a> <a href="/tags/threadpool/" style="font-size: 10px;">threadpool</a> <a href="/tags/tricks/" style="font-size: 10px;">tricks</a> <a href="/tags/ubuntu/" style="font-size: 10px;">ubuntu</a> <a href="/tags/user-agent/" style="font-size: 10px;">user-agent</a> <a href="/tags/vb-net/" style="font-size: 20px;">vb.net</a> <a href="/tags/web/" style="font-size: 10px;">web</a> <a href="/tags/web-api/" style="font-size: 10px;">web api</a> <a href="/tags/web-server/" style="font-size: 10px;">web server</a> <a href="/tags/win10/" style="font-size: 10px;">win10</a> <a href="/tags/works/" style="font-size: 10px;">works</a> <a href="/tags/中華田園犬/" style="font-size: 10px;">中華田園犬</a> <a href="/tags/前端/" style="font-size: 10px;">前端</a> <a href="/tags/前端设计/" style="font-size: 13.33px;">前端设计</a> <a href="/tags/数据分析/" style="font-size: 10px;">数据分析</a> <a href="/tags/数据可视化/" style="font-size: 11.67px;">数据可视化</a> <a href="/tags/数据视图/" style="font-size: 10px;">数据视图</a> <a href="/tags/架构/" style="font-size: 11.67px;">架构</a> <a href="/tags/架构设计/" style="font-size: 10px;">架构设计</a> <a href="/tags/线程池/" style="font-size: 10px;">线程池</a> <a href="/tags/转载/" style="font-size: 10px;">转载</a> <a href="/tags/转载搬运/" style="font-size: 16.67px;">转载搬运</a> <a href="/tags/连锁不平衡/" style="font-size: 11.67px;">连锁不平衡</a> <a href="/tags/遗传学/" style="font-size: 11.67px;">遗传学</a> <a href="/tags/非线性拟合/" style="font-size: 10px;">非线性拟合</a> <a href="/tags/鹿乃/" style="font-size: 10px;">鹿乃</a>
         </div>
@@ -1582,7 +1582,7 @@
     
         
     <div class="widget-wrap widget-list">
-        <h3 class="widget-title">链接</h3>
+        <h3 class="widget-title">links</h3>
         <div class="widget">
             <ul>
                 
